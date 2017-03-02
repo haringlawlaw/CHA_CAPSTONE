@@ -32,6 +32,63 @@ public class ShopController {
         return "login";
     }
 
+    @RequestMapping(value="/index", method = RequestMethod.GET)
+    public String loginShopUser2(Model model){
+
+
+
+        return "index";
+    }
+
+    @RequestMapping(value="/main", method = RequestMethod.GET)
+    public String loginShopUser3(Model model){
+
+
+
+        return "main";
+    }
+
+    @RequestMapping(value="/dashboard", method = RequestMethod.GET)
+    public String loginShopUser4(Model model){
+
+
+
+        return "dashboard";
+    }
+
+    @RequestMapping(value="/sales", method = RequestMethod.GET)
+    public String loginShopUser5(Model model){
+
+
+
+        return "sales";
+    }
+
+    @RequestMapping(value="/transactions", method = RequestMethod.GET)
+    public String loginShopUser6(Model model){
+
+
+
+        return "transactions";
+    }
+
+    @RequestMapping(value="/inventory", method = RequestMethod.GET)
+    public String loginShopUser7(Model model){
+
+
+
+        return "inventory";
+    }
+
+    @RequestMapping(value="/profile", method = RequestMethod.GET)
+    public String loginShopUser8(Model model){
+
+
+
+        return "profile";
+    }
+
+
     @RequestMapping(value="/shop", method=RequestMethod.GET)
     public ResponseEntity<?> getShopLoginById(@RequestParam("id") String id){
         HashMap<String, Object> response = new HashMap<>();

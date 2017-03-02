@@ -24,6 +24,7 @@ body {
 }
 .btn-aqua {
 	background-color:#7157cc;
+	color: "black";
 }
 
 .btn-aqua.active, .btn-aqua.focus, .btn-aqua:active, .btn-aqua:focus, .btn-aqua:hover, .open > .dropdown-toggle.btn-aqua {
