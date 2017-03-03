@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b9f9bbf-a68d-439d-91f6-2df195c53b14" name="Default" comment="" />
+    <list default="true" id="6b9f9bbf-a68d-439d-91f6-2df195c53b14" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -84,7 +86,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="modificationStamps">
@@ -178,43 +180,11 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
       </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="AquaJMT" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Plugins" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="AquaJMT" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Plugins" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="spring-boot" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginNode" />
-        </PATH_ELEMENT>
-      </PATH>
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="y" value="1" />
+    <option name="x" value="-8" />
+    <option name="y" value="2" />
     <option name="width" value="1932" />
     <option name="height" value="1036" />
   </component>
@@ -234,8 +204,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -428,10 +396,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Backend/pom.xml" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="SearchEverywhereHistoryKey" value="application&#9;FILE&#9;file://D:/School/Capstone/Project/Web/src/main/resources/application.properties&#10;shopm&#9;FILE&#9;file://D:/School/Capstone/Project/Web/src/main/resources/mapper/ShopMapper.xml&#10;shopmapp&#9;FILE&#9;file://D:/School/Capstone/Project/Web/src/main/resources/mapper/ShopMapper.xml&#10;shopcont&#9;FILE&#9;file://D:/School/Capstone/Project/Web/src/main/java/com/capstone/jmt/controller/ShopController.java&#10;shopinfo&#9;FILE&#9;file://D:/School/Capstone/Project/Web/src/main/java/com/capstone/jmt/data/ShopInfo.java&#10;ordermapper&#9;FILE&#9;file://D:/School/Capstone/Project/Web/src/main/resources/mapper/OrderMapper.xml&#10;orderinfo&#9;FILE&#9;file://D:/School/Capstone/Project/Web/src/main/java/com/capstone/jmt/data/OrderInfo.java&#10;shopma&#9;FILE&#9;file://D:/School/Capstone/Project/Web/src/main/resources/mapper/ShopMapper.xml&#10;customer&#9;FILE&#9;file://D:/School/Capstone/Project/Web/src/main/java/com/capstone/jmt/controller/CustomerController.java&#10;customerS&#9;FILE&#9;file://D:/School/Capstone/Project/Web/src/main/java/com/capstone/jmt/service/CustomerService.java&#10;controller&#9;FILE&#9;file://D:/School/Capstone/Project/Web/src/main/java/com/capstone/jmt/controller/CustomerController.java&#10;web&#9;FILE&#9;file://D:/School/Capstone/Project/Web/src/main/java/com/capstone/jmt/config/WebMvcConfig.java&#10;contro&#9;FILE&#9;file://D:/School/Capstone/Project/Web/src/main/java/com/capstone/jmt/controller/CustomerController.java&#10;customercon&#9;FILE&#9;file://D:/School/Capstone/Project/Web/src/main/java/com/capstone/jmt/controller/CustomerController.java&#10;ordercontr&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/controller/OrderController.java&#10;orders&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/service/OrderService.java&#10;shopser&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/service/ShopService.java&#10;orderser&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/service/OrderService.java&#10;shopserv&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/service/ShopService.java&#10;customerserv&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/service/CustomerService.java&#10;ordercont&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/controller/OrderController.java&#10;shopcontro&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/controller/ShopController.java&#10;customerContr&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/controller/CustomerController.java&#10;ordercon&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/controller/OrderController.java&#10;customec&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/controller/CustomerController.java&#10;ordercontroller&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/controller/OrderController.java&#10;mapper&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/resources/mapper/ShopMapper.xml&#10;customercont&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/controller/CustomerController.java&#10;shopcontroller&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/controller/ShopController.java&#10;customermapp&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/resources/mapper/CustomerMapper.xml&#10;customerCont&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/controller/CustomerController.java&#10;shop&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/resources/mapper/ShopMapper.xml&#10;ordermapp&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/resources/mapper/OrderMapper.xml&#10;service&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/service/ShopService.java&#10;shopc&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/controller/ShopController.java&#10;order&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/resources/mapper/OrderMapper.xml&#10;shopCont&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/controller/ShopController.java&#10;customermap&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/resources/mapper/CustomerMapper.xml&#10;containersoff&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/data/ContainersOffered.java&#10;water&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/data/WaterTypesOffered.java&#10;ordercontain&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/data/OrderContainers.java&#10;orderstatu&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/data/OrderStatus.java&#10;ordermap&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/resources/mapper/OrderMapper.xml&#10;Order&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/service/OrderService.java&#10;swagger&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/config/SwaggerConfig.java&#10;applicatio&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/resources/application.properties&#10;pom&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/pom.xml&#10;shoplocatio&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/data/ShopLocation.java&#10;shopInfo&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/data/ShopInfo.java&#10;shoplogin&#9;FILE&#9;file://D:/School/Capstone/Project/AquaJMT/src/main/java/com/capstone/jmt/data/ShopLogin.java" />
@@ -942,11 +912,12 @@
       <workItem from="1486976152451" duration="48867000" />
       <workItem from="1487554753144" duration="27082000" />
       <workItem from="1487919992948" duration="30315000" />
+      <workItem from="1488428784601" duration="621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106264000" />
+    <option name="totallyTimeSpent" value="106885000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -958,41 +929,41 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="1" width="1932" height="1036" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="2" width="1932" height="1036" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49785176" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38165346" sideWeight="0.52255636" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33028018" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34902412" sideWeight="0.4774436" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09736541" sideWeight="0.49785176" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19058554" sideWeight="0.4935553" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26831895" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49785176" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49570355" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34902412" sideWeight="0.4774436" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09736541" sideWeight="0.49785176" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.80597013" sideWeight="0.4935553" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2645474" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.49462944" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49570355" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.49462944" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1047,17 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#ContainersOffered#0" expanded="false" />
-            <element signature="e#343#346#0" expanded="false" />
-            <element signature="e#423#453#0" expanded="false" />
-            <element signature="e#526#553#0" expanded="false" />
-            <element signature="e#624#653#0" expanded="false" />
-            <element signature="e#728#756#0" expanded="false" />
-            <element signature="e#829#854#0" expanded="false" />
-            <element signature="e#920#945#0" expanded="false" />
-            <element signature="e#1011#1036#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1065,18 +1025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="623">
           <caret line="62" column="30" lean-forward="false" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="30" />
-          <folding>
-            <element signature="n#select#2;n#mapper#0;n#!!top" expanded="false" />
-            <marker date="1487905386870" expanded="true" signature="1794:1816" ph="SELECT * FRO... customerLogin" />
-            <marker date="1487905386870" expanded="true" signature="1794:1820" ph="SELECT * FRO... customerInfo" />
-            <marker date="1487905386870" expanded="true" signature="1930:1973" ph="SELECT * FRO... customerInfo" />
-            <marker date="1487905386870" expanded="true" signature="2091:2138" ph="SELECT * FRO... customerLocation" />
-            <marker date="1487905386870" expanded="true" signature="2251:2880" ph="INSERT INTO customerInfo... " />
-            <marker date="1487905386870" expanded="true" signature="2959:2978" ph="UPDATE custo... " />
-            <marker date="1487905386870" expanded="true" signature="2959:3527" ph="UPDATE custo... " />
-            <marker date="1487905386870" expanded="true" signature="3644:3937" ph="INSERT INTO customerLocation... " />
-            <marker date="1487905386870" expanded="true" signature="4020:4287" ph="UPDATE custo... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1084,7 +1032,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="28" column="78" lean-forward="true" selection-start-line="28" selection-start-column="78" selection-end-line="28" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1092,7 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-88">
           <caret line="26" column="99" lean-forward="false" selection-start-line="26" selection-start-column="99" selection-end-line="26" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1100,7 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="23" column="99" lean-forward="false" selection-start-line="23" selection-start-column="99" selection-end-line="23" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1108,7 +1053,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="23" column="99" lean-forward="false" selection-start-line="23" selection-start-column="99" selection-end-line="23" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1116,7 +1060,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-154">
           <caret line="23" column="99" lean-forward="false" selection-start-line="23" selection-start-column="99" selection-end-line="23" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1124,7 +1067,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="26" column="99" lean-forward="false" selection-start-line="26" selection-start-column="99" selection-end-line="26" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1132,7 +1074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="23" column="99" lean-forward="false" selection-start-line="23" selection-start-column="99" selection-end-line="23" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1140,7 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="29" column="99" lean-forward="false" selection-start-line="29" selection-start-column="99" selection-end-line="29" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1148,7 +1088,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-154">
           <caret line="26" column="99" lean-forward="false" selection-start-line="26" selection-start-column="99" selection-end-line="26" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1156,7 +1095,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="23" column="99" lean-forward="false" selection-start-line="23" selection-start-column="99" selection-end-line="23" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1164,7 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-880">
           <caret line="23" column="99" lean-forward="false" selection-start-line="23" selection-start-column="99" selection-end-line="23" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1172,7 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="23" column="99" lean-forward="false" selection-start-line="23" selection-start-column="99" selection-end-line="23" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1180,7 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="29" column="99" lean-forward="false" selection-start-line="29" selection-start-column="99" selection-end-line="29" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1188,7 +1123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="29" column="99" lean-forward="false" selection-start-line="29" selection-start-column="99" selection-end-line="29" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1196,25 +1130,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="43" column="46" lean-forward="false" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jmt/data/ShopInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jmt/data/ShopInfo.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jmt/mapper/OrderMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1222,7 +1145,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
           <caret line="26" column="51" lean-forward="false" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1238,18 +1160,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jmt/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jmt/service/UserService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jmt/config/WebSecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
@@ -1262,26 +1176,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
           <caret line="176" column="33" lean-forward="false" selection-start-line="176" selection-start-column="33" selection-end-line="176" selection-end-column="33" />
-          <folding>
-            <element signature="docComment;class#OrderInfo#0" expanded="false" />
-            <element signature="e#288#295#0" expanded="false" />
-            <element signature="e#374#377#0" expanded="false" />
-            <element signature="e#454#481#0" expanded="false" />
-            <element signature="e#547#574#0" expanded="false" />
-            <element signature="e#644#675#0" expanded="false" />
-            <element signature="e#753#778#0" expanded="false" />
-            <element signature="e#844#872#0" expanded="false" />
-            <element signature="e#945#972#0" expanded="false" />
-            <element signature="e#1043#1070#0" expanded="false" />
-            <element signature="e#1140#1165#0" expanded="false" />
-            <element signature="e#1328#1353#0" expanded="false" />
-            <element signature="e#1419#1444#0" expanded="false" />
-            <element signature="e#1510#1535#0" expanded="false" />
-            <element signature="e#1601#1628#0" expanded="false" />
-            <element signature="e#4162#4163#0" expanded="true" />
-            <element signature="e#4210#4211#0" expanded="true" />
-            <element signature="e#4250#4251#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1289,38 +1183,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="19" column="75" lean-forward="false" selection-start-line="19" selection-start-column="75" selection-end-line="19" selection-end-column="75" />
-          <folding>
-            <marker date="1488294373738" expanded="true" signature="3366:3406" ph="SELECT * FRO... orderInfo" />
-            <marker date="1488294373738" expanded="true" signature="3541:3583" ph="SELECT * FRO... orderStatus" />
-            <marker date="1488294373738" expanded="true" signature="3730:3776" ph="SELECT * FRO... orderContainers" />
-            <marker date="1488294373738" expanded="true" signature="3879:4586" ph="INSERT INTO orderinfo... " />
-            <marker date="1488294373738" expanded="true" signature="4710:5348" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="5455:5535" ph="INSERT INTO orderstatus... " />
-            <marker date="1488294373738" expanded="true" signature="5455:5697" ph="INSERT INTO orderstatus... " />
-            <marker date="1488294373738" expanded="true" signature="5775:5793" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="5775:6157" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="5775:6200" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="5775:6238" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="6316:6367" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="6316:6434" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="6316:6458" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="6316:6484" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="6316:6508" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="6627:6758" ph="INSERT INTO orderContainers... " />
-            <marker date="1488294373738" expanded="true" signature="6627:6773" ph="INSERT INTO orderContainers... " />
-            <marker date="1488294373738" expanded="true" signature="6627:6945" ph="INSERT INTO orderContainers... " />
-            <marker date="1488294373738" expanded="true" signature="6627:7034" ph="INSERT INTO orderContainers... " />
-            <marker date="1488294373738" expanded="true" signature="7170:7192" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="7170:7204" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="7170:7259" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="7170:7260" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="7170:7425" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="7170:7426" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="7170:7449" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="7170:7468" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="7170:7482" ph="UPDATE order... " />
-            <marker date="1488294373738" expanded="true" signature="7170:7539" ph="UPDATE order... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1328,25 +1190,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="691">
           <caret line="194" column="0" lean-forward="true" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#ShopInfo#0" expanded="false" />
-            <element signature="e#288#295#0" expanded="false" />
-            <element signature="e#452#482#0" expanded="false" />
-            <element signature="e#554#577#0" expanded="false" />
-            <element signature="e#639#660#0" expanded="false" />
-            <element signature="e#718#745#0" expanded="false" />
-            <element signature="e#815#842#0" expanded="false" />
-            <element signature="e#912#936#0" expanded="false" />
-            <element signature="e#1000#1025#0" expanded="false" />
-            <element signature="e#1091#1116#0" expanded="false" />
-            <element signature="e#1183#1205#0" expanded="false" />
-            <element signature="e#1265#1296#0" expanded="false" />
-            <element signature="e#1375#1404#0" expanded="false" />
-            <element signature="e#1478#1508#0" expanded="false" />
-            <element signature="e#1585#1610#0" expanded="false" />
-            <element signature="e#1676#1701#0" expanded="false" />
-            <element signature="e#1767#1792#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1354,7 +1197,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
           <caret line="43" column="32" lean-forward="false" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1362,28 +1204,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="72" column="34" lean-forward="false" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="34" />
-          <folding>
-            <marker date="1488294417418" expanded="true" signature="4947:4999" ph="SELECT * FRO... shopLogin" />
-            <marker date="1488294417418" expanded="true" signature="5129:5168" ph="SELECT * FRO... shopInfo" />
-            <marker date="1488294417418" expanded="true" signature="5301:5341" ph="SELECT * FRO... shopLogin" />
-            <marker date="1488294417418" expanded="true" signature="5479:5522" ph="SELECT * FRO... shopLocation" />
-            <marker date="1488294417418" expanded="true" signature="5675:5723" ph="SELECT * FRO... waterTypesOffered" />
-            <marker date="1488294417418" expanded="true" signature="5876:5924" ph="SELECT * FRO... containersOffered" />
-            <marker date="1488294417418" expanded="true" signature="6025:6153" ph="INSERT INTO shopInfo... " />
-            <marker date="1488294417418" expanded="true" signature="6025:6433" ph="INSERT INTO shopInfo... " />
-            <marker date="1488294417418" expanded="true" signature="6537:7264" ph="UPDATE shopI... " />
-            <marker date="1488294417418" expanded="true" signature="7367:7526" ph="INSERT INTO shopLogin... " />
-            <marker date="1488294417418" expanded="true" signature="7367:7928" ph="INSERT INTO shopLogin... " />
-            <marker date="1488294417418" expanded="true" signature="8004:8445" ph="UPDATE shopL... " />
-            <marker date="1488294417418" expanded="true" signature="8554:8852" ph="INSERT INTO shopLocation... " />
-            <marker date="1488294417418" expanded="true" signature="8931:9085" ph="UPDATE shopL... " />
-            <marker date="1488294417418" expanded="true" signature="8931:9146" ph="UPDATE shopL... " />
-            <marker date="1488294417418" expanded="true" signature="8931:9202" ph="UPDATE shopL... " />
-            <marker date="1488294417418" expanded="true" signature="9321:9949" ph="INSERT INTO waterTypesOffered... " />
-            <marker date="1488294417418" expanded="true" signature="10089:10656" ph="UPDATE water... " />
-            <marker date="1488294417418" expanded="true" signature="10775:11141" ph="INSERT INTO containersOffered... " />
-            <marker date="1488294417418" expanded="true" signature="11281:11624" ph="UPDATE conta... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1391,7 +1211,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
           <caret line="40" column="41" lean-forward="false" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1399,7 +1218,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="53" column="46" lean-forward="false" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1419,14 +1237,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jmt/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jmt/controller/LoginController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jmt/controller/ShopController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -1473,7 +1284,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1481,7 +1291,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
           <caret line="26" column="99" lean-forward="false" selection-start-line="26" selection-start-column="99" selection-end-line="26" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1489,7 +1298,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="23" column="99" lean-forward="false" selection-start-line="23" selection-start-column="99" selection-end-line="23" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1505,7 +1313,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1513,7 +1320,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="6455" column="31" lean-forward="false" selection-start-line="6455" selection-start-column="31" selection-end-line="6455" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1530,7 +1336,7 @@
         <state relative-caret-position="264">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1555,7 +1361,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="22" column="48" lean-forward="false" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
