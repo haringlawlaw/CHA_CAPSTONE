@@ -2,12 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
-          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+          th:href="@{../static/vendor/bootstrap/css/bootstrap.min.css}"
           rel="stylesheet" media="screen"/>
-
-    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
-            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
 
     <link href="../../static/css/style.css"
           th:href="@{../../static/css/style.css}" rel="stylesheet" media="screen"/>
@@ -19,20 +17,18 @@
         <nav class="navbar navbar-default navbar-fixed-left">
             <div class="container-fluid">
                 <div class="navbar-header">
-                     <a class="navbar-logo" href="#" th:href="@{/}">
-                     	<img src="../../static/images/logo.png" th:src="@{../../static/images/logo.png}"  />
-                     </a>
-                     <br/><br/>
-        	         <ul class="nav navbar-nav">
-                        <li><a href="#" th:href="@{/}">Home</a></li>
-                        <li><a href="#" th:href="@{/users}">View Users</a></li>
-                         <li><a href="#" th:href="@{/devices}">View Devices</a></li>
-                        <li><a href="#" th:href="@{/user/new}">Create User</a></li>
-                         <li><a href="#" th:href="@{/device/new}">Register Device</a></li>
-                        <li><a href="#" th:href="@{/logout}">Logout</a></li>
-                    </ul>
-
+                    <a class="navbar-brand" href="#">AquaJMT</a>
                 </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="#" th:href="@{/dashboard}">Dashboard</a></li>
+                    <li><a href="#" th:href="@{/sales}">Sales History</a></li>
+                    <li><a href="#" th:href="@{/transactions}">Manage Transactions</a></li>
+                    <li><a href="#" th:href="@{/inventory}">Inventory</a></li>
+                    <li><a href="#" th:href="@{/profile}">Store Profile</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" th:href="@{/logout}">Logout</a></li>
+                </ul>
             </div>
         </nav>
     </div>

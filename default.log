@@ -13849,3 +13849,456 @@ org.xml.sax.SAXParseException: The element type "meta" must be terminated by the
 2017-03-02 23:29:58.824 DEBUG 6868 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/CustomerMapper.xml]'
 2017-03-02 23:29:58.909 DEBUG 6868 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/ShopMapper.xml]'
 2017-03-02 23:29:58.958 DEBUG 6868 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/OrderMapper.xml]'
+2017-03-03 12:42:24.015 TRACE 16952 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 12:42:24.018 DEBUG 16952 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 12:42:24.018 TRACE 16952 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 12:42:24.018 DEBUG 16952 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 12:42:24.019 TRACE 16952 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 12:42:24.019 DEBUG 16952 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 12:42:24.020 DEBUG 16952 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'customerMapper' and 'com.capstone.jmt.mapper.CustomerMapper' mapperInterface
+2017-03-03 12:42:24.021 DEBUG 16952 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'customerMapper'.
+2017-03-03 12:42:24.021 DEBUG 16952 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'orderMapper' and 'com.capstone.jmt.mapper.OrderMapper' mapperInterface
+2017-03-03 12:42:24.021 DEBUG 16952 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2017-03-03 12:42:24.021 DEBUG 16952 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'shopMapper' and 'com.capstone.jmt.mapper.ShopMapper' mapperInterface
+2017-03-03 12:42:24.021 DEBUG 16952 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'shopMapper'.
+2017-03-03 12:42:38.263 DEBUG 16952 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2017-03-03 12:42:38.658 DEBUG 16952 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl' adapter.
+2017-03-03 12:42:38.661 DEBUG 16952 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed configuration file: 'class path resource [mybatis-config.xml]'
+2017-03-03 12:42:38.950 DEBUG 16952 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/CustomerMapper.xml]'
+2017-03-03 12:42:39.207 DEBUG 16952 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/ShopMapper.xml]'
+2017-03-03 12:42:39.407 DEBUG 16952 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/OrderMapper.xml]'
+2017-03-03 12:51:58.795 TRACE 6768 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 12:51:58.799 DEBUG 6768 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 12:51:58.800 TRACE 6768 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 12:51:58.800 DEBUG 6768 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 12:51:58.800 TRACE 6768 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 12:51:58.801 DEBUG 6768 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 12:51:58.801 DEBUG 6768 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'customerMapper' and 'com.capstone.jmt.mapper.CustomerMapper' mapperInterface
+2017-03-03 12:51:58.803 DEBUG 6768 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'customerMapper'.
+2017-03-03 12:51:58.803 DEBUG 6768 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'orderMapper' and 'com.capstone.jmt.mapper.OrderMapper' mapperInterface
+2017-03-03 12:51:58.804 DEBUG 6768 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2017-03-03 12:51:58.804 DEBUG 6768 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'shopMapper' and 'com.capstone.jmt.mapper.ShopMapper' mapperInterface
+2017-03-03 12:51:58.804 DEBUG 6768 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'shopMapper'.
+2017-03-03 12:52:03.841 DEBUG 6768 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2017-03-03 12:52:03.977 DEBUG 6768 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl' adapter.
+2017-03-03 12:52:03.979 DEBUG 6768 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed configuration file: 'class path resource [mybatis-config.xml]'
+2017-03-03 12:52:04.084 DEBUG 6768 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/CustomerMapper.xml]'
+2017-03-03 12:52:04.118 DEBUG 6768 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/ShopMapper.xml]'
+2017-03-03 12:52:04.161 DEBUG 6768 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/OrderMapper.xml]'
+2017-03-03 12:52:43.796 TRACE 19936 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 12:52:43.799 DEBUG 19936 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 12:52:43.799 TRACE 19936 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 12:52:43.800 DEBUG 19936 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 12:52:43.800 TRACE 19936 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 12:52:43.800 DEBUG 19936 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 12:52:43.801 DEBUG 19936 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'customerMapper' and 'com.capstone.jmt.mapper.CustomerMapper' mapperInterface
+2017-03-03 12:52:43.802 DEBUG 19936 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'customerMapper'.
+2017-03-03 12:52:43.803 DEBUG 19936 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'orderMapper' and 'com.capstone.jmt.mapper.OrderMapper' mapperInterface
+2017-03-03 12:52:43.806 DEBUG 19936 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2017-03-03 12:52:43.807 DEBUG 19936 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'shopMapper' and 'com.capstone.jmt.mapper.ShopMapper' mapperInterface
+2017-03-03 12:52:43.807 DEBUG 19936 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'shopMapper'.
+2017-03-03 12:52:50.902 DEBUG 19936 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2017-03-03 12:52:51.037 DEBUG 19936 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl' adapter.
+2017-03-03 12:52:51.039 DEBUG 19936 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed configuration file: 'class path resource [mybatis-config.xml]'
+2017-03-03 12:52:51.127 DEBUG 19936 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/CustomerMapper.xml]'
+2017-03-03 12:52:51.159 DEBUG 19936 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/ShopMapper.xml]'
+2017-03-03 12:52:51.211 DEBUG 19936 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/OrderMapper.xml]'
+2017-03-03 12:56:42.513 TRACE 10692 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 12:56:42.517 DEBUG 10692 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 12:56:42.518 TRACE 10692 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 12:56:42.518 DEBUG 10692 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 12:56:42.519 TRACE 10692 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 12:56:42.519 DEBUG 10692 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 12:56:42.520 DEBUG 10692 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'customerMapper' and 'com.capstone.jmt.mapper.CustomerMapper' mapperInterface
+2017-03-03 12:56:42.521 DEBUG 10692 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'customerMapper'.
+2017-03-03 12:56:42.521 DEBUG 10692 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'orderMapper' and 'com.capstone.jmt.mapper.OrderMapper' mapperInterface
+2017-03-03 12:56:42.521 DEBUG 10692 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2017-03-03 12:56:42.521 DEBUG 10692 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'shopMapper' and 'com.capstone.jmt.mapper.ShopMapper' mapperInterface
+2017-03-03 12:56:42.522 DEBUG 10692 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'shopMapper'.
+2017-03-03 12:56:47.423 DEBUG 10692 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2017-03-03 12:56:47.548 DEBUG 10692 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl' adapter.
+2017-03-03 12:56:47.550 DEBUG 10692 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed configuration file: 'class path resource [mybatis-config.xml]'
+2017-03-03 12:56:47.647 DEBUG 10692 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/CustomerMapper.xml]'
+2017-03-03 12:56:47.696 DEBUG 10692 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/ShopMapper.xml]'
+2017-03-03 12:56:47.726 DEBUG 10692 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/OrderMapper.xml]'
+2017-03-03 12:59:06.373 TRACE 20880 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 12:59:06.374 DEBUG 20880 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 12:59:06.375 TRACE 20880 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 12:59:06.375 DEBUG 20880 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 12:59:06.375 TRACE 20880 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 12:59:06.376 DEBUG 20880 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 12:59:06.376 DEBUG 20880 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'customerMapper' and 'com.capstone.jmt.mapper.CustomerMapper' mapperInterface
+2017-03-03 12:59:06.377 DEBUG 20880 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'customerMapper'.
+2017-03-03 12:59:06.377 DEBUG 20880 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'orderMapper' and 'com.capstone.jmt.mapper.OrderMapper' mapperInterface
+2017-03-03 12:59:06.377 DEBUG 20880 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2017-03-03 12:59:06.377 DEBUG 20880 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'shopMapper' and 'com.capstone.jmt.mapper.ShopMapper' mapperInterface
+2017-03-03 12:59:06.377 DEBUG 20880 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'shopMapper'.
+2017-03-03 12:59:11.510 DEBUG 20880 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2017-03-03 12:59:11.663 DEBUG 20880 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl' adapter.
+2017-03-03 12:59:11.665 DEBUG 20880 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed configuration file: 'class path resource [mybatis-config.xml]'
+2017-03-03 12:59:11.756 DEBUG 20880 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/CustomerMapper.xml]'
+2017-03-03 12:59:11.788 DEBUG 20880 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/ShopMapper.xml]'
+2017-03-03 12:59:11.826 DEBUG 20880 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/OrderMapper.xml]'
+2017-03-03 12:59:28.707 ERROR 20880 --- [http-nio-8080-exec-1] o.thymeleaf.templateparser.ErrorHandler  : [THYMELEAF][http-nio-8080-exec-1] Fatal error during parsing
+
+org.xml.sax.SAXParseException: Attribute "rel" was already specified for element "link".
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203) ~[na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177) ~[na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400) [na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327) [na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1438) [na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1561) [na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1320) [na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2787) [na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606) [na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510) [na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848) [na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777) [na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141) [na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213) [na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643) [na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327) [na:1.8.0_91]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.standard.fragment.StandardFragment.extractFragment(StandardFragment.java:202) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.standard.processor.attr.AbstractStandardFragmentHandlingAttrProcessor.computeFragment(AbstractStandardFragmentHandlingAttrProcessor.java:72) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.attr.AbstractFragmentHandlingAttrProcessor.processAttribute(AbstractFragmentHandlingAttrProcessor.java:63) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.attr.AbstractAttrProcessor.doProcess(AbstractAttrProcessor.java:87) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.AbstractProcessor.process(AbstractProcessor.java:212) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.applyNextProcessor(Node.java:1017) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:972) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Document.process(Document.java:93) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1155) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335) [thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190) [thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1257) [spring-webmvc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037) [spring-webmvc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) [spring-webmvc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897) [spring-webmvc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) [spring-webmvc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) [spring-webmvc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) [javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) [spring-webmvc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) [javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) [spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) [spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262) [spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105) [spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) [spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) [spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:474) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:783) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:798) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1434) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_91]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
+
+2017-03-03 12:59:28.720 ERROR 20880 --- [http-nio-8080-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-1] Exception processing template "dashboard": Exception parsing document: template="fragments/headerinc", line 7 - column 27 (dashboard:7)
+2017-03-03 12:59:28.726 ERROR 20880 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Exception parsing document: template="fragments/headerinc", line 7 - column 27 (dashboard:7)] with root cause
+
+org.xml.sax.SAXParseException: Attribute "rel" was already specified for element "link".
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203) ~[na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177) ~[na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400) ~[na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327) ~[na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1438) ~[na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1561) ~[na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1320) ~[na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2787) ~[na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606) ~[na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510) ~[na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848) ~[na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777) ~[na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141) ~[na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213) ~[na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643) ~[na:1.8.0_91]
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327) ~[na:1.8.0_91]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.standard.fragment.StandardFragment.extractFragment(StandardFragment.java:202) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.standard.processor.attr.AbstractStandardFragmentHandlingAttrProcessor.computeFragment(AbstractStandardFragmentHandlingAttrProcessor.java:72) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.attr.AbstractFragmentHandlingAttrProcessor.processAttribute(AbstractFragmentHandlingAttrProcessor.java:63) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.attr.AbstractAttrProcessor.doProcess(AbstractAttrProcessor.java:87) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.AbstractProcessor.process(AbstractProcessor.java:212) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.applyNextProcessor(Node.java:1017) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:972) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Document.process(Document.java:93) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1155) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1257) ~[spring-webmvc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037) ~[spring-webmvc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) ~[spring-webmvc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897) ~[spring-webmvc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.1.RELEASE.jar:4.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) ~[spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262) ~[spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105) ~[spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:474) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:783) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:798) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1434) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_91]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
+
+2017-03-03 13:00:26.094 TRACE 4604 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 13:00:26.096 DEBUG 4604 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 13:00:26.096 TRACE 4604 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 13:00:26.096 DEBUG 4604 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 13:00:26.096 TRACE 4604 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 13:00:26.097 DEBUG 4604 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 13:00:26.097 DEBUG 4604 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'customerMapper' and 'com.capstone.jmt.mapper.CustomerMapper' mapperInterface
+2017-03-03 13:00:26.098 DEBUG 4604 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'customerMapper'.
+2017-03-03 13:00:26.098 DEBUG 4604 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'orderMapper' and 'com.capstone.jmt.mapper.OrderMapper' mapperInterface
+2017-03-03 13:00:26.098 DEBUG 4604 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2017-03-03 13:00:26.098 DEBUG 4604 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'shopMapper' and 'com.capstone.jmt.mapper.ShopMapper' mapperInterface
+2017-03-03 13:00:26.098 DEBUG 4604 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'shopMapper'.
+2017-03-03 13:00:31.443 DEBUG 4604 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2017-03-03 13:00:31.577 DEBUG 4604 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl' adapter.
+2017-03-03 13:00:31.583 DEBUG 4604 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed configuration file: 'class path resource [mybatis-config.xml]'
+2017-03-03 13:00:31.687 DEBUG 4604 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/CustomerMapper.xml]'
+2017-03-03 13:00:31.735 DEBUG 4604 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/ShopMapper.xml]'
+2017-03-03 13:00:31.767 DEBUG 4604 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/OrderMapper.xml]'
+2017-03-03 13:07:10.718 TRACE 15496 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 13:07:10.719 DEBUG 15496 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 13:07:10.720 TRACE 15496 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 13:07:10.720 DEBUG 15496 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 13:07:10.720 TRACE 15496 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 13:07:10.721 DEBUG 15496 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 13:07:10.721 DEBUG 15496 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'customerMapper' and 'com.capstone.jmt.mapper.CustomerMapper' mapperInterface
+2017-03-03 13:07:10.722 DEBUG 15496 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'customerMapper'.
+2017-03-03 13:07:10.722 DEBUG 15496 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'orderMapper' and 'com.capstone.jmt.mapper.OrderMapper' mapperInterface
+2017-03-03 13:07:10.722 DEBUG 15496 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2017-03-03 13:07:10.722 DEBUG 15496 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'shopMapper' and 'com.capstone.jmt.mapper.ShopMapper' mapperInterface
+2017-03-03 13:07:10.722 DEBUG 15496 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'shopMapper'.
+2017-03-03 13:07:15.302 DEBUG 15496 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2017-03-03 13:07:15.410 DEBUG 15496 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl' adapter.
+2017-03-03 13:07:15.412 DEBUG 15496 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed configuration file: 'class path resource [mybatis-config.xml]'
+2017-03-03 13:07:15.478 DEBUG 15496 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/CustomerMapper.xml]'
+2017-03-03 13:07:15.506 DEBUG 15496 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/ShopMapper.xml]'
+2017-03-03 13:07:15.550 DEBUG 15496 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/OrderMapper.xml]'
+2017-03-03 13:09:57.287 TRACE 14620 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 13:09:57.289 DEBUG 14620 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 13:09:57.290 TRACE 14620 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 13:09:57.290 DEBUG 14620 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 13:09:57.290 TRACE 14620 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 13:09:57.291 DEBUG 14620 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 13:09:57.291 DEBUG 14620 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'customerMapper' and 'com.capstone.jmt.mapper.CustomerMapper' mapperInterface
+2017-03-03 13:09:57.292 DEBUG 14620 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'customerMapper'.
+2017-03-03 13:09:57.292 DEBUG 14620 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'orderMapper' and 'com.capstone.jmt.mapper.OrderMapper' mapperInterface
+2017-03-03 13:09:57.292 DEBUG 14620 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2017-03-03 13:09:57.293 DEBUG 14620 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'shopMapper' and 'com.capstone.jmt.mapper.ShopMapper' mapperInterface
+2017-03-03 13:09:57.293 DEBUG 14620 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'shopMapper'.
+2017-03-03 13:10:01.948 DEBUG 14620 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2017-03-03 13:10:02.067 DEBUG 14620 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl' adapter.
+2017-03-03 13:10:02.069 DEBUG 14620 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed configuration file: 'class path resource [mybatis-config.xml]'
+2017-03-03 13:10:02.148 DEBUG 14620 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/CustomerMapper.xml]'
+2017-03-03 13:10:02.196 DEBUG 14620 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/ShopMapper.xml]'
+2017-03-03 13:10:02.231 DEBUG 14620 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/OrderMapper.xml]'
+2017-03-03 13:11:37.693 TRACE 12548 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 13:11:37.695 DEBUG 12548 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 13:11:37.695 TRACE 12548 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 13:11:37.695 DEBUG 12548 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 13:11:37.696 TRACE 12548 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 13:11:37.696 DEBUG 12548 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 13:11:37.696 DEBUG 12548 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'customerMapper' and 'com.capstone.jmt.mapper.CustomerMapper' mapperInterface
+2017-03-03 13:11:37.697 DEBUG 12548 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'customerMapper'.
+2017-03-03 13:11:37.698 DEBUG 12548 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'orderMapper' and 'com.capstone.jmt.mapper.OrderMapper' mapperInterface
+2017-03-03 13:11:37.698 DEBUG 12548 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2017-03-03 13:11:37.698 DEBUG 12548 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'shopMapper' and 'com.capstone.jmt.mapper.ShopMapper' mapperInterface
+2017-03-03 13:11:37.699 DEBUG 12548 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'shopMapper'.
+2017-03-03 13:11:42.461 DEBUG 12548 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2017-03-03 13:11:42.573 DEBUG 12548 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl' adapter.
+2017-03-03 13:11:42.575 DEBUG 12548 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed configuration file: 'class path resource [mybatis-config.xml]'
+2017-03-03 13:11:42.652 DEBUG 12548 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/CustomerMapper.xml]'
+2017-03-03 13:11:42.681 DEBUG 12548 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/ShopMapper.xml]'
+2017-03-03 13:11:42.720 DEBUG 12548 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/OrderMapper.xml]'
+2017-03-03 13:13:13.726 TRACE 11252 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 13:13:13.728 DEBUG 11252 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 13:13:13.728 TRACE 11252 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 13:13:13.728 DEBUG 11252 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 13:13:13.728 TRACE 11252 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 13:13:13.729 DEBUG 11252 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 13:13:13.729 DEBUG 11252 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'customerMapper' and 'com.capstone.jmt.mapper.CustomerMapper' mapperInterface
+2017-03-03 13:13:13.730 DEBUG 11252 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'customerMapper'.
+2017-03-03 13:13:13.730 DEBUG 11252 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'orderMapper' and 'com.capstone.jmt.mapper.OrderMapper' mapperInterface
+2017-03-03 13:13:13.730 DEBUG 11252 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2017-03-03 13:13:13.731 DEBUG 11252 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'shopMapper' and 'com.capstone.jmt.mapper.ShopMapper' mapperInterface
+2017-03-03 13:13:13.731 DEBUG 11252 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'shopMapper'.
+2017-03-03 13:13:18.130 DEBUG 11252 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2017-03-03 13:13:18.272 DEBUG 11252 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl' adapter.
+2017-03-03 13:13:18.274 DEBUG 11252 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed configuration file: 'class path resource [mybatis-config.xml]'
+2017-03-03 13:13:18.353 DEBUG 11252 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/CustomerMapper.xml]'
+2017-03-03 13:13:18.403 DEBUG 11252 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/ShopMapper.xml]'
+2017-03-03 13:13:18.433 DEBUG 11252 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/OrderMapper.xml]'
+2017-03-03 13:15:23.793 TRACE 9652 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 13:15:23.795 DEBUG 9652 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\CustomerMapper.class]
+2017-03-03 13:15:23.795 TRACE 9652 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 13:15:23.796 DEBUG 9652 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\OrderMapper.class]
+2017-03-03 13:15:23.796 TRACE 9652 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Scanning file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 13:15:23.797 DEBUG 9652 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Capstone\Web\target\classes\com\capstone\jmt\mapper\ShopMapper.class]
+2017-03-03 13:15:23.797 DEBUG 9652 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'customerMapper' and 'com.capstone.jmt.mapper.CustomerMapper' mapperInterface
+2017-03-03 13:15:23.798 DEBUG 9652 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'customerMapper'.
+2017-03-03 13:15:23.798 DEBUG 9652 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'orderMapper' and 'com.capstone.jmt.mapper.OrderMapper' mapperInterface
+2017-03-03 13:15:23.798 DEBUG 9652 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2017-03-03 13:15:23.798 DEBUG 9652 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'shopMapper' and 'com.capstone.jmt.mapper.ShopMapper' mapperInterface
+2017-03-03 13:15:23.798 DEBUG 9652 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'shopMapper'.
+2017-03-03 13:15:28.647 DEBUG 9652 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2017-03-03 13:15:28.762 DEBUG 9652 --- [restartedMain] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl' adapter.
+2017-03-03 13:15:28.764 DEBUG 9652 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed configuration file: 'class path resource [mybatis-config.xml]'
+2017-03-03 13:15:28.840 DEBUG 9652 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/CustomerMapper.xml]'
+2017-03-03 13:15:28.896 DEBUG 9652 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/ShopMapper.xml]'
+2017-03-03 13:15:28.959 DEBUG 9652 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mapper/OrderMapper.xml]'
