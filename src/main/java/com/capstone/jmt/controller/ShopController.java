@@ -32,12 +32,12 @@ public class ShopController {
         return "login";
     }
 
-    @RequestMapping(value="/index", method = RequestMethod.GET)
+    @RequestMapping(value="/rating", method = RequestMethod.GET)
     public String loginShopUser2(Model model){
 
 
 
-        return "index";
+        return "rating";
     }
 
     @RequestMapping(value="/main", method = RequestMethod.GET)
