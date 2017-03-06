@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="663157f8-8682-45cd-b468-7496e98be3d4" name="Default" comment="added files in static">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/dist/css/sb-admin-2.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/dist/css/sb-admin-2.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/dist/js/sb-admin-2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/dist/js/sb-admin-2.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/capstone/jmt/config/SwaggerConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/capstone/jmt/config/SwaggerConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/default.log" afterPath="$PROJECT_DIR$/default.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,7 +30,7 @@
       <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="154">
               <caret line="7" column="43" lean-forward="false" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
               <folding>
                 <element signature="n#style#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -52,7 +55,7 @@
       <file leaf-file-name="rating.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/rating.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
+            <state relative-caret-position="66">
               <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="4" selection-end-column="35" />
               <folding>
                 <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -64,7 +67,7 @@
       <file leaf-file-name="sales.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sales.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
+            <state relative-caret-position="66">
               <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="28" />
               <folding>
                 <element signature="n#style#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -77,7 +80,7 @@
       <file leaf-file-name="inventory.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/inventory.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
+            <state relative-caret-position="1474">
               <caret line="139" column="25" lean-forward="false" selection-start-line="139" selection-start-column="25" selection-end-line="139" selection-end-column="25" />
               <folding>
                 <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -90,7 +93,7 @@
       <file leaf-file-name="transactions.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/transactions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
+            <state relative-caret-position="1474">
               <caret line="123" column="25" lean-forward="false" selection-start-line="123" selection-start-column="25" selection-end-line="123" selection-end-column="25" />
               <folding>
                 <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -103,7 +106,7 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
+            <state relative-caret-position="1386">
               <caret line="63" column="57" lean-forward="false" selection-start-line="63" selection-start-column="57" selection-end-line="63" selection-end-column="57" />
               <folding />
             </state>
@@ -113,42 +116,9 @@
       <file leaf-file-name="ContainersOffered.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jmt/data/ContainersOffered.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="88">
               <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding>
-                <element signature="e#1125#1126#0" expanded="false" />
-                <element signature="e#1150#1151#0" expanded="false" />
-                <element signature="e#1186#1187#0" expanded="false" />
-                <element signature="e#1214#1215#0" expanded="false" />
-                <element signature="e#1254#1255#0" expanded="false" />
-                <element signature="e#1289#1290#0" expanded="false" />
-                <element signature="e#1346#1347#0" expanded="false" />
-                <element signature="e#1394#1395#0" expanded="false" />
-                <element signature="e#1433#1434#0" expanded="false" />
-                <element signature="e#1467#1468#0" expanded="false" />
-                <element signature="e#1522#1523#0" expanded="false" />
-                <element signature="e#1568#1569#0" expanded="false" />
-                <element signature="e#1609#1610#0" expanded="false" />
-                <element signature="e#1645#1646#0" expanded="false" />
-                <element signature="e#1704#1705#0" expanded="false" />
-                <element signature="e#1754#1755#0" expanded="false" />
-                <element signature="e#1794#1795#0" expanded="false" />
-                <element signature="e#1829#1830#0" expanded="false" />
-                <element signature="e#1886#1887#0" expanded="false" />
-                <element signature="e#1934#1935#0" expanded="false" />
-                <element signature="e#1970#1971#0" expanded="false" />
-                <element signature="e#2002#2003#0" expanded="false" />
-                <element signature="e#2052#2053#0" expanded="false" />
-                <element signature="e#2094#2095#0" expanded="false" />
-                <element signature="e#2130#2131#0" expanded="false" />
-                <element signature="e#2162#2163#0" expanded="false" />
-                <element signature="e#2212#2213#0" expanded="false" />
-                <element signature="e#2254#2255#0" expanded="false" />
-                <element signature="e#2290#2291#0" expanded="false" />
-                <element signature="e#2322#2323#0" expanded="false" />
-                <element signature="e#2372#2373#0" expanded="false" />
-                <element signature="e#2414#2415#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -156,11 +126,9 @@
       <file leaf-file-name="ShopController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jmt/controller/ShopController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="198">
               <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -204,6 +172,12 @@
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -240,10 +214,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator currentView="PackagesPane" proportions="" version="1">
@@ -260,8 +234,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="PackagesPane">
         <subPane>
@@ -391,12 +363,16 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="SearchEverywhereHistoryKey" value="pom.xml&#9;FILE&#9;file://C:/Users/lawrence mataga/Capstone/For Web/AquaJMT/pom.xml&#10;pom.x&#9;FILE&#9;file://C:/Users/lawrence mataga/Capstone/For Web/AquaJMT/pom.xml&#10;pom&#9;FILE&#9;file://C:/Users/lawrence mataga/Capstone/For Web/AquaJMT/pom.xml" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
   </component>
   <component name="RunManager" selected="Maven.AquaJMT [spring-boot:run]">
     <configuration default="false" name="AquaJMT [spring-boot:run] (1)" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
@@ -698,6 +674,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1488451793262</updated>
+      <workItem from="1488775713366" duration="242000" />
     </task>
     <task id="LOCAL-00001" summary="added dist files in static&#10;and pages complete&#10;-law">
       <created>1488639410072</created>
@@ -723,6 +700,9 @@
     <option name="localTasksCounter" value="4" />
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="242000" />
+  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -733,7 +713,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -743,14 +723,17 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14714494" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35173503" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10311493" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22989808" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2665615" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36006546" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3590034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15959005" sideWeight="0.49462366" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11439312" sideWeight="0.49462366" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1775" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -765,6 +748,9 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -789,9 +775,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
           <caret line="67" column="46" lean-forward="false" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -845,9 +829,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
           <caret line="67" column="46" lean-forward="false" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -901,9 +883,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
           <caret line="67" column="46" lean-forward="false" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -957,9 +937,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
           <caret line="67" column="46" lean-forward="true" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1088,48 +1066,15 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jmt/data/ContainersOffered.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state relative-caret-position="88">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#1125#1126#0" expanded="false" />
-            <element signature="e#1150#1151#0" expanded="false" />
-            <element signature="e#1186#1187#0" expanded="false" />
-            <element signature="e#1214#1215#0" expanded="false" />
-            <element signature="e#1254#1255#0" expanded="false" />
-            <element signature="e#1289#1290#0" expanded="false" />
-            <element signature="e#1346#1347#0" expanded="false" />
-            <element signature="e#1394#1395#0" expanded="false" />
-            <element signature="e#1433#1434#0" expanded="false" />
-            <element signature="e#1467#1468#0" expanded="false" />
-            <element signature="e#1522#1523#0" expanded="false" />
-            <element signature="e#1568#1569#0" expanded="false" />
-            <element signature="e#1609#1610#0" expanded="false" />
-            <element signature="e#1645#1646#0" expanded="false" />
-            <element signature="e#1704#1705#0" expanded="false" />
-            <element signature="e#1754#1755#0" expanded="false" />
-            <element signature="e#1794#1795#0" expanded="false" />
-            <element signature="e#1829#1830#0" expanded="false" />
-            <element signature="e#1886#1887#0" expanded="false" />
-            <element signature="e#1934#1935#0" expanded="false" />
-            <element signature="e#1970#1971#0" expanded="false" />
-            <element signature="e#2002#2003#0" expanded="false" />
-            <element signature="e#2052#2053#0" expanded="false" />
-            <element signature="e#2094#2095#0" expanded="false" />
-            <element signature="e#2130#2131#0" expanded="false" />
-            <element signature="e#2162#2163#0" expanded="false" />
-            <element signature="e#2212#2213#0" expanded="false" />
-            <element signature="e#2254#2255#0" expanded="false" />
-            <element signature="e#2290#2291#0" expanded="false" />
-            <element signature="e#2322#2323#0" expanded="false" />
-            <element signature="e#2372#2373#0" expanded="false" />
-            <element signature="e#2414#2415#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
+        <state relative-caret-position="1386">
           <caret line="63" column="57" lean-forward="false" selection-start-line="63" selection-start-column="57" selection-end-line="63" selection-end-column="57" />
           <folding />
         </state>
@@ -1158,17 +1103,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jmt/controller/ShopController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="198">
           <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/inventory.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
+        <state relative-caret-position="1474">
           <caret line="139" column="25" lean-forward="false" selection-start-line="139" selection-start-column="25" selection-end-line="139" selection-end-column="25" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -1179,7 +1122,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/transactions.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
+        <state relative-caret-position="1474">
           <caret line="123" column="25" lean-forward="false" selection-start-line="123" selection-start-column="25" selection-end-line="123" selection-end-column="25" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -1190,7 +1133,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="154">
           <caret line="7" column="43" lean-forward="false" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1200,7 +1143,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/rating.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
+        <state relative-caret-position="66">
           <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="4" selection-end-column="35" />
           <folding>
             <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1210,7 +1153,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sales.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
+        <state relative-caret-position="66">
           <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="28" />
           <folding>
             <element signature="n#style#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
