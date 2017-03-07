@@ -6,6 +6,8 @@ import com.capstone.jmt.data.OrderInfo;
 import com.capstone.jmt.data.OrderStatus;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 /**
  * Created by Jabito on 02/17/2017.
  */
@@ -31,4 +33,6 @@ public interface OrderMapper {
     Integer addOrderContainers(@Param("order") OrderContainers order);
 
     Integer updateOrderContainers(@Param("order") OrderContainers order);
+
+    List getOrdersByShopId(@Param("shopId") String shopId);
 }

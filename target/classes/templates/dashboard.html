@@ -34,7 +34,7 @@
                                 <i class="fa fa fa-usd fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">26 Php</div>
+                                <div class="huge" th:text="*{totalSales}"></div>
                                 <div>Sales</div>
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                                 <i class="fa fa-shopping-cart fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">124</div>
+                                <div class="huge" th:text="${saleCount}"></div>
                                 <div>Orders</div>
                             </div>
                         </div>
@@ -100,8 +100,8 @@
                                 <i class="fa fa-star-half-o fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">13</div>
-                                <div>Reviews!</div>
+                                <div class="huge" th:text="${rating}"></div>
+                                <div>Rating!</div>
                             </div>
                         </div>
                     </div>
