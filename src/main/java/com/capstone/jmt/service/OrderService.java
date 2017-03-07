@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -84,5 +85,11 @@ public class OrderService {
         logger.info("updateOrderContainers");
         Integer ret = orderMapper.updateOrderContainers(order);
         System.out.println(ret);
+    }
+
+    public List<OrderInfo> getOrdersByShopId(String shopId) {
+        logger.info("getOrdersByShopId");
+        List orders = orderMapper.getOrdersByShopId(shopId);
+        return orders;
     }
 }

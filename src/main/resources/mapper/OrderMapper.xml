@@ -16,7 +16,7 @@
         <result column="createdOn" property="createdOn" jdbcType="VARCHAR" />
         <result column="updatedOn" property="updatedOn" jdbcType="VARCHAR" />
         <result column="updatedBy" property="updatedBy" jdbcType="VARCHAR" />
-        <result column="ratingGiven" property="ratingGiven" jdbcType="DOUBLE" />
+        <result column="ratingGiven" property="ratingGiven" jdbcType="INTEGER" />
         <result column="comments" property="comments" jdbcType="VARCHAR" />
     </resultMap>
     
@@ -69,7 +69,9 @@
         slimOrdered,
         costPerItem,
         totalCost,
-        moreDetails)
+        moreDetails,
+        ratingGiven,
+        comments)
         VALUES
         (#{order.id, jdbcType=VARCHAR},
         #{order.orderedBy, jdbcType=VARCHAR},
@@ -80,7 +82,9 @@
         #{order.slimOrdered, jdbcType=INTEGER},
         #{order.costPerItem, jdbcType=DOUBLE},
         #{order.totalCost, jdbcType=DOUBLE},
-        #{order.moreDetails, jdbcType=VARCHAR})
+        #{order.moreDetails, jdbcType=VARCHAR},
+        #{order.ratingGiven, jdbcType=INTEGER},
+        #{order.comments, jdbcType=VARCHAR})
     </insert>
 
     <update id="updateOrderInfo" flushCache="true" parameterType="com.capstone.jmt.data.OrderInfo">
@@ -88,7 +92,7 @@
         SET
         orderedBy = #{order.orderedBy, jdbcType=VARCHAR},
         orderedFrom = #{order.orderedFrom, jdbcType=VARCHAR},
-        customerAddress = #{order.customerAddress, jdbcType=VARCHAR},
+        customerAddress = #{orde  r.customerAddress, jdbcType=VARCHAR},
         waterType = #{order.waterType, jdbcType=VARCHAR},
         roundOrdered = #{order.roundOrdered, jdbcType=INTEGER},
         slimordered = #{order.slimOrdered, jdbcType=INTEGER},
@@ -163,4 +167,9 @@
         WHERE
         id = #{order.id, jdbcType=VARCHAR}
     </update>
+
+    <select id="getOrdersByShopId" resultMap="orderInfoMap" resultType="java.util.List">
+        SELECT * FROM orderInfo
+        WHERE orderedFrom = #{shopId}
+    </select>
 </mapper>
