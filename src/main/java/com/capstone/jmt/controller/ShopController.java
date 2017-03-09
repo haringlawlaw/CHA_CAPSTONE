@@ -1,6 +1,7 @@
 package com.capstone.jmt.controller;
 
 import com.capstone.jmt.data.*;
+import com.capstone.jmt.service.OrderService;
 import com.capstone.jmt.service.ShopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,6 +25,9 @@ public class ShopController {
     @Autowired
     private ShopService shopService;
 
+    @Autowired
+    private OrderService orderService;
+
     @RequestMapping(value="/login", method = RequestMethod.GET)
     public String loginShopUser(@RequestBody ShopLogin shopUser, Model model){
 
@@ -32,12 +36,12 @@ public class ShopController {
         return "login";
     }
 
-    @RequestMapping(value="/index", method = RequestMethod.GET)
+    @RequestMapping(value="/rating", method = RequestMethod.GET)
     public String loginShopUser2(Model model){
 
 
 
-        return "index";
+        return "rating";
     }
 
     @RequestMapping(value="/main", method = RequestMethod.GET)
@@ -49,16 +53,18 @@ public class ShopController {
     }
 
     @RequestMapping(value="/dashboard", method = RequestMethod.GET)
-    public String loginShopUser4(Model model){
-
-
+    public String showDashboard(@RequestParam("shopId") String shopId, Model model){
+        model.addAttribute("totalSales", "P " + shopService.getTotalSales(shopId));
+        model.addAttribute("saleCount", shopService.getSalesCount(shopId));
+        model.addAttribute("rating", shopService.getShopRating(shopId));
 
         return "dashboard";
     }
 
     @RequestMapping(value="/sales", method = RequestMethod.GET)
-    public String loginShopUser5(Model model){
+    public String showSales(@RequestParam("shopId") String shopId, Model model){
 
+        model.addAttribute("orders", orderService.getOrdersByShopId(shopId));
 
 
         return "sales";

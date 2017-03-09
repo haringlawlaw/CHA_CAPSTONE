@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.DecimalFormat;
 import java.util.UUID;
 
 /**
@@ -122,5 +123,31 @@ public class ShopService {
         logger.info("updateContainersOffered");
         Integer ret = shopMapper.updateContainersOffered(shop);
         System.out.println(ret);
+    }
+
+    public String getTotalSales(String shopId) {
+        logger.info("getTotalSales");
+        String sales = shopMapper.getTotalSalesById(shopId);
+
+        return sales;
+    }
+
+    public String getSalesCount(String shopId) {
+        logger.info("getSalesCount");
+        String count = shopMapper.getSalesCount(shopId);
+
+        return count;
+    }
+
+    public String getShopRating(String shopId) {
+        logger.info("getShopRating");
+        Integer ratings = shopMapper.getTotalRatings(shopId);
+        Integer reviews = shopMapper.getReviewsCount(shopId);
+
+        if(reviews == 0)
+            return "0";
+        else
+            return String.format("%.2f", Double.toString((double)ratings/(double)reviews));
+
     }
 }

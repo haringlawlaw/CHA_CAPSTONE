@@ -57,7 +57,7 @@ public class OrderInfo implements Serializable{
     private String updatedBy;
     @Column(name="ratingGiven")
     @JsonProperty("ratingGiven")
-    private Double ratingGiven;
+    private Integer ratingGiven;
     @Column(name="comments")
     @JsonProperty("comments")
     private String comments;
@@ -166,11 +166,11 @@ public class OrderInfo implements Serializable{
         this.updatedBy = updatedBy;
     }
 
-    public Double getRatingGiven() {
+    public Integer getRatingGiven() {
         return ratingGiven;
     }
 
-    public void setRatingGiven(Double ratingGiven) {
+    public void setRatingGiven(Integer ratingGiven) {
         this.ratingGiven = ratingGiven;
     }
 

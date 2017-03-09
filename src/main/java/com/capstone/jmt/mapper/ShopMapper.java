@@ -42,4 +42,12 @@ public interface ShopMapper {
     Integer updateContainersOffered(@Param("shop") ContainersOffered shop);
 
     ShopLogin loadUserByUsername(@Param("username") String username);
+
+    String getTotalSalesById(@Param("shopId") String shopId);
+
+    String getSalesCount(@Param("shopId") String shopId);
+
+    Integer getTotalRatings(@Param("shopId") String shopId);
+
+    Integer getReviewsCount(@Param("shopId") String shopId);
 }
