@@ -18,22 +18,10 @@
         <result column="updatedBy" property="updatedBy" jdbcType="VARCHAR" />
         <result column="ratingGiven" property="ratingGiven" jdbcType="INTEGER" />
         <result column="comments" property="comments" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="VARCHAR" />
+        <result column="complaint" property="status" jdbcType="VARCHAR" />
     </resultMap>
-    
-    <resultMap id="orderStatusMap" type="com.capstone.jmt.data.OrderStatus">
-        <result column="id" property="id" jdbcType="VARCHAR" />
-        <result column="requestedOn" property="requestedOn" jdbcType="VARCHAR" />
-        <result column="acceptedOn" property="acceptedOn" jdbcType="VARCHAR" />
-        <result column="rejectedOn" property="rejectedOn" jdbcType="VARCHAR" />
-        <result column="retrievedOn" property="retrievedOn" jdbcType="VARCHAR" />
-        <result column="deliveredOn" property="deliveredOn" jdbcType="VARCHAR" />
-        <result column="completedOn" property="completedOn" jdbcType="VARCHAR" />
-        <result column="cancelledOn" property="cancelledOn" jdbcType="VARCHAR" />
-        <result column="cancelledBy" property="cancelledBy" jdbcType="VARCHAR" />
-        <result column="moreDetails" property="moreDetails" jdbcType="VARCHAR" />
-        <result column="currentStatus" property="currentStatus" jdbcType="VARCHAR" />
-    </resultMap>
-    
+
     <resultMap id="orderContainersMap" type="com.capstone.jmt.data.CustomerLocation">
         <result column="id" property="id" jdbcType="VARCHAR" />
         <result column="roundQty" property="roundQty" jdbcType="INTEGER" />
@@ -48,10 +36,6 @@
 
     <select id="getOrderInfoById" resultMap="orderInfoMap" resultType="com.capstone.jmt.data.OrderInfo">
         SELECT * FROM orderInfo WHERE id = #{id}
-    </select>
-
-    <select id="getOrderStatusById" resultMap="orderStatusMap" resultType="com.capstone.jmt.data.OrderStatus">
-        SELECT * FROM orderStatus WHERE id = #{id}
     </select>
 
     <select id="getOrderContainersById" resultMap="orderContainersMap" resultType="com.capstone.jmt.data.OrderContainers">
@@ -71,7 +55,9 @@
         totalCost,
         moreDetails,
         ratingGiven,
-        comments)
+        comments,
+        status,
+        complaint)
         VALUES
         (#{order.id, jdbcType=VARCHAR},
         #{order.orderedBy, jdbcType=VARCHAR},
@@ -84,7 +70,9 @@
         #{order.totalCost, jdbcType=DOUBLE},
         #{order.moreDetails, jdbcType=VARCHAR},
         #{order.ratingGiven, jdbcType=INTEGER},
-        #{order.comments, jdbcType=VARCHAR})
+        #{order.comments, jdbcType=VARCHAR},
+        #{order.status, jdbcType=VARCHAR},
+        #{order.complaint, jdbcType=VARCHAR})
     </insert>
 
     <update id="updateOrderInfo" flushCache="true" parameterType="com.capstone.jmt.data.OrderInfo">
@@ -98,47 +86,14 @@
         slimordered = #{order.slimOrdered, jdbcType=INTEGER},
         costPerItem = #{order.costPerItem, jdbcType=DOUBLE},
         totalCost = #{order.totalCost, jdbcType=DOUBLE},
-        moreDetails = #{order.moreDetails, jdbcType=VARCHAR}
+        moreDetails = #{order.moreDetails, jdbcType=VARCHAR},
+        comments = #{order.comments, jdbcType=VARCHAR},
+        status = #{order.status, jdbcType=VARCHAR},
+        complaint = #{order.complaint}
         WHERE
         id = #{order.id, jdbcType=VARCHAR}
     </update>
 
-    <insert id="addOrderStatus" parameterType="com.capstone.jmt.data.OrderStatus">
-        INSERT INTO orderstatus
-        (id,
-        requestedOn,
-        currentStatus)
-        VALUES
-        (#{order.id, jdbcType=VARCHAR},
-        #{order.requestedOn, jdbcType=VARCHAR},
-        #{order.currentStatus, jdbcType=VARCHAR}
-        )
-    </insert>
-
-    <update id="updateOrderStatus" flushCache="true">
-        UPDATE orderStatus SET
-        <choose>
-            <when test="status == 'ACCEPTED'">acceptedOn</when>
-            <when test="status == 'REJECTED'">rejectedOn</when>
-            <when test="status == 'RETRIEVED'">retrievedOn</when>
-            <when test="status == 'DELIVERED'">deliveredOn</when>
-            <when test="status == 'COMPLETE'">completedOn</when>
-        </choose>
-        = NOW(), currentStatus = #{status}
-        WHERE
-        id = #{orderId}
-    </update>
-
-    <update id="rejectOrderStatus" flushCache="true">
-        UPDATE orderStatus SET
-        cancelledOn = NOW(),
-        moreDetails = #{details},
-        cancelledBy = #{userId},
-        currentStatus = 'CANCELLED'
-        WHERE
-        id = #{orderId}
-    </update>
-    
     <insert id="addOrderContainers" parameterType="com.capstone.jmt.data.OrderContainers">
         INSERT INTO orderContainers
         (id,
