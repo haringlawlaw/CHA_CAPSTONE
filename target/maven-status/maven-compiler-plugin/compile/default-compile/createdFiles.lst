@@ -20,7 +20,6 @@ com\capstone\jmt\config\WebSecurityConfig.class
 com\capstone\jmt\config\ThymeleafConfiguration.class
 com\capstone\jmt\controller\ShopController.class
 com\capstone\jmt\controller\CustomerController.class
-com\capstone\jmt\config\LoginConfig.class
 com\capstone\jmt\service\CustomerService.class
 com\capstone\jmt\data\CustomerLocation.class
 com\capstone\jmt\service\OrderService.class

@@ -8,11 +8,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 
 /**
@@ -20,6 +20,7 @@ import java.util.HashMap;
  */
 @Controller
 @RequestMapping(value="/")
+@SessionAttributes("shopUser")
 public class ShopController {
 
     @Autowired
@@ -27,18 +28,44 @@ public class ShopController {
 
     @Autowired
     private OrderService orderService;
+    /*
+    List of all GET Requests
+     */
+    @ModelAttribute("shopUser")
+    public ShopLogin getShopUser(){
+        return new ShopLogin();
+    }
 
     @RequestMapping(value="/login", method = RequestMethod.GET)
-    public String loginShopUser(@RequestBody ShopLogin shopUser, Model model){
-
-
+    public String loginShopUser(@RequestParam(value="error", required = false) String error, HttpServletRequest request,
+                                Model model){
+        if(null != error){
+            if(error.equals("1"))
+                model.addAttribute("param.error", true);
+            else if(error.equals("2"))
+                model.addAttribute("param.logout", true);
+        }
+        model.addAttribute("user", new ShopLogin());
 
         return "login";
     }
 
-    @RequestMapping(value="/rating", method = RequestMethod.GET)
-    public String loginShopUser2(Model model){
+    @RequestMapping(value="/dashboard", method = RequestMethod.GET)
+    public String showDashboard(@ModelAttribute("shopUser") ShopLogin shopUser, Model model){
+        if(shopUser.getId() == null)
+            return "redirect:/login";
 
+        model.addAttribute("totalSales", "P " + shopService.getTotalSales(shopUser.getStaffOf()));
+        model.addAttribute("saleCount", shopService.getSalesCount(shopUser.getStaffOf()));
+        model.addAttribute("rating", shopService.getShopRating(shopUser.getStaffOf()));
+
+        return "dashboard";
+    }
+
+    @RequestMapping(value="/rating", method = RequestMethod.GET)
+    public String shopRating(@ModelAttribute("shopUser") ShopLogin shopUser, Model model){
+        if(shopUser.getId() == null)
+            return "redirect:/login";
 
 
         return "rating";
@@ -52,55 +79,69 @@ public class ShopController {
         return "main";
     }
 
-    @RequestMapping(value="/dashboard", method = RequestMethod.GET)
-    public String showDashboard(@RequestParam("shopId") String shopId, Model model){
-        model.addAttribute("totalSales", "P " + shopService.getTotalSales(shopId));
-        model.addAttribute("saleCount", shopService.getSalesCount(shopId));
-        model.addAttribute("rating", shopService.getShopRating(shopId));
-
-        return "dashboard";
-    }
-
     @RequestMapping(value="/sales", method = RequestMethod.GET)
-    public String showSales(@RequestParam("shopId") String shopId, Model model){
+    public String showSales(@ModelAttribute("shopUser") ShopLogin shopUser, Model model){
+        if(shopUser.getId() == null)
+            return "redirect:/login";
 
-        model.addAttribute("orders", orderService.getOrdersByShopId(shopId));
+            model.addAttribute("orders", orderService.getOrdersByShopId(shopUser.getStaffOf()));
 
-
-        return "sales";
+            return "sales";
     }
 
     @RequestMapping(value="/transactions", method = RequestMethod.GET)
-    public String loginShopUser6(Model model){
-
-
+    public String showTransactions(@ModelAttribute("shopUser") ShopLogin shopUser, Model model){
+        if(shopUser.getId() == null)
+            return "redirect:/login";
 
         return "transactions";
     }
 
     @RequestMapping(value="/inventory", method = RequestMethod.GET)
-    public String loginShopUser7(Model model){
-
+    public String shopInventory(@ModelAttribute("shopUser") ShopLogin shopUser, Model model){
+        if(shopUser.getId() == null)
+            return "redirect:/login";
 
 
         return "inventory";
     }
 
     @RequestMapping(value="/profile", method = RequestMethod.GET)
-    public String loginShopUser8(Model model){
+    public String shopProfile(@ModelAttribute("shopUser") ShopLogin shopUser, Model model){
+        if(shopUser.getId() == null)
+            return "redirect:/login";
 
-
-
+        model.addAttribute("shop", shopService.getShopInfoById(shopUser.getStaffOf()));
         return "profile";
     }
+    /*
+    List of all POST Requests
+     */
+    @RequestMapping(value="loginUser", method = RequestMethod.POST)
+    public String loginUser(ShopLogin shop, Model model){
+        ShopLogin user = shopService.validateUser(shop);
+        if(null != user){
+            model.addAttribute("shopUser", user);
+            return "redirect:/dashboard/";
+        }else{
+            return "redirect:/login/?error=" + "1";
+        }
+    }
 
+    @RequestMapping(value="/logout", method = RequestMethod.POST)
+    public String logOutUser(@ModelAttribute("shopUser") ShopLogin shopUser, HttpServletRequest request, SessionStatus session){
+        session.setComplete();
 
+        return "login";
+    }
+
+/*
     @RequestMapping(value="/shop", method=RequestMethod.GET)
-    public ResponseEntity<?> getShopLoginById(@RequestParam("id") String id){
+    public String getShopLoginById(@RequestBody ShopLogin shopUser, Model model){
         HashMap<String, Object> response = new HashMap<>();
-        ShopLogin shop = shopService.getShopLoginById(id);
+        ShopLogin shop = shopService.getShopLoginById(shopUser.getId());
         response.put("shop", shop);
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        return "main";
     }
 
     @RequestMapping(value="/shop/info", method=RequestMethod.GET)
@@ -244,5 +285,5 @@ public class ShopController {
         }
 
         return new ResponseEntity<>(response, HttpStatus.OK);
-    }
+    }*/
 }

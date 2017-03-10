@@ -32,22 +32,22 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-6">
-                                <form role="form">
+                                <form th:object="${shop}" role="form">
                                     <div class="form-group">
                                         <label>Business Name</label>
-                                        <input class="form-control" placeholder="Business Name"/>
+                                        <input class="form-control" placeholder="Business Name" th:field="*{businessName}"/>
                                     </div>
                                     <div class="form-group">
                                         <label>Address</label>
-                                        <input class="form-control" placeholder="Business Address"/>
+                                        <input class="form-control" placeholder="Business Address" th:field="*{address}"/>
                                     </div>
                                     <div class="form-group">
                                         <label>Contact Number</label>
-                                        <input class="form-control" placeholder="Business Number"/>
+                                        <input class="form-control" placeholder="Business Number" th:field="*{cellphoneNo}"/>
                                     </div>
                                     <div class="form-group">
                                         <label>Alternative Number</label>
-                                        <input class="form-control" placeholder="Alternative Number"/>
+                                        <input class="form-control" placeholder="Alternative Number" th:field="*{alternateNo}"/>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-lg-4">

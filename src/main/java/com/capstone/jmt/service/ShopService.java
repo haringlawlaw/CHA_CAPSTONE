@@ -5,6 +5,7 @@ import com.capstone.jmt.mapper.ShopMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.text.DecimalFormat;
@@ -19,13 +20,19 @@ public class ShopService {
     private static final Logger logger = LoggerFactory.getLogger(ShopService.class);
 
     @Autowired
-    ShopMapper shopMapper;
+    private ShopMapper shopMapper;
 
-    public ShopLogin loadUserByUsername(String username) {
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    public ShopLogin validateUser(ShopLogin user) {
         logger.info("loadUserByUsername");
-        ShopLogin user = shopMapper.loadUserByUsername(username);
+        ShopLogin account = shopMapper.loadUserByUsername(user.getUsername());
         logger.info("loadUserByUsername", user);
-        return user;
+        if(passwordEncoder.matches(user.getPassword(), account.getPassword()))
+            return account;
+        else
+            return null;
     }
 
     public ShopLogin getShopLoginById(String id){
@@ -63,66 +70,44 @@ public class ShopService {
         return order;
     }
 
-    public void addShopInfo(ShopInfo shop) {
-        logger.info("addShopInfo");
-        shop.setId(UUID.randomUUID().toString());
-        Integer ret = shopMapper.addShopInfo(shop);
-        System.out.println(ret);
-    }
-
     public void updateShopInfo(ShopInfo shop) {
         logger.info("updateShopInfo");
         Integer ret = shopMapper.updateShopInfo(shop);
-        System.out.println(ret);
-    }
-
-    public void addShopLogin(ShopLogin shop) {
-        logger.info("addShopLogin");
-        shop.setId(UUID.randomUUID().toString());
-        Integer ret = shopMapper.addShopLogin(shop);
-        System.out.println(ret);
     }
 
     public void updateShopLogin(ShopLogin shop) {
         logger.info("updateShopLogin");
         Integer ret = shopMapper.updateShopLogin(shop);
-        System.out.println(ret);
     }
 
     public void addShopLocation(ShopLocation shop) {
         logger.info("addShopLocation");
         Integer ret = shopMapper.addShopLocation(shop);
-        System.out.println(ret);
     }
 
     public void updateShopLocation(ShopLocation shop) {
         logger.info("updateShopLocation");
         Integer ret = shopMapper.updateShopLocation(shop);
-        System.out.println(ret);
     }
 
     public void addWaterTypesOffered(WaterTypesOffered shop) {
         logger.info("addWaterTypesOffered");
         Integer ret = shopMapper.addWaterTypesOffered(shop);
-        System.out.println(ret);
     }
 
     public void updateWaterTypesOffered(WaterTypesOffered shop) {
         logger.info("updateWaterTypesOffered");
         Integer ret = shopMapper.updateWaterTypesOffered(shop);
-        System.out.println(ret);
     }
 
     public void addContainersOffered(ContainersOffered shop) {
         logger.info("addContainersOffered");
         Integer ret = shopMapper.addContainersOffered(shop);
-        System.out.println(ret);
     }
 
     public void updateContainersOffered(ContainersOffered shop) {
         logger.info("updateContainersOffered");
         Integer ret = shopMapper.updateContainersOffered(shop);
-        System.out.println(ret);
     }
 
     public String getTotalSales(String shopId) {
@@ -144,10 +129,12 @@ public class ShopService {
         Integer ratings = shopMapper.getTotalRatings(shopId);
         Integer reviews = shopMapper.getReviewsCount(shopId);
 
-        if(reviews == 0)
+        if(reviews == 0 || null == ratings || null == reviews)
             return "0";
-        else
-            return String.format("%.2f", Double.toString((double)ratings/(double)reviews));
-
+        else {
+            DecimalFormat formatter = new DecimalFormat("#0.00");
+            String output = formatter.format(ratings/reviews);
+            return output;
+        }
     }
 }
