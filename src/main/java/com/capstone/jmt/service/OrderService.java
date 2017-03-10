@@ -39,7 +39,7 @@ public class OrderService {
 
     public OrderContainers getOrderContainersById(String id){
         logger.info("getOrderContainersById");
-        OrderContainers order = orderMapper.getOrderContainersById(id);
+        OrderContainers order = orderMapper.getOrderContainersByShopId(id);
         logger.info("getOrderContainersById", order);
         return order;
     }
@@ -92,4 +92,5 @@ public class OrderService {
         List orders = orderMapper.getOrdersByShopId(shopId);
         return orders;
     }
+
 }
