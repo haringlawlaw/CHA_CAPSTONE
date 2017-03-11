@@ -25,4 +25,6 @@ public interface CustomerMapper {
     Integer addCustomerLocation(@Param("customer") CustomerLocation customer);
 
     Integer updateCustomerLocation(@Param("customer") CustomerLocation customer);
+
+    String getCustomerNameById(@Param("id") String id);
 }

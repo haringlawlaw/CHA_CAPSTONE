@@ -58,6 +58,12 @@ public class OrderInfo implements Serializable{
     @Column(name="ratingGiven")
     @JsonProperty("ratingGiven")
     private Integer ratingGiven;
+    @Column(name="status")
+    @JsonProperty("status")
+    private String status;
+    @Column(name="complaint")
+    @JsonProperty("complaint")
+    private String complaint;
     @Column(name="comments")
     @JsonProperty("comments")
     private String comments;

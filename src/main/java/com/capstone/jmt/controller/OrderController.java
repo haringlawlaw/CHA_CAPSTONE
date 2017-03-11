@@ -2,7 +2,6 @@ package com.capstone.jmt.controller;
 
 import com.capstone.jmt.data.OrderContainers;
 import com.capstone.jmt.data.OrderInfo;
-import com.capstone.jmt.data.OrderStatus;
 import com.capstone.jmt.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -33,14 +32,6 @@ public class OrderController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @RequestMapping(value="/order/status", method= RequestMethod.GET)
-    public ResponseEntity<?> getOrderStatusById(@RequestParam("id") String id){
-        HashMap<String, Object> response = new HashMap<>();
-        OrderStatus order = orderService.getOrderStatusById(id);
-        response.put("order", order);
-        return new ResponseEntity<>(response, HttpStatus.OK);
-    }
-
     @RequestMapping(value="/order/containers", method= RequestMethod.GET)
     public ResponseEntity<?> getOrderContainersById(@RequestParam("id") String id){
         HashMap<String, Object> response = new HashMap<>();
@@ -67,41 +58,6 @@ public class OrderController {
             response.put("responseCode", 200);
             response.put("responseDesc", "Successfully Updated Order Info.");
         }
-
-        return new ResponseEntity<>(response, HttpStatus.OK);
-    }
-
-    @RequestMapping(value="addOrUpdateOrderStatus", method = RequestMethod.POST)
-    public ResponseEntity<?> addOrUpdateOrderStatus(@RequestBody OrderStatus order){
-        HashMap<String, Object> response = new HashMap<>();
-
-        OrderStatus existingOrderStatus = orderService.getOrderStatusById(order.getId());
-        if(null == existingOrderStatus){
-            orderService.addOrderStatus(order);
-            response.put("order", order);
-            response.put("id", order.getId());
-            response.put("responseCode", 200);
-            response.put("responseDesc", "Successfully Added Order Status.");
-        }else{
-            orderService.updateOrderStatus(order);
-            response.put("order", order);
-            response.put("id", order.getId());
-            response.put("responseCode", 200);
-            response.put("responseDesc", "Successfully Updated Order Status.");
-        }
-
-        return new ResponseEntity<>(response, HttpStatus.OK);
-    }
-
-    @RequestMapping(value="rejectOrderStatus", method = RequestMethod.POST)
-    public ResponseEntity<?> rejectOrderStatus(@RequestBody OrderStatus order){
-        HashMap<String, Object> response = new HashMap<>();
-
-        orderService.rejectOrderStatus(order);
-        response.put("order", order);
-        response.put("id", order.getId());
-        response.put("responseCode", 200);
-        response.put("responseDesc", "Successfully Updated Order Status");
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

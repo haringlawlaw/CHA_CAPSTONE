@@ -13,11 +13,11 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter  {
 	private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {
 			"classpath:/META-INF/resources/", "classpath:/resources/"};
 
-	@Override
+	/*@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/login").setViewName("login");
 		registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
-	}
+	}*/
 
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {  
 		 registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");

@@ -36,6 +36,13 @@
     <select id="getCustomerLocationById" resultType="com.capstone.jmt.data.CustomerLocation">
         SELECT * FROM customerLocation WHERE id = #{id}
     </select>
+
+    <select id="getCustomerNameById" resultType="java.lang.String">
+        SELECT
+        lastname || ', ' || firstname || ' ' || coalesce(middlename)
+        FROM customerInfo
+        WHERE id = #{id}
+    </select>
     
     <insert id="addCustomerInfo" parameterType="com.capstone.jmt.data.CustomerInfo">
         INSERT INTO customerInfo

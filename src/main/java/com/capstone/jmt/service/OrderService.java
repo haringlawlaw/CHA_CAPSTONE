@@ -2,7 +2,7 @@ package com.capstone.jmt.service;
 
 import com.capstone.jmt.data.OrderContainers;
 import com.capstone.jmt.data.OrderInfo;
-import com.capstone.jmt.data.OrderStatus;
+import com.capstone.jmt.mapper.CustomerMapper;
 import com.capstone.jmt.mapper.OrderMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,19 +21,15 @@ public class OrderService {
     private static final Logger logger = LoggerFactory.getLogger(OrderService.class);
 
     @Autowired
-    OrderMapper orderMapper;
+    private OrderMapper orderMapper;
+
+    @Autowired
+    private CustomerMapper customerMapper;
 
     public OrderInfo getOrderInfoById(String id){
         logger.info("getOrderInfoById");
         OrderInfo order = orderMapper.getOrderInfoById(id);
         logger.info("getOrderInfoById", order);
-        return order;
-    }
-
-    public OrderStatus getOrderStatusById(String id){
-        logger.info("getOrderStatusById");
-        OrderStatus order = orderMapper.getOrderStatusById(id);
-        logger.info("getOrderStatusById", order);
         return order;
     }
 
@@ -57,24 +53,6 @@ public class OrderService {
         System.out.println(ret);
     }
 
-    public void addOrderStatus(OrderStatus order) {
-        logger.info("addOrderStatus");
-        Integer ret = orderMapper.addOrderStatus(order);
-        System.out.println(ret);
-    }
-
-    public void updateOrderStatus(OrderStatus order) {
-        logger.info("updateOrderStatus");
-        Integer ret = orderMapper.updateOrderStatus(order);
-        System.out.println(ret);
-    }
-
-    public void rejectOrderStatus(OrderStatus order) {
-        logger.info("rejectOrderStatus");
-        Integer ret = orderMapper.rejectOrderStatus(order);
-        System.out.println(ret);
-    }
-
     public void addOrderContainers(OrderContainers order) {
         logger.info("addOrderContainers");
         Integer ret = orderMapper.addOrderContainers(order);
@@ -89,7 +67,12 @@ public class OrderService {
 
     public List<OrderInfo> getOrdersByShopId(String shopId) {
         logger.info("getOrdersByShopId");
-        List orders = orderMapper.getOrdersByShopId(shopId);
+        List<OrderInfo> orders = orderMapper.getOrdersByShopId(shopId);
+        for(int x=0; x<orders.size(); x++){
+            String name = customerMapper.getCustomerNameById(orders.get(x).getOrderedBy());
+            orders.get(x).setOrderedBy(name);
+        }
+
         return orders;
     }
 }
