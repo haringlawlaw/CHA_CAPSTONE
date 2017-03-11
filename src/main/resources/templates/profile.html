@@ -51,18 +51,13 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <div class="col-lg-3">
                                             <label>Opening Time</label> <input type="time" />
-                                        </div>
 
-                                        <div class="col-lg-3">
                                             <label>Closing Time</label> <input type="time" />
-                                        </div>
-
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Opens on Sunday?</label>
+                                        <label>Open on Sundays?</label>
                                             <label class="radio-inline">
                                                 <input type="radio" name="radioSundays" id="radio1" value="option1"/>Yes
                                             </label>
@@ -72,7 +67,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Opens on Holiday?</label>
+                                        <label>Open on Holidays?</label>
                                             <label class="radio-inline">
                                                 <input type="radio" name="radioHolidays" id="radio3" value="option1"/>Yes
                                             </label>
@@ -80,6 +75,17 @@
                                             <input type="radio" name="radioHolidays" id="radio4" value="option2"/>No
                                         </label>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label>Transaction Types</label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="radioSwaps" id="radio5" value="option1"/>Allows Pick-ups and Swaps
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="radioSwaps" id="radio6" value="option2"/>Allows Pick-ups only
+                                        </label>
+                                    </div>
+
                                     <button type="button" class="btn btn-success btn-lg">Save Profile</button>
                                     <button type="button" class="btn btn-danger btn-lg">Cancel</button>
                                 </form>
@@ -116,19 +122,6 @@
                                         <span class="input-group-addon">.00</span>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label>Transaction Types</label>
-                                        <div class="checkbox">
-                                            <label>
-                                                 <input type="checkbox" value=""/>Pick Up Container
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" value=""/>Swap Container
-                                            </label>
-                                        </div>
-                                    </div>
                                     <button type="button" class="btn btn-success btn-lg">Save Prices</button>
                                     <button type="button" class="btn btn-danger btn-lg">Cancel</button>
                                 </form>
