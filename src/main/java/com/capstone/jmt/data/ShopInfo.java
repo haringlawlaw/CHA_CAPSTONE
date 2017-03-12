@@ -43,9 +43,6 @@ public class ShopInfo implements Serializable{
     @Column(name="allowSwap")
     @JsonProperty("allowSwap")
     private Boolean allowSwap;
-    @Column(name="rating")
-    @JsonProperty("rating")
-    private Double rating;
     @Column(name="accountVerified")
     @JsonProperty("accountVerified")
     private Boolean accountVerified;
@@ -127,14 +124,6 @@ public class ShopInfo implements Serializable{
 
     public void setTimeClose(String timeClose) {
         this.timeClose = timeClose;
-    }
-
-    public Double getRating() {
-        return rating;
-    }
-
-    public void setRating(Double rating) {
-        this.rating = rating;
     }
 
     public Boolean getAllowSwap() {
