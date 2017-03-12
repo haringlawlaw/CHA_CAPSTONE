@@ -25,7 +25,6 @@
         <result column="timeOpen" property="timeOpen" jdbcType="VARCHAR" />
         <result column="timeClose" property="timeClose" jdbcType="VARCHAR" />
         <result column="allowSwap" property="allowSwap" jdbcType="BOOLEAN" />
-        <result column="rating" property="rating" jdbcType="DOUBLE" />
         <result column="accountVerified" property="accountVerified" jdbcType="BOOLEAN" />
         <result column="daysAvailable" property="daysAvailable" jdbcType="VARCHAR" />
         <result column="openOnHolidays" property="openOnHolidays" jdbcType="BOOLEAN" />
