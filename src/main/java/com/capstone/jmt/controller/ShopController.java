@@ -106,6 +106,15 @@ public class ShopController {
         return "inventory";
     }
 
+    @RequestMapping(value="/bottlesales", method = RequestMethod.GET)
+    public String showBottleSales(@ModelAttribute("shopUser") ShopLogin shopUser, Model model){
+        if(shopUser.getId() == null)
+            return "redirect:/login";
+
+
+        return "bottlesales";
+    }
+
     @RequestMapping(value="/profile", method = RequestMethod.GET)
     public String shopProfile(@ModelAttribute("shopUser") ShopLogin shopUser, Model model){
         if(shopUser.getId() == null)
