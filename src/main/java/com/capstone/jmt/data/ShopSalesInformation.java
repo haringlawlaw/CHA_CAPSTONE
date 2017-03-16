@@ -12,13 +12,25 @@ import java.io.Serializable;
  * Created by Jabito on 15/02/2017.
  */
 @Entity
-@Table(name="waterTypesOffered")
-public class WaterTypesOffered implements Serializable {
+@Table(name="shopSalesInformation")
+public class ShopSalesInformation implements Serializable {
 
     @Id
     @JsonProperty("id")
     @Column(name = "id")
     private String id;
+    @Column(name = "roundOffered")
+    @JsonProperty("roundOffered")
+    private Boolean roundOffered;
+    @Column(name="slimOffered")
+    @JsonProperty("slimOffered")
+    private Boolean slimOffered;
+    @Column(name="roundStock")
+    @JsonProperty("roundStock")
+    private Integer roundStock;
+    @Column(name="slimStock")
+    @JsonProperty("slimStock")
+    private Integer slimStock;
     @Column(name = "distilled")
     @JsonProperty("distilled")
     private Boolean distilled;
@@ -55,6 +67,38 @@ public class WaterTypesOffered implements Serializable {
 
     public String getId() {
         return id;
+    }
+
+    public Boolean getRoundOffered() {
+        return roundOffered;
+    }
+
+    public void setRoundOffered(Boolean roundOffered) {
+        this.roundOffered = roundOffered;
+    }
+
+    public Boolean getSlimOffered() {
+        return slimOffered;
+    }
+
+    public void setSlimOffered(Boolean slimOffered) {
+        this.slimOffered = slimOffered;
+    }
+
+    public Integer getRoundStock() {
+        return roundStock;
+    }
+
+    public void setRoundStock(Integer roundStock) {
+        this.roundStock = roundStock;
+    }
+
+    public Integer getSlimStock() {
+        return slimStock;
+    }
+
+    public void setSlimStock(Integer slimStock) {
+        this.slimStock = slimStock;
     }
 
     public void setId(String id) {

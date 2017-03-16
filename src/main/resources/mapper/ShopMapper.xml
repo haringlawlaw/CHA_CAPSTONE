@@ -43,8 +43,12 @@
         <result column="updatedBy" property="updatedBy" jdbcType="VARCHAR" />
     </resultMap>
 
-    <resultMap id="waterTypesOfferedMap" type="com.capstone.jmt.data.WaterTypesOffered">
+    <resultMap id="shopSalesInformationMap" type="com.capstone.jmt.data.ShopSalesInformation">
         <result column="id" property="id" jdbcType="VARCHAR" />
+        <result column="roundOffered" property="roundOffered" jdbcType="BOOLEAN" />
+        <result column="slimOffered" property="slimOffered" jdbcType="BOOLEAN" />
+        <result column="roundStock" property="roundStock" jdbcType="INTEGER" />
+        <result column="slimStock" property="slimStock" jdbcType="INTEGER" />
         <result column="distilled" property="distilled" jdbcType="BOOLEAN" />
         <result column="purified" property="purified" jdbcType="BOOLEAN" />
         <result column="mineral" property="mineral" jdbcType="BOOLEAN" />
@@ -53,17 +57,6 @@
         <result column="purifiedPrice" property="purifiedPrice" jdbcType="DOUBLE" />
         <result column="mineralPrice" property="mineralPrice" jdbcType="DOUBLE" />
         <result column="alkalinePrice" property="alkalinePrice" jdbcType="DOUBLE" />
-        <result column="createdOn" property="createdOn" jdbcType="VARCHAR" />
-        <result column="updatedOn" property="updatedOn" jdbcType="VARCHAR" />
-        <result column="updatedBy" property="updatedBy" jdbcType="VARCHAR" />
-    </resultMap>
-
-    <resultMap id="containersOfferedMap" type="com.capstone.jmt.data.ContainersOffered">
-        <result column="id" property="id" jdbcType="VARCHAR" />
-        <result column="roundOffered" property="roundOffered" jdbcType="BOOLEAN" />
-        <result column="slimOffered" property="slimOffered" jdbcType="BOOLEAN" />
-        <result column="roundQuantity" property="roundQuantity" jdbcType="INTEGER" />
-        <result column="slimQuantity" property="slimQuantity" jdbcType="INTEGER" />
         <result column="createdOn" property="createdOn" jdbcType="VARCHAR" />
         <result column="updatedOn" property="updatedOn" jdbcType="VARCHAR" />
         <result column="updatedBy" property="updatedBy" jdbcType="VARCHAR" />
@@ -85,12 +78,8 @@
         SELECT * FROM shopLocation WHERE id = #{id}
     </select>
 
-    <select id="getWaterTypesOfferedById" resultMap="waterTypesOfferedMap" resultType="com.capstone.jmt.data.WaterTypesOffered">
-        SELECT * FROM waterTypesOffered WHERE id = #{id}
-    </select>
-
-    <select id="getContainersOfferedById" resultMap="containersOfferedMap" resultType="com.capstone.jmt.data.ContainersOffered">
-        SELECT * FROM containersOffered WHERE id = #{id}
+    <select id="getShopSalesInformationById" resultMap="shopSalesInformationMap" resultType="com.capstone.jmt.data.ShopSalesInformation">
+        SELECT * FROM shopSalesInformation WHERE id = #{id}
     </select>
 
     <insert id="addShopInfo" parameterType="com.capstone.jmt.data.ShopInfo">
@@ -186,9 +175,13 @@
         id = #{shop.id, jdbcType=VARCHAR}
     </update>
 
-    <insert id="addWaterTypesOffered" parameterType="com.capstone.jmt.data.WaterTypesOffered">
-        INSERT INTO waterTypesOffered
+    <insert id="addShopSalesInformation" parameterType="com.capstone.jmt.data.ShopSalesInformation">
+        INSERT INTO shopSalesInformation
         (id,
+        roundOffered,
+        slimOffered,
+        roundStock,
+        slimStock,
         distilled,
         purified,
         mineral,
@@ -199,6 +192,10 @@
         alkalinePrice)
         VALUES
         (#{shop.id, jdbcType=VARCHAR},
+        #{shop.roundOffered, jdbcType=BOOLEAN},
+        #{shop.slimOffered, jdbcType=BOOLEAN},
+        #{shop.roundStock, jdbcType=INTEGER},
+        #{shop.slimStock, jdbcType=INTEGER},
         #{shop.distilled, jdbcType=BOOLEAN},
         #{shop.purified, jdbcType=BOOLEAN},
         #{shop.mineral, jdbcType=BOOLEAN},
@@ -209,9 +206,13 @@
         #{shop.alkalinePrice, jdbcType=DOUBLE})
     </insert>
 
-    <update id="updateWaterTypesOffered" flushCache="true" parameterType="com.capstone.jmt.data.WaterTypesOffered">
-        UPDATE waterTypesOffered
+    <update id="updateShopSalesInformation" flushCache="true" parameterType="com.capstone.jmt.data.ShopSalesInformation">
+        UPDATE shopSalesInformation
         SET
+        roundOffered = #{shop.roundOffered, jdbcType=BOOLEAN},
+        slimOffered = #{shop.slimOffered, jdbcType=BOOLEAN},
+        roundStock = #{shop.roundStock, jdbcType=INTEGER},
+        slimStock = #{shop.slimStock, jdbcType=INTEGER},
         distilled = #{shop.distilled, jdbcType=BOOLEAN},
         purified = #{shop.purified, jdbcType=BOOLEAN},
         mineral = #{shop.mineral, jdbcType=BOOLEAN},
@@ -220,32 +221,6 @@
         purifiedPrice = #{shop.purifiedPrice, jdbcType=DOUBLE},
         mineralPrice = #{shop.mineralPrice, jdbcType=DOUBLE},
         alkalinePrice = #{shop.alkalinePrice, jdbcType=DOUBLE}
-        WHERE
-        id = #{shop.id, jdbcType=VARCHAR}
-    </update>
-
-    <insert id="addContainersOffered" parameterType="com.capstone.jmt.data.ContainersOffered">
-        INSERT INTO containersOffered
-        (id,
-        roundOffered,
-        slimOffered,
-        roundQuantity,
-        slimQuantity)
-        VALUES
-        (#{shop.id, jdbcType=VARCHAR},
-        #{shop.roundOffered, jdbcType=BOOLEAN},
-        #{shop.slimOffered, jdbcType=BOOLEAN},
-        #{roundQuantity, jdbcType=INTEGER},
-        #{slimQuantity, jdbcType=INTEGER})
-    </insert>
-
-    <update id="updateContainersOffered" flushCache="true" parameterType="com.capstone.jmt.data.ContainersOffered">
-        UPDATE containersOffered
-        SET
-        roundOffered = #{shop.roundOffered, jdbcType=BOOLEAN},
-        slimOffered = #{shop.slimOffered, jdbcType=BOOLEAN},
-        roundQuantity = #{shop.roundQuantity, jdbcType=INTEGER},
-        slimQuantity = #{shop.slimQuantity, jdbcType=INTEGER}
         WHERE
         id = #{shop.id, jdbcType=VARCHAR}
     </update>

@@ -56,17 +56,10 @@ public class ShopService {
         return customer;
     }
 
-    public WaterTypesOffered getWaterTypesOfferedById(String id){
-        logger.info("getWaterTypesOfferedById");
-        WaterTypesOffered order = shopMapper.getWaterTypesOfferedById(id);
-        logger.info("getWaterTypesOfferedById", order);
-        return order;
-    }
-
-    public ContainersOffered getContainersOfferedById(String id){
-        logger.info("getContainersOfferedById");
-        ContainersOffered order = shopMapper.getContainersOfferedById(id);
-        logger.info("getContainersOfferedById", order);
+    public ShopSalesInformation getShopSalesInformationById(String id){
+        logger.info("getShopSalesInformation");
+        ShopSalesInformation order = shopMapper.getShopSalesInformationById(id);
+        logger.info("getShopSalesInformation", order);
         return order;
     }
 
@@ -90,24 +83,14 @@ public class ShopService {
         Integer ret = shopMapper.updateShopLocation(shop);
     }
 
-    public void addWaterTypesOffered(WaterTypesOffered shop) {
-        logger.info("addWaterTypesOffered");
-        Integer ret = shopMapper.addWaterTypesOffered(shop);
-    }
-
-    public void updateWaterTypesOffered(WaterTypesOffered shop) {
-        logger.info("updateWaterTypesOffered");
-        Integer ret = shopMapper.updateWaterTypesOffered(shop);
-    }
-
-    public void addContainersOffered(ContainersOffered shop) {
+    public void addShopSalesInformation(ShopSalesInformation shop) {
         logger.info("addContainersOffered");
-        Integer ret = shopMapper.addContainersOffered(shop);
+        Integer ret = shopMapper.addShopSalesInformation(shop);
     }
 
-    public void updateContainersOffered(ContainersOffered shop) {
+    public void updateShopSalesInformation(ShopSalesInformation shop) {
         logger.info("updateContainersOffered");
-        Integer ret = shopMapper.updateContainersOffered(shop);
+        Integer ret = shopMapper.updateShopSalesInformation(shop);
     }
 
     public String getTotalSales(String shopId) {

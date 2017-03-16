@@ -51,9 +51,9 @@
                                     </div>
 
                                     <div class="form-group">
-                                            <label>Opening Time</label> <input type="time" />
+                                            <label>Opening Time</label> <input type="time" th:text="*{timeOpen}"/>
 
-                                            <label>Closing Time</label> <input type="time" />
+                                            <label>Closing Time</label> <input type="time" th:text="*{timeClose}"/>
                                     </div>
 
                                     <div class="form-group">
@@ -84,44 +84,38 @@
                                         </label>
                                     </div>
 
-                                    <button type="button" class="btn btn-success btn-lg">Save Profile</button>
-                                    <button type="button" class="btn btn-danger btn-lg">Cancel</button>
+                                    <button type="button" class="btn btn-success btn-lg">Update Profile</button>
                                 </form>
                             </div>
                         <!-- /.col-lg-6 (nested) -->
                             <div class="col-lg-6">
-                                <form th:object="${shop}" role="form">
+                                <form th:object="${water}" role="form">
 
-                                    <label>Price of Alcaline Water</label>
+                                    <label>Price of Alkaline Water</label>
                                     <div class="form-group input-group">
-                                        <span class="input-group-addon">₱</span>
-                                        <input type="text" class="form-control"/>
-                                        <span class="input-group-addon">.00</span>
+                                        <span class="input-group-addon">₱ </span>
+                                        <input type="text" class="form-control" th:text="*{alkalinePrice}"/>
                                     </div>
 
                                     <label>Price of Mineral Water</label>
                                     <div class="form-group input-group">
-                                        <span class="input-group-addon">₱</span>
-                                        <input type="text" class="form-control"/>
-                                        <span class="input-group-addon">.00</span>
+                                        <span class="input-group-addon">₱ </span>
+                                        <input type="text" class="form-control" th:text="*{mineralPrice}"/>
                                     </div>
 
-                                    <label>Price of Gallon</label>
+                                    <label>Price of Purified Water</label>
                                     <div class="form-group input-group">
-                                        <span class="input-group-addon">₱</span>
-                                        <input type="text" class="form-control"/>
-                                        <span class="input-group-addon">.00</span>
+                                        <span class="input-group-addon">₱ </span>
+                                        <input type="text" class="form-control" th:text="*{purifiedPrice}"/>
                                     </div>
 
-                                    <label>Price of Slim</label>
+                                    <label>Price of Distilled Water</label>
                                     <div class="form-group input-group">
-                                        <span class="input-group-addon">₱</span>
-                                        <input type="text" class="form-control"/>
-                                        <span class="input-group-addon">.00</span>
+                                        <span class="input-group-addon">₱ </span>
+                                        <input type="text" class="form-control" th:text="*{distilledPrice}"/>
                                     </div>
 
-                                    <button type="button" class="btn btn-success btn-lg">Save Prices</button>
-                                    <button type="button" class="btn btn-danger btn-lg">Cancel</button>
+                                    <button type="submit" class="btn btn-success btn-lg">Update Prices</button>
                                 </form>
                             </div>
                         <!-- /.col-lg-6 (nested) -->

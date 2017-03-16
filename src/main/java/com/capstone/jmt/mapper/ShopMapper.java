@@ -17,9 +17,7 @@ public interface ShopMapper {
 
     ShopLocation getShopLocationById(@Param("id") String id);
 
-    WaterTypesOffered getWaterTypesOfferedById(@Param("id") String id);
-
-    ContainersOffered getContainersOfferedById(@Param("id") String id);
+    ShopSalesInformation getShopSalesInformationById(@Param("id") String id);
 
     Integer addShopInfo(@Param("shop") ShopInfo shop);
 
@@ -33,13 +31,9 @@ public interface ShopMapper {
 
     Integer updateShopLocation(@Param("shop") ShopLocation shop);
 
-    Integer addWaterTypesOffered(@Param("shop") WaterTypesOffered shop);
+    Integer addShopSalesInformation(@Param("shop") ShopSalesInformation shop);
 
-    Integer updateWaterTypesOffered(@Param("shop") WaterTypesOffered shop);
-
-    Integer addContainersOffered(@Param("shop") ContainersOffered shop);
-
-    Integer updateContainersOffered(@Param("shop") ContainersOffered shop);
+    Integer updateShopSalesInformation(@Param("shop") ShopSalesInformation shop);
 
     ShopLogin loadUserByUsername(@Param("username") String username);
 
