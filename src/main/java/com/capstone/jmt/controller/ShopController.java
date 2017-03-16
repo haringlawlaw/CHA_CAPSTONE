@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Jabito on 24/02/2017.
@@ -86,8 +87,15 @@ public class ShopController {
         if (shopUser.getId() == null)
             return "redirect:/login";
 
-        model.addAttribute("orders", orderService.getOrdersByShopId(shopUser.getStaffOf()));
+        List<OrderInfo> orders = orderService.getOrdersByShopId(shopUser.getStaffOf());
+        model.addAttribute("orders", orders);
         model.addAttribute("username", shopUser.getUsername());
+        Double sales = 0.0;
+        for(int x=0; x<orders.size(); x++){
+            sales += orders.get(x).getTotalCost();
+        }
+
+        model.addAttribute("totalSales", "P " + sales.toString());
 
         return "sales";
     }

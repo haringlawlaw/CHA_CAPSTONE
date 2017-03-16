@@ -71,6 +71,7 @@ public class OrderService {
         for(int x=0; x<orders.size(); x++){
             String name = customerMapper.getCustomerNameById(orders.get(x).getOrderedBy());
             orders.get(x).setOrderedBy(name);
+            orders.get(x).setCreatedOn(orders.get(x).getCreatedOn().substring(0, 15));
         }
 
         return orders;
