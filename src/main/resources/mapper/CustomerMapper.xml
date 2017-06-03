@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.capstone.jmt.mapper.CustomerMapper">
     
-    <resultMap id="customerInfoMap" type="com.capstone.jmt.data.CustomerInfo">
+    <resultMap id="customerLoginMap" type="com.capstone.jmt.data.CustomerLogin">
         <result column="id" property="id" jdbcType="VARCHAR" />
         <result column="username" property="username" jdbcType="VARCHAR" />
         <result column="password" property="password" jdbcType="VARCHAR" />
@@ -25,12 +25,12 @@
         <result column="updated_on" property="updatedOn" jdbcType="VARCHAR" />
     </resultMap>
 
-    <select id="getAllCustomers" resultMap="customerInfoMap" resultType="java.util.List">
-        SELECT * FROM customer_info
+    <select id="getAllCustomers" resultMap="customerLoginMap" resultType="java.util.List">
+        SELECT * FROM customer_login
     </select>
 
     <select id="getCustomerInfoById" resultType="com.capstone.jmt.data.CustomerInfo">
-        SELECT * FROM customer_info WHERE id = #{id}
+        SELECT * FROM customer_login WHERE id = #{id}
     </select>
 
     <select id="getCustomerLocationById" resultType="com.capstone.jmt.data.CustomerLocation">
@@ -40,12 +40,12 @@
     <select id="getCustomerNameById" resultType="java.lang.String">
         SELECT
         lastname || ', ' || firstname || ' ' || coalesce(middlename)
-        FROM customer_info
+        FROM customer_login
         WHERE id = #{id}
     </select>
     
-    <insert id="addCustomerInfo" parameterType="com.capstone.jmt.data.CustomerInfo">
-        INSERT INTO customer_info
+    <insert id="addCustomerLogin" parameterType="com.capstone.jmt.data.CustomerLogin">
+        INSERT INTO customer_login
         (id,
         username,
         password,
@@ -67,8 +67,8 @@
         #{customer.landline, jdbcType=VARCHAR})
     </insert>
 
-    <update id="updateCustomerInfo" flushCache="true">
-        UPDATE customer_info
+    <update id="updateCustomerLogin" flushCache="true">
+        UPDATE customer_login
         SET
         username = #{customer.username, jdbcType=VARCHAR},
         password = #{customer.password, jdbcType=VARCHAR},

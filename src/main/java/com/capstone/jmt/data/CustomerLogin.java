@@ -12,8 +12,8 @@ import java.io.Serializable;
  * Created by Jabito on 15/02/2017.
  */
 @Entity
-@Table(name = "customerLogin")
-public class CustomerInfo implements Serializable{
+@Table(name = "customer_login")
+public class CustomerLogin implements Serializable{
 
     @Id
     @JsonProperty("id")

@@ -12,7 +12,7 @@ import java.io.Serializable;
  * Created by Jabito on 15/02/2017.
  */
 @Entity
-@Table(name="customerLocation")
+@Table(name="customer_location")
 public class CustomerLocation implements Serializable {
 
     @Id

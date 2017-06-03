@@ -12,7 +12,7 @@ import java.io.Serializable;
  * Created by Jabito on 15/02/2017.
  */
 @Entity
-@Table(name="orderInfo")
+@Table(name="order_info")
 public class OrderInfo implements Serializable{
 
     @Id

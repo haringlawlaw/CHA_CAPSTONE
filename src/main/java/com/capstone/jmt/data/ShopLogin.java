@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * Created by Jabito on 15/02/2017.
  */
 @Entity
-@Table(name="shopLogin")
+@Table(name="shop_login")
 public class ShopLogin {
 
     @Id
