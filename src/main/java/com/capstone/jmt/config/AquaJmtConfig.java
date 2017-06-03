@@ -56,13 +56,6 @@ public class AquaJmtConfig {
         return sqlSessionFactory.getObject();
     }
 
-    /*@Bean
-    public HibernateJpaSessionFactoryBean sessionFactory(EntityManagerFactory emf) {
-        HibernateJpaSessionFactoryBean factory = new HibernateJpaSessionFactoryBean();
-        factory.setEntityManagerFactory(emf);
-        return factory;
-    }*/
-
     @Bean
     public DataSourceTransactionManager transactionManager() {
         logger.debug("> transactionManager");

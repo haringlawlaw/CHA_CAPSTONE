@@ -29,34 +29,34 @@ public class ShopService {
         logger.info("loadUserByUsername");
         ShopLogin account = shopMapper.loadUserByUsername(user.getUsername());
         logger.info("loadUserByUsername", user);
-        if(passwordEncoder.matches(user.getPassword(), account.getPassword()))
-            return account;
-        else
-            return null;
+        if (null != account)
+            if (passwordEncoder.matches(user.getPassword(), account.getPassword()))
+                return account;
+        return null;
     }
 
-    public ShopLogin getShopLoginById(String id){
+    public ShopLogin getShopLoginById(String id) {
         logger.info("getShopLoginById");
         ShopLogin shopUser = shopMapper.getShopLoginById(id);
         logger.info("getShopLoginById", shopUser);
         return shopUser;
     }
 
-    public ShopInfo getShopInfoById(String id){
+    public ShopInfo getShopInfoById(String id) {
         logger.info("getShopInfoById");
         ShopInfo shopUser = shopMapper.getShopInfoById(id);
         logger.info("getShopInfoById", shopUser);
         return shopUser;
     }
 
-    public ShopLocation getShopLocationById(String id){
+    public ShopLocation getShopLocationById(String id) {
         logger.info("getShopLocationById");
         ShopLocation customer = shopMapper.getShopLocationById(id);
         logger.info("getShopLocationById", customer);
         return customer;
     }
 
-    public ShopSalesInformation getShopSalesInformationById(String id){
+    public ShopSalesInformation getShopSalesInformationById(String id) {
         logger.info("getShopSalesInformation");
         ShopSalesInformation order = shopMapper.getShopSalesInformationById(id);
         logger.info("getShopSalesInformation", order);
@@ -112,11 +112,11 @@ public class ShopService {
         Integer ratings = shopMapper.getTotalRatings(shopId);
         Integer reviews = shopMapper.getReviewsCount(shopId);
 
-        if(reviews == 0 || null == ratings || null == reviews)
+        if (reviews == 0 || null == ratings || null == reviews)
             return "0";
         else {
             DecimalFormat formatter = new DecimalFormat("#0.00");
-            String output = formatter.format(ratings/reviews);
+            String output = formatter.format(ratings / reviews);
             return output;
         }
     }

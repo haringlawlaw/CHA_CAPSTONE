@@ -7,13 +7,13 @@
         <result column="username" property="username" jdbcType="VARCHAR" />
         <result column="password" property="password" jdbcType="VARCHAR" />
         <result column="email" property="email" jdbcType="VARCHAR" />
-        <result column="firstName" property="firstName" jdbcType="VARCHAR" />
-        <result column="lastName" property="lastName" jdbcType="VARCHAR" />
-        <result column="middleName" property="middleName" jdbcType="VARCHAR" />
-        <result column="cellphoneNo" property="cellphoneNo" jdbcType="VARCHAR" />
+        <result column="first_name" property="firstName" jdbcType="VARCHAR" />
+        <result column="last_name" property="lastName" jdbcType="VARCHAR" />
+        <result column="middle_name" property="middleName" jdbcType="VARCHAR" />
+        <result column="cellphone_no" property="cellphoneNo" jdbcType="VARCHAR" />
         <result column="landline" property="landline" jdbcType="VARCHAR" />
-        <result column="createdOn" property="createdOn" jdbcType="VARCHAR" />
-        <result column="updatedOn" property="updatedOn" jdbcType="VARCHAR" />
+        <result column="created_on" property="createdOn" jdbcType="VARCHAR" />
+        <result column="updated_on" property="updatedOn" jdbcType="VARCHAR" />
     </resultMap>
     
     <resultMap id="customerLocationMap" type="com.capstone.jmt.data.CustomerLocation">
@@ -21,39 +21,39 @@
         <result column="address" property="address" jdbcType="VARCHAR" />
         <result column="longitude" property="longitude" jdbcType="FLOAT" />
         <result column="latitude" property="latitude" jdbcType="FLOAT" />
-        <result column="createdOn" property="createdOn" jdbcType="VARCHAR" />
-        <result column="updatedOn" property="updatedOn" jdbcType="VARCHAR" />
+        <result column="created_on" property="createdOn" jdbcType="VARCHAR" />
+        <result column="updated_on" property="updatedOn" jdbcType="VARCHAR" />
     </resultMap>
 
     <select id="getAllCustomers" resultMap="customerInfoMap" resultType="java.util.List">
-        SELECT * FROM customerInfo
+        SELECT * FROM customer_info
     </select>
 
     <select id="getCustomerInfoById" resultType="com.capstone.jmt.data.CustomerInfo">
-        SELECT * FROM customerInfo WHERE id = #{id}
+        SELECT * FROM customer_info WHERE id = #{id}
     </select>
 
     <select id="getCustomerLocationById" resultType="com.capstone.jmt.data.CustomerLocation">
-        SELECT * FROM customerLocation WHERE id = #{id}
+        SELECT * FROM customer_location WHERE id = #{id}
     </select>
 
     <select id="getCustomerNameById" resultType="java.lang.String">
         SELECT
         lastname || ', ' || firstname || ' ' || coalesce(middlename)
-        FROM customerInfo
+        FROM customer_info
         WHERE id = #{id}
     </select>
     
     <insert id="addCustomerInfo" parameterType="com.capstone.jmt.data.CustomerInfo">
-        INSERT INTO customerInfo
+        INSERT INTO customer_info
         (id,
         username,
         password,
         email,
-        firstName,
-        lastName,
-        middleName,
-        cellphoneNo,
+        first_name,
+        last_name,
+        middle_name,
+        cellphone_no,
         landline)
         VALUES
         (#{customer.id, jdbcType=VARCHAR},
@@ -68,22 +68,22 @@
     </insert>
 
     <update id="updateCustomerInfo" flushCache="true">
-        UPDATE customerInfo
+        UPDATE customer_info
         SET
         username = #{customer.username, jdbcType=VARCHAR},
         password = #{customer.password, jdbcType=VARCHAR},
         email = #{customer.email, jdbcType=VARCHAR},
-        firstName = #{customer.firstName, jdbcType=VARCHAR},
-        lastName = #{customer.lastName, jdbcType=VARCHAR},
-        middleName = #{customer.middleName, jdbcType=VARCHAR},
-        cellphoneNo = #{customer.cellphoneNo, jdbcType=VARCHAR},
+        first_name = #{customer.firstName, jdbcType=VARCHAR},
+        last_name = #{customer.lastName, jdbcType=VARCHAR},
+        middle_name = #{customer.middleName, jdbcType=VARCHAR},
+        cellphone_no = #{customer.cellphoneNo, jdbcType=VARCHAR},
         landline = #{customer.landline, jdbcType=VARCHAR}
         WHERE
         id = #{customer.id, jdbcType=VARCHAR}
     </update>
 
     <insert id="addCustomerLocation" parameterType="com.capstone.jmt.data.CustomerLocation">
-        INSERT INTO customerLocation
+        INSERT INTO customer_location
         (id,
         address,
         longitude,
@@ -96,7 +96,7 @@
     </insert>
 
     <update id="updateCustomerLocation" flushCache="true">
-        UPDATE customerLocation
+        UPDATE customer_location
         SET
         address = #{customer.address, jdbcType=VARCHAR},
         longitude = #{customer.longitude, jdbcType=FLOAT},

@@ -7,89 +7,89 @@
         <result column="username" property="username" jdbcType="VARCHAR" />
         <result column="password" property="password" jdbcType="VARCHAR" />
         <result column="email" property="email" jdbcType="VARCHAR" />
-        <result column="firstName" property="firstName" jdbcType="VARCHAR" />
-        <result column="middleName" property="middleName" jdbcType="VARCHAR" />
-        <result column="lastName" property="lastName" jdbcType="VARCHAR" />
-        <result column="staffOf" property="staffOf" jdbcType="VARCHAR" />
-        <result column="createdOn" property="createdOn" jdbcType="VARCHAR" />
-        <result column="updatedOn" property="updatedOn" jdbcType="VARCHAR" />
+        <result column="first_name" property="firstName" jdbcType="VARCHAR" />
+        <result column="middle_name" property="middleName" jdbcType="VARCHAR" />
+        <result column="last_name" property="lastName" jdbcType="VARCHAR" />
+        <result column="staff_of" property="staffOf" jdbcType="VARCHAR" />
+        <result column="created_on" property="createdOn" jdbcType="VARCHAR" />
+        <result column="updated_on" property="updatedOn" jdbcType="VARCHAR" />
     </resultMap>
     
     <resultMap id="shopInfoMap" type="com.capstone.jmt.data.ShopInfo">
         <result column="id" property="id" jdbcType="VARCHAR" />
-        <result column="businessName" property="businessName" jdbcType="VARCHAR" />
+        <result column="business_name" property="businessName" jdbcType="VARCHAR" />
         <result column="address" property="address" jdbcType="VARCHAR" />
         <result column="email" property="email" jdbcType="VARCHAR" />
-        <result column="cellphoneNo" property="cellphoneNo" jdbcType="VARCHAR" />
-        <result column="alternateNo" property="alternateNo" jdbcType="VARCHAR" />
-        <result column="timeOpen" property="timeOpen" jdbcType="VARCHAR" />
-        <result column="timeClose" property="timeClose" jdbcType="VARCHAR" />
-        <result column="allowSwap" property="allowSwap" jdbcType="BOOLEAN" />
-        <result column="accountVerified" property="accountVerified" jdbcType="BOOLEAN" />
-        <result column="daysAvailable" property="daysAvailable" jdbcType="VARCHAR" />
-        <result column="openOnHolidays" property="openOnHolidays" jdbcType="BOOLEAN" />
-        <result column="createdOn" property="createdOn" jdbcType="VARCHAR" />
-        <result column="updatedOn" property="updatedOn" jdbcType="VARCHAR" />
-        <result column="updatedBy" property="updatedBy" jdbcType="VARCHAR" />
+        <result column="cellphone_no" property="cellphoneNo" jdbcType="VARCHAR" />
+        <result column="alternate_no" property="alternateNo" jdbcType="VARCHAR" />
+        <result column="time_open" property="timeOpen" jdbcType="VARCHAR" />
+        <result column="time_close" property="timeClose" jdbcType="VARCHAR" />
+        <result column="allow_swap" property="allowSwap" jdbcType="BOOLEAN" />
+        <result column="account_verified" property="accountVerified" jdbcType="BOOLEAN" />
+        <result column="days_available" property="daysAvailable" jdbcType="VARCHAR" />
+        <result column="open_on_holidays" property="openOnHolidays" jdbcType="BOOLEAN" />
+        <result column="created_on" property="createdOn" jdbcType="VARCHAR" />
+        <result column="updated_on" property="updatedOn" jdbcType="VARCHAR" />
+        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
     </resultMap>
     
     <resultMap id="shopLocationMap" type="com.capstone.jmt.data.ShopLocation">
         <result column="id" property="id" jdbcType="VARCHAR" />
-        <result column="shopAddress" property="shopAddress" jdbcType="VARCHAR" />
-        <result column="shopLongitude" property="shopLongitude" jdbcType="FLOAT" />
-        <result column="shopLatitude" property="shopLatitude" jdbcType="FLOAT" />
-        <result column="createdOn" property="createdOn" jdbcType="VARCHAR" />
-        <result column="updatedOn" property="updatedOn" jdbcType="VARCHAR" />
-        <result column="updatedBy" property="updatedBy" jdbcType="VARCHAR" />
+        <result column="shop_address" property="shopAddress" jdbcType="VARCHAR" />
+        <result column="shop_longitude" property="shopLongitude" jdbcType="FLOAT" />
+        <result column="shop_latitude" property="shopLatitude" jdbcType="FLOAT" />
+        <result column="created_on" property="createdOn" jdbcType="VARCHAR" />
+        <result column="updated_on" property="updatedOn" jdbcType="VARCHAR" />
+        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
     </resultMap>
 
     <resultMap id="shopSalesInformationMap" type="com.capstone.jmt.data.ShopSalesInformation">
         <result column="id" property="id" jdbcType="VARCHAR" />
-        <result column="roundOffered" property="roundOffered" jdbcType="BOOLEAN" />
-        <result column="slimOffered" property="slimOffered" jdbcType="BOOLEAN" />
-        <result column="roundStock" property="roundStock" jdbcType="INTEGER" />
-        <result column="slimStock" property="slimStock" jdbcType="INTEGER" />
+        <result column="round_offered" property="roundOffered" jdbcType="BOOLEAN" />
+        <result column="slim_offered" property="slimOffered" jdbcType="BOOLEAN" />
+        <result column="round_stock" property="roundStock" jdbcType="INTEGER" />
+        <result column="slim_stock" property="slimStock" jdbcType="INTEGER" />
         <result column="distilled" property="distilled" jdbcType="BOOLEAN" />
         <result column="purified" property="purified" jdbcType="BOOLEAN" />
         <result column="mineral" property="mineral" jdbcType="BOOLEAN" />
         <result column="alkaline" property="alkaline" jdbcType="BOOLEAN" />
-        <result column="distilledPrice" property="distilledPrice" jdbcType="DOUBLE" />
-        <result column="purifiedPrice" property="purifiedPrice" jdbcType="DOUBLE" />
-        <result column="mineralPrice" property="mineralPrice" jdbcType="DOUBLE" />
-        <result column="alkalinePrice" property="alkalinePrice" jdbcType="DOUBLE" />
-        <result column="createdOn" property="createdOn" jdbcType="VARCHAR" />
-        <result column="updatedOn" property="updatedOn" jdbcType="VARCHAR" />
-        <result column="updatedBy" property="updatedBy" jdbcType="VARCHAR" />
+        <result column="distilled_price" property="distilledPrice" jdbcType="DOUBLE" />
+        <result column="purified_price" property="purifiedPrice" jdbcType="DOUBLE" />
+        <result column="mineral_price" property="mineralPrice" jdbcType="DOUBLE" />
+        <result column="alkaline_price" property="alkalinePrice" jdbcType="DOUBLE" />
+        <result column="created_on" property="createdOn" jdbcType="VARCHAR" />
+        <result column="updated_on" property="updatedOn" jdbcType="VARCHAR" />
+        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
     </resultMap>
 
     <select id="loadUserByUsername" resultMap="shopLoginMap" resultType="com.capstone.jmt.data.ShopLogin">
-        SELECT * FROM shopLogin WHERE username = #{username}
+        SELECT * FROM shop_login WHERE username = #{username}
     </select>
     
     <select id="getShopInfoById" resultMap="shopInfoMap" resultType="com.capstone.jmt.data.ShopInfo">
-        SELECT * FROM shopInfo WHERE id = #{id}
+        SELECT * FROM shop_info WHERE id = #{id}
     </select>
     
     <select id="getShopLoginById" resultMap="shopLoginMap" resultType="com.capstone.jmt.data.ShopLogin">
-        SELECT * FROM shopLogin WHERE id = #{id}
+        SELECT * FROM shop_login WHERE id = #{id}
     </select>
 
     <select id="getShopLocationById" resultMap="shopLocationMap" resultType="com.capstone.jmt.data.ShopLocation">
-        SELECT * FROM shopLocation WHERE id = #{id}
+        SELECT * FROM shop_location WHERE id = #{id}
     </select>
 
     <select id="getShopSalesInformationById" resultMap="shopSalesInformationMap" resultType="com.capstone.jmt.data.ShopSalesInformation">
-        SELECT * FROM shopSalesInformation WHERE id = #{id}
+        SELECT * FROM shop_sales_information WHERE id = #{id}
     </select>
 
     <insert id="addShopInfo" parameterType="com.capstone.jmt.data.ShopInfo">
-        INSERT INTO shopInfo
+        INSERT INTO shop_info
         (id,
-        businessName,
+        business_name,
         address,
         email
-        cellphoneNo,
-        alternateNo)
+        cellphone_no,
+        alternate_no)
         VALUES
         (#{shop.id, jdbcType=VARCHAR},
         #{shop.businessName, jdbcType=VARCHAR},
@@ -100,33 +100,33 @@
     </insert>
 
     <update id="updateShopInfo" parameterType="com.capstone.jmt.data.ShopInfo">
-        UPDATE shopInfo
+        UPDATE shop_info
         SET
-        businessName = #{shop.businessName, jdbcType=VARCHAR},
+        business_name = #{shop.businessName, jdbcType=VARCHAR},
         address = #{shop.address, jdbcType=VARCHAR},
         email = #{shop.email, jdbcType=VARCHAR},
-        cellphoneNo = #{shop.cellphoneNo, jdbcType=VARCHAR},
-        alternateNo = #{shop.alternateNo, jdbcType=VARCHAR},
-        timeOpen = #{shop.timeOpen, jdbcType=VARCHAR},
-        timeClose = #{shop.timeClose, jdbcType=VARCHAR},
-        allowSwap = #{shop.allowSwap, jdbcType=BOOLEAN},
-        daysAvailable = #{shop.daysAvailable, jdbcType=VARCHAR},
-        openOnHolidays = #{shop.openOnHolidays, jdbcType=BOOLEAN},
-        updatedBy = #{shop.updatedBy, jdbcType=VARCHAR}
+        cellphone_no = #{shop.cellphoneNo, jdbcType=VARCHAR},
+        alternate_no = #{shop.alternateNo, jdbcType=VARCHAR},
+        time_open = #{shop.timeOpen, jdbcType=VARCHAR},
+        time_close = #{shop.timeClose, jdbcType=VARCHAR},
+        allow_swap = #{shop.allowSwap, jdbcType=BOOLEAN},
+        days_available = #{shop.daysAvailable, jdbcType=VARCHAR},
+        open_on_holidays = #{shop.openOnHolidays, jdbcType=BOOLEAN},
+        updated_by = #{shop.updatedBy, jdbcType=VARCHAR}
         WHERE
         id = #{shop.id, jdbcType=VARCHAR}
     </update>
 
     <insert id="addShopLogin" parameterType="com.capstone.jmt.data.ShopLogin">
-        INSERT INTO shopLogin
+        INSERT INTO shop_login
         (id,
         username,
         password,
         email,
-        firstName,
-        lastName,
-        middleName,
-        staffOf)
+        first_name,
+        last_name,
+        middle_name,
+        staff_of)
         VALUES
         (#{shopUser.id, jdbcType=VARCHAR},
         #{shopUser.username, jdbcType=VARCHAR},
@@ -140,24 +140,24 @@
     </insert>
 
     <update id="updateShopLogin" flushCache="true">
-        UPDATE shopLogin
+        UPDATE shop_login
         SET
         username = #{shopUser.username, jdbcType=VARCHAR},
         password = #{shopUser.password, jdbcType=VARCHAR},
         email = #{shopUser.email, jdbcType=VARCHAR},
-        firstName = #{shopUser.firstName, jdbcType=VARCHAR},
-        lastName = #{shopUser.lastName, jdbcType=VARCHAR},
-        middleName = #{shopUser.middleName, jdbcType=VARCHAR}
+        first_name = #{shopUser.firstName, jdbcType=VARCHAR},
+        last_name = #{shopUser.lastName, jdbcType=VARCHAR},
+        middle_name = #{shopUser.middleName, jdbcType=VARCHAR}
         WHERE
         id = #{shopUser.id, jdbcType=VARCHAR}
     </update>
 
     <insert id="addShopLocation" parameterType="com.capstone.jmt.data.ShopLocation">
-        INSERT INTO shopLocation
+        INSERT INTO shop_location
         (id,
-        shopAddress,
-        shopLongitude,
-        shopLatitude)
+        shop_address,
+        shop_longitude,
+        shop_latitude)
         VALUES
         (#{shop.id}, jdbcType=VARCHAR},
         #{shop.shopAddress, jdbcType=VARCHAR},
@@ -166,30 +166,30 @@
     </insert>
 
     <update id="updateShopLocation" flushCache="true">
-        UPDATE shopLocation
+        UPDATE shop_location
         SET
-        shopAddress = #{shop.shopAddress, jdbcType=VARCHAR},
-        shopLongitude = #{shop.shopLongitude, jdbcType=FLOAT},
-        shopLatitude = #{shop.shopLatitude, jdbcType=FLOAT}
+        shop_address = #{shop.shopAddress, jdbcType=VARCHAR},
+        shop_longitude = #{shop.shopLongitude, jdbcType=FLOAT},
+        shop_latitude = #{shop.shopLatitude, jdbcType=FLOAT}
         WHERE
         id = #{shop.id, jdbcType=VARCHAR}
     </update>
 
     <insert id="addShopSalesInformation" parameterType="com.capstone.jmt.data.ShopSalesInformation">
-        INSERT INTO shopSalesInformation
+        INSERT INTO shop_sales_information
         (id,
-        roundOffered,
-        slimOffered,
-        roundStock,
-        slimStock,
+        round_offered,
+        slim_offered,
+        round_stock,
+        slim_stock,
         distilled,
         purified,
         mineral,
         alkaline,
-        distilledPrice,
-        purifiedPrice,
-        mineralPrice,
-        alkalinePrice)
+        distilled_price,
+        purified_price,
+        mineral_price,
+        alkaline_price)
         VALUES
         (#{shop.id, jdbcType=VARCHAR},
         #{shop.roundOffered, jdbcType=BOOLEAN},
@@ -207,45 +207,45 @@
     </insert>
 
     <update id="updateShopSalesInformation" flushCache="true" parameterType="com.capstone.jmt.data.ShopSalesInformation">
-        UPDATE shopSalesInformation
+        UPDATE shop_sales_information
         SET
         roundOffered = #{shop.roundOffered, jdbcType=BOOLEAN},
-        slimOffered = #{shop.slimOffered, jdbcType=BOOLEAN},
-        roundStock = #{shop.roundStock, jdbcType=INTEGER},
-        slimStock = #{shop.slimStock, jdbcType=INTEGER},
+        slim_offered = #{shop.slimOffered, jdbcType=BOOLEAN},
+        round_stock = #{shop.roundStock, jdbcType=INTEGER},
+        slim_stock = #{shop.slimStock, jdbcType=INTEGER},
         distilled = #{shop.distilled, jdbcType=BOOLEAN},
         purified = #{shop.purified, jdbcType=BOOLEAN},
         mineral = #{shop.mineral, jdbcType=BOOLEAN},
         alkaline = #{shop.alkaline, jdbcType=BOOLEAN},
-        distilledPrice = #{shop.distilledPrice, jdbcType=DOUBLE},
-        purifiedPrice = #{shop.purifiedPrice, jdbcType=DOUBLE},
-        mineralPrice = #{shop.mineralPrice, jdbcType=DOUBLE},
-        alkalinePrice = #{shop.alkalinePrice, jdbcType=DOUBLE}
+        distilled_price = #{shop.distilledPrice, jdbcType=DOUBLE},
+        purified_price = #{shop.purifiedPrice, jdbcType=DOUBLE},
+        mineral_price = #{shop.mineralPrice, jdbcType=DOUBLE},
+        alkaline_price = #{shop.alkalinePrice, jdbcType=DOUBLE}
         WHERE
         id = #{shop.id, jdbcType=VARCHAR}
     </update>
 
     <select id="getTotalSalesById" resultType="java.lang.String">
         SELECT SUM(totalCost)
-        FROM orderInfo
-        WHERE orderedFrom = #{shopId}
+        FROM order_info
+        WHERE ordered_from = #{shopId}
     </select>
 
     <select id="getSalesCount" resultType="java.lang.String">
         SELECT COUNT(id)
-        FROM orderInfo
-        WHERE orderedFrom = #{shopId}
+        FROM order_info
+        WHERE ordered_from = #{shopId}
     </select>
 
     <select id="getTotalRatings" resultType="java.lang.Integer">
         SELECT SUM(ratingGiven)
-        FROM orderInfo
-        WHERE orderedFrom = #{shopId}
+        FROM order_info
+        WHERE ordered_from = #{shopId}
     </select>
 
     <select id="getReviewsCount" resultType="java.lang.Integer">
         SELECT COUNT(id)
-        FROM orderInfo
-        WHERE ratingGiven >= 0 AND orderedFrom = #{shopId}
+        FROM order_info
+        WHERE rating_given >= 0 AND ordered_from = #{shopId}
     </select>
 </mapper>
