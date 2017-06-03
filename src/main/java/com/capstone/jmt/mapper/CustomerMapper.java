@@ -1,7 +1,7 @@
 package com.capstone.jmt.mapper;
 
 
-import com.capstone.jmt.data.CustomerInfo;
+import com.capstone.jmt.data.CustomerLogin;
 import com.capstone.jmt.data.CustomerLocation;
 import org.apache.ibatis.annotations.Param;
 
@@ -14,13 +14,13 @@ public interface CustomerMapper {
 
     List getAllCustomers();
 
-    CustomerInfo getCustomerInfoById(@Param("id") String id);
+    CustomerLogin getCustomerLoginById(@Param("id") String id);
 
     CustomerLocation getCustomerLocationById(@Param("id") String id);
 
-    Integer addCustomerInfo(@Param("customer") CustomerInfo customer);
+    Integer addCustomerLogin(@Param("customer") CustomerLogin customer);
 
-    Integer updateCustomerInfo(@Param("customer") CustomerInfo customer);
+    Integer updateCustomerLogin(@Param("customer") CustomerLogin customer);
 
     Integer addCustomerLocation(@Param("customer") CustomerLocation customer);
 

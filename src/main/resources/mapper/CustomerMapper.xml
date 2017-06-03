@@ -29,7 +29,7 @@
         SELECT * FROM customer_login
     </select>
 
-    <select id="getCustomerInfoById" resultType="com.capstone.jmt.data.CustomerInfo">
+    <select id="getCustomerLoginById" resultType="com.capstone.jmt.data.CustomerLogin">
         SELECT * FROM customer_login WHERE id = #{id}
     </select>
 
