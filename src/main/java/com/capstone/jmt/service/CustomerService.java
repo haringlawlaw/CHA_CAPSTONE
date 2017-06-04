@@ -1,7 +1,7 @@
 package com.capstone.jmt.service;
 
-import com.capstone.jmt.data.CustomerInfo;
 import com.capstone.jmt.data.CustomerLocation;
+import com.capstone.jmt.data.CustomerLogin;
 import com.capstone.jmt.mapper.CustomerMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,10 +29,10 @@ public class CustomerService {
         return customers;
     }
 
-    public CustomerInfo getCustomerInfoById(String id){
-        logger.info("getCustomerInfoByUsername");
-        CustomerInfo customer = customerMapper.getCustomerInfoById(id);
-        logger.info("getCustomerInfoByUsername", customer);
+    public CustomerLogin getCustomerLoginById(String id){
+        logger.info("getCustomerLoginByUsername");
+        CustomerLogin customer = customerMapper.getCustomerLoginById(id);
+        logger.info("getCustomerLoginByUsername", customer);
         return customer;
     }
 
@@ -43,16 +43,16 @@ public class CustomerService {
         return customer;
     }
 
-    public void addCustomerInfo(CustomerInfo customer) {
-        logger.info("addCustomerInfo");
+    public void addCustomerLogin(CustomerLogin customer) {
+        logger.info("addCustomerLogin");
         customer.setId(UUID.randomUUID().toString());
-        Integer ret = customerMapper.addCustomerInfo(customer);
+        Integer ret = customerMapper.addCustomerLogin(customer);
         System.out.println(ret);
     }
 
-    public void updateCustomerInfo(CustomerInfo customer) {
-        logger.info("updateCustomerInfo");
-        Integer ret = customerMapper.updateCustomerInfo(customer);
+    public void updateCustomerLogin(CustomerLogin customer) {
+        logger.info("updateCustomerLogin");
+        Integer ret = customerMapper.updateCustomerLogin(customer);
         System.out.println(ret);
     }
 

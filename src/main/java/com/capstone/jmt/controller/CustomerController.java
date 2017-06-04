@@ -1,6 +1,6 @@
 package com.capstone.jmt.controller;
 
-import com.capstone.jmt.data.CustomerInfo;
+import com.capstone.jmt.data.CustomerLogin;
 import com.capstone.jmt.data.CustomerLocation;
 import com.capstone.jmt.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +37,7 @@ public class CustomerController {
     @RequestMapping(value="/customer", method=RequestMethod.GET)
     public ResponseEntity<?> getCustomerById(@RequestParam("id") String id){
         HashMap<String, Object> response = new HashMap<>();
-        CustomerInfo customer = customerService.getCustomerInfoById(id);
+        CustomerLogin customer = customerService.getCustomerLoginById(id);
         response.put("customer", customer);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
@@ -50,19 +50,19 @@ public class CustomerController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @RequestMapping(value="addOrUpdateCustomerInfo", method=RequestMethod.POST)
-    public ResponseEntity<?> addCustomerInfo(@RequestBody CustomerInfo customer){
+    @RequestMapping(value="addOrUpdateCustomerLogin", method=RequestMethod.POST)
+    public ResponseEntity<?> addCustomerLogin(@RequestBody CustomerLogin customer){
         HashMap<String, Object> response = new HashMap<>();
 
-        CustomerInfo existingCustomer = customerService.getCustomerInfoById(customer.getId());
+        CustomerLogin existingCustomer = customerService.getCustomerLoginById(customer.getId());
         if(null == existingCustomer) {
-            customerService.addCustomerInfo(customer);
+            customerService.addCustomerLogin(customer);
             response.put("customer", customer);
             response.put("id", customer.getId());
             response.put("responseCode", 200);
             response.put("reponseDesc", "Successfully Added Customer");
         }else{
-            customerService.updateCustomerInfo(customer);
+            customerService.updateCustomerLogin(customer);
             response.put("customer", customer);
             response.put("id", customer.getId());
             response.put("responseCode", 200);
