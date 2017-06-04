@@ -226,7 +226,7 @@
     </update>
 
     <select id="getTotalSalesById" resultType="java.lang.String">
-        SELECT SUM(totalCost)
+        SELECT SUM(total_cost)
         FROM order_info
         WHERE ordered_from = #{shopId}
     </select>
@@ -238,7 +238,7 @@
     </select>
 
     <select id="getTotalRatings" resultType="java.lang.Integer">
-        SELECT SUM(ratingGiven)
+        SELECT SUM(rating_given)
         FROM order_info
         WHERE ordered_from = #{shopId}
     </select>
