@@ -34,6 +34,12 @@
         <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
     </resultMap>
 
+    <select id="getOrdersForToday" resultType="java.util.List">
+        select * from customer_login
+        WHERE ordered_from = #{shopId}
+        AND created_on::date = CURRENT_DATE::date
+    </select>
+
     <select id="getOrderInfoById" resultMap="orderInfoMap" resultType="com.capstone.jmt.data.OrderInfo">
         SELECT * FROM order_info WHERE id = #{id}
     </select>
@@ -74,6 +80,17 @@
         #{order.status, jdbcType=VARCHAR},
         #{order.complaint, jdbcType=VARCHAR})
     </insert>
+
+    <select id="getLastSevenDays" resultMap="orderInfoMap" resultType="java.util.List">
+        SELECT DISTINCT created_on::TIMESTAMP::DATE,
+        SUM(round_ordered + slim_ordered)
+        FROM order_info
+        WHERE created_on &lt; now()::TIMESTAMP::DATE
+        AND created_on &gt; now()::TIMESTAMP::DATE - INTERVAL '7 DAYS'
+        AND ordered_from = #{shopId}
+        GROUP BY created_on
+        ORDER BY created_on DESC
+    </select>
 
     <update id="updateOrderInfo" flushCache="true" parameterType="com.capstone.jmt.data.OrderInfo">
         UPDATE order_info

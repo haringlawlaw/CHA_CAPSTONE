@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
+import java.util.StringJoiner;
 
 /**
  * Created by Jabito on 24/02/2017.
@@ -56,9 +57,17 @@ public class ShopController {
     public String showDashboard(@ModelAttribute("shopUser") ShopLogin shopUser, Model model) {
         if (shopUser.getId() == null)
             return "redirect:/login";
-
-        model.addAttribute("totalSales", "P " + shopService.getTotalSales(shopUser.getStaffOf()));
-        model.addAttribute("saleCount", shopService.getSalesCount(shopUser.getStaffOf()));
+        Double sales = shopService.getTotalSales(shopUser.getStaffOf());
+        Integer saleCount = shopService.getSalesCount(shopUser.getStaffOf());
+        Double total = 0.0;
+        List<LastSevenDays> orders = shopService.getLastSevenDays(shopUser.getStaffOf());
+        for (LastSevenDays lastSevenDays : orders) {
+            total+= lastSevenDays.getSales();
+        }
+        model.addAttribute("orders", orders);
+        model.addAttribute("total", "P " + String.valueOf(total));
+        model.addAttribute("totalSales", "P " + sales==null? "0.00": String.valueOf(sales));
+        model.addAttribute("saleCount", saleCount==null? "0": saleCount);
         model.addAttribute("rating", shopService.getShopRating(shopUser.getStaffOf()));
         model.addAttribute("username", shopUser.getUsername());
 

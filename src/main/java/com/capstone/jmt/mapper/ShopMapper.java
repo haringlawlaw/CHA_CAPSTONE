@@ -4,6 +4,8 @@ package com.capstone.jmt.mapper;
 import com.capstone.jmt.data.*;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 
 /**
  * Created by Jabito on 02/17/2017.
@@ -37,11 +39,13 @@ public interface ShopMapper {
 
     ShopLogin loadUserByUsername(@Param("username") String username);
 
-    String getTotalSalesById(@Param("shopId") String shopId);
+    Double getTotalSalesById(@Param("shopId") String shopId);
 
-    String getSalesCount(@Param("shopId") String shopId);
+    Integer getSalesCount(@Param("shopId") String shopId);
 
     Integer getTotalRatings(@Param("shopId") String shopId);
 
     Integer getReviewsCount(@Param("shopId") String shopId);
+
+    String getShopRating(@Param("shopId") String shopId);
 }

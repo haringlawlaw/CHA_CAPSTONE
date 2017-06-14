@@ -1,6 +1,7 @@
 package com.capstone.jmt.service;
 
 import com.capstone.jmt.data.*;
+import com.capstone.jmt.mapper.OrderMapper;
 import com.capstone.jmt.mapper.ShopMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +10,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -21,6 +24,9 @@ public class ShopService {
 
     @Autowired
     private ShopMapper shopMapper;
+
+    @Autowired
+    private OrderMapper orderMapper;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -93,31 +99,71 @@ public class ShopService {
         Integer ret = shopMapper.updateShopSalesInformation(shop);
     }
 
-    public String getTotalSales(String shopId) {
+    public Double getTotalSales(String shopId) {
         logger.info("getTotalSales");
-        String sales = shopMapper.getTotalSalesById(shopId);
+        Double sales = shopMapper.getTotalSalesById(shopId);
 
         return sales;
     }
 
-    public String getSalesCount(String shopId) {
+    public Integer getSalesCount(String shopId) {
         logger.info("getSalesCount");
-        String count = shopMapper.getSalesCount(shopId);
+        Integer count = shopMapper.getSalesCount(shopId);
 
         return count;
     }
 
     public String getShopRating(String shopId) {
         logger.info("getShopRating");
-        Integer ratings = shopMapper.getTotalRatings(shopId);
-        Integer reviews = shopMapper.getReviewsCount(shopId);
+        return shopMapper.getShopRating(shopId);
+    }
 
-        if (reviews == 0 || null == ratings || null == reviews)
-            return "0";
-        else {
-            DecimalFormat formatter = new DecimalFormat("#0.00");
-            String output = formatter.format(ratings / reviews);
-            return output;
+    public List getOrdersForToday(String shopId) {
+        logger.info("getOrdersForToday");
+        return orderMapper.getOrdersForToday(shopId);
+    }
+
+    public List getLastSevenDays(String shopId) {
+        logger.info("getLastSevenDays");
+        List<OrderInfo> orders = orderMapper.getLastSevenDays(shopId);
+        String startDate;
+        Integer sold=0;
+        Double sales=0.0;
+        List<LastSevenDays> lastSeven = new ArrayList<>();
+        if(null != orders) {
+            startDate = orders.get(0).getCreatedOn();
+            for (OrderInfo order : orders) {
+                if (!order.getCreatedOn().equals(startDate)) {
+                    LastSevenDays lsd = new LastSevenDays();
+                    lsd.setDate(startDate);
+                    lsd.setSold(sold);
+                    lsd.setSales(sales);
+                    lastSeven.add(lsd);
+                    sold = 0;
+                    sales = 0.0;
+                    startDate = order.getCreatedOn();
+                    if(null != order.getRoundOrdered())
+                        sold += order.getRoundOrdered();
+                    if(null != order.getSlimOrdered())
+                        sold += order.getSlimOrdered();
+                    if(null != order.getTotalCost())
+                        sales += order.getTotalCost();
+                } else {
+                    if(null != order.getRoundOrdered())
+                        sold += order.getRoundOrdered();
+                    if(null != order.getSlimOrdered())
+                        sold += order.getSlimOrdered();
+                    if(null != order.getTotalCost())
+                        sales += order.getTotalCost();
+                }
+            }
+            LastSevenDays lsd = new LastSevenDays();
+            lsd.setDate(startDate);
+            lsd.setSold(sold);
+            lsd.setSales(sales);
+            lastSeven.add(lsd);
         }
+
+        return lastSeven;
     }
 }

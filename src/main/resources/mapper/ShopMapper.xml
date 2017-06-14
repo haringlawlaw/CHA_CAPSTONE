@@ -62,6 +62,9 @@
         <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
     </resultMap>
 
+    <select id="getShopRating" resultType="java.lang.String">
+        SELECT rating from shop_info WHERE id = #{shopId}
+    </select>
     <select id="loadUserByUsername" resultMap="shopLoginMap" resultType="com.capstone.jmt.data.ShopLogin">
         SELECT * FROM shop_login WHERE username = #{username}
     </select>
@@ -225,13 +228,13 @@
         id = #{shop.id, jdbcType=VARCHAR}
     </update>
 
-    <select id="getTotalSalesById" resultType="java.lang.String">
+    <select id="getTotalSalesById" resultType="java.lang.Double">
         SELECT SUM(total_cost)
         FROM order_info
         WHERE ordered_from = #{shopId}
     </select>
 
-    <select id="getSalesCount" resultType="java.lang.String">
+    <select id="getSalesCount" resultType="java.lang.Integer">
         SELECT COUNT(id)
         FROM order_info
         WHERE ordered_from = #{shopId}
