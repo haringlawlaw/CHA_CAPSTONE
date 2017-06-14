@@ -11,11 +11,10 @@ import java.io.Serializable;
 /**
  * Created by Jabito on 15/02/2017.
  */
-@Entity
-@Table(name="order_info")
+
 public class OrderInfo implements Serializable{
 
-    @Id
+
     @JsonProperty("id")
     @Column(name = "id")
     private String id;
@@ -61,12 +60,12 @@ public class OrderInfo implements Serializable{
     @Column(name="status")
     @JsonProperty("status")
     private String status;
-    @Column(name="complaint")
-    @JsonProperty("complaint")
-    private String complaint;
     @Column(name="comments")
     @JsonProperty("comments")
     private String comments;
+    @Column(name = "Name")
+    @JsonProperty("name")
+    private String name;
 
     public String getId() {
         return id;
@@ -186,5 +185,21 @@ public class OrderInfo implements Serializable{
 
     public void setComments(String comments) {
         this.comments = comments;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

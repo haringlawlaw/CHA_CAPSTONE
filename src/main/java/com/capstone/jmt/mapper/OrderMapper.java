@@ -27,5 +27,7 @@ public interface OrderMapper {
 
     List getOrdersByShopId(@Param("shopId") String shopId);
 
+    List getBottleSales();
+
 
 }

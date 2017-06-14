@@ -64,45 +64,15 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>03-12-2017</td>
-                                <td>Efren "Bata" Reyes</td>
-                                <td>Quezon City</td>
-                                <td>2</td>
-                                <td>25</td>
-                                <td>3</td>
-                                <td>25</td>
-                                <td>P125.00</td>
-                            </tr>
-                            <tr>
-                                <td>03-12-2017</td>
-                                <td>Efren "Bata" Reyes</td>
-                                <td>Quezon City</td>
-                                <td>2</td>
-                                <td>25</td>
-                                <td>3</td>
-                                <td>25</td>
-                                <td>P125.00</td>
-                            </tr>
-                            <tr>
-                                <td>03-12-2017</td>
-                                <td>Efren "Bata" Reyes</td>
-                                <td>Quezon City</td>
-                                <td>2</td>
-                                <td>25</td>
-                                <td>3</td>
-                                <td>25</td>
-                                <td>P125.00</td>
-                            </tr>
-                            <tr>
-                                <td>03-12-2017</td>
-                                <td>Efren "Bata" Reyes</td>
-                                <td>Quezon City</td>
-                                <td>2</td>
-                                <td>25</td>
-                                <td>3</td>
-                                <td>25</td>
-                                <td>P125.00</td>
+                            <tr class="odd gradeX" th:each="battleSales: ${bottleSalesRecord}">
+                                <td th:text="${battleSales.createdOn}"></td>
+                                <td th:text="${battleSales.name}"></td>
+                                <td th:text="${battleSales.customerAddress}"></td>
+                                <td th:text="${battleSales.roundOrdered}" class="center"></td>
+                                <td th:text="${battleSales.costPerItem}" class="center"></td>
+                                <td th:text="${battleSales.slimOrdered}" class="center"></td>
+                                <td th:text="${battleSales.costPerItem}" class="center"></td>
+                                <td th:text="${battleSales.totalCost}" class="center"></td>
                             </tr>
                             </tbody>
                             <thead>

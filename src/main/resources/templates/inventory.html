@@ -50,8 +50,8 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>20</td>
+                                <tr class="odd gradeX" th:object="${inventory}">
+                                    <td th:text="*{slimStock}"></td>
                                 </tr>
                                 <tr>
                                     <td rowspan="2" class="col-md-4">Image of Round Bottle</td>
@@ -65,8 +65,8 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>35</td>
+                                <tr class="odd gradeX" th:object="${inventory}">
+                                    <td th:text="*{roundStock}"></td>
                                 </tr>
                                 </tbody>
                             </table>
