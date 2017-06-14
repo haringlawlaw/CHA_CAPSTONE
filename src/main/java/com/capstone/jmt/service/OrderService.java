@@ -76,4 +76,10 @@ public class OrderService {
 
         return orders;
     }
+
+    public List<OrderInfo> getBottleSales(){
+
+        List<OrderInfo> orders = orderMapper.getBottleSales();
+        return orders;
+    }
 }

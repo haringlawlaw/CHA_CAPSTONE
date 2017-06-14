@@ -10,7 +10,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.text.DecimalFormat;
+<<<<<<< HEAD
 import java.util.ArrayList;
+=======
+>>>>>>> 9c7b6f639823e2c152ec3613ab1a9040b94f8c57
 import java.util.List;
 import java.util.UUID;
 
