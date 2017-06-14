@@ -34,7 +34,7 @@
                                 <i class="fa fa fa-usd fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge" th:text="*{totalSales}"></div>
+                                <div class="huge" th:text="*{total}"></div>
                                 <div>Today's Total</div>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                                 <i class="fa fa-history fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">12</div>
+                                <div class="huge" th:text="${saleCount}"></div>
                                 <div>Orders Fulfilled Today</div>
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                                 <i class="fa fa-shopping-cart fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge" th:text="${saleCount}"></div>
+                                <div class="huge" th:text="${inventoryCount}"></div>
                                 <div>Bottles In Hand</div>
                             </div>
                         </div>

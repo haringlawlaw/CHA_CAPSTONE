@@ -57,7 +57,7 @@ public class ShopController {
     public String showDashboard(@ModelAttribute("shopUser") ShopLogin shopUser, Model model) {
         if (shopUser.getId() == null)
             return "redirect:/login";
-        Double sales = shopService.getTotalSales(shopUser.getStaffOf());
+        Double sales = shopService.getTotalSalesToday(shopUser.getStaffOf());
         Integer saleCount = shopService.getSalesCount(shopUser.getStaffOf());
         Double total = 0.0;
         List<LastSevenDays> orders = shopService.getLastSevenDays(shopUser.getStaffOf());
@@ -67,6 +67,7 @@ public class ShopController {
         model.addAttribute("orders", orders);
         model.addAttribute("total", "P " + String.valueOf(total));
         model.addAttribute("totalSales", "P " + sales==null? "0.00": String.valueOf(sales));
+        model.addAttribute("inventoryCount", String.valueOf(shopService.getInventoryCount(shopUser.getStaffOf())));
         model.addAttribute("saleCount", saleCount==null? "0": saleCount);
         model.addAttribute("rating", shopService.getShopRating(shopUser.getStaffOf()));
         model.addAttribute("username", shopUser.getUsername());
@@ -172,6 +173,18 @@ public class ShopController {
         session.setComplete();
 
         return "login";
+    }
+
+    @RequestMapping(value = "/updateInventory1", method = RequestMethod.POST)
+    public String updateInventory1(@RequestParam("input") String input){
+        System.out.println(input);
+        return "redirect:/inventory";
+    }
+
+    @RequestMapping(value = "/updateInventory2", method = RequestMethod.POST)
+    public String updateInvenotry2(@RequestAttribute("input") String input){
+        System.out.println(input);
+        return "redirect:/inventory";
     }
 
 /*

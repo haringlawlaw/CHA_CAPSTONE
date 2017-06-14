@@ -251,4 +251,17 @@
         FROM order_info
         WHERE rating_given >= 0 AND ordered_from = #{shopId}
     </select>
+
+    <select id="getTotalSalesToday" resultType="java.lang.Double">
+        SELECT SUM(total_cost)
+        FROM order_info
+        WHERE created_on::DATE = now()::DATE
+        AND ordered_from = #{shopId}
+    </select>
+
+    <select id="getInventoryCount" resultType="java.lang.Integer">
+        SELECT SUM(round_stock + slim_stock)
+        FROM shop_sales_information
+        WHERE id = #{shopId}
+    </select>
 </mapper>

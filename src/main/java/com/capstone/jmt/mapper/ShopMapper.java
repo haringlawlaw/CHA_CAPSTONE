@@ -48,4 +48,8 @@ public interface ShopMapper {
     Integer getReviewsCount(@Param("shopId") String shopId);
 
     String getShopRating(@Param("shopId") String shopId);
+
+    Double getTotalSalesToday(@Param("shopId") String staffOf);
+
+    Integer getInventoryCount(@Param("shopId") String shopId);
 }

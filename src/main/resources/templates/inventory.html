@@ -5,18 +5,18 @@
     <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
 
     <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true
+        $(document).ready(function () {
+            $('#dataTables-example').DataTable({
+                responsive: true
+            });
         });
-    });
     </script>
 
 </head>
 <body>
 
 <div id="wrapper">
-                <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
 
 
     <div id="page-wrapper">
@@ -36,38 +36,47 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="container-fluid">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <table width="100%" class="table table-striped table-bordered table-hover"
+                                   id="dataTables-example">
                                 <tbody>
-                                <tr>
-                                    <td rowspan="2" class="col-md-4">Image of Slim Bottle</td>
-                                    <th class="col-md-2">Bottles Left:</th>
-                                    <td rowspan="2" class="col-md-2">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Enter New Quantity" />
-                                            <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button">Update</button>
+                                <form th:action="@{/updateInventory1}" method="POST">
+                                    <tr>
+                                        <td rowspan="2" class="col-md-4"><img src="../static/images/slim.jpg"
+                                                                              width="300px"/></td>
+                                        <th class="col-md-2">Bottles Left:</th>
+                                        <td rowspan="2" class="col-md-2">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control"
+                                                       placeholder="Enter New Quantity" th:value="${input}"/>
+                                                <span class="input-group-btn">
+                                            <button class="btn btn-default" type="submit">Update</button>
                                             </span>
-                                        </div>
-                                    </td>
-                                </tr>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </form>
                                 <tr class="odd gradeX" th:object="${inventory}">
                                     <td th:text="*{slimStock}"></td>
                                 </tr>
-                                <tr>
-                                    <td rowspan="2" class="col-md-4">Image of Round Bottle</td>
-                                    <th class="col-md-2">Bottles Left:</th>
-                                    <td rowspan="2" class="col-md-2">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Enter New Quantity" />
-                                            <span class="input-group-btn">
+                                <form th:action="@{/updateInventory2}" method="POST">
+                                    <tr>
+                                        <td rowspan="2" class="col-md-4"><img src="../static/images/round.jpg"
+                                                                              width="300px"/></td>
+                                        <th class="col-md-2">Bottles Left:</th>
+                                        <td rowspan="2" class="col-md-2">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Enter New Quantity"
+                                                       th:value="${input}"/>
+                                                <span class="input-group-btn">
                                             <button class="btn btn-default" type="button">Update</button>
                                             </span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX" th:object="${inventory}">
-                                    <td th:text="*{roundStock}"></td>
-                                </tr>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="odd gradeX" th:object="${inventory}">
+                                        <td th:text="*{roundStock}"></td>
+                                    </tr>
+                                </form>
                                 </tbody>
                             </table>
                         </div>
@@ -84,11 +93,11 @@
     </div>
 
     <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true
+        $(document).ready(function () {
+            $('#dataTables-example').DataTable({
+                responsive: true
+            });
         });
-    });
     </script>
 </div>
 </body>

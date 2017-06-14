@@ -9,11 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.text.DecimalFormat;
-<<<<<<< HEAD
 import java.util.ArrayList;
-=======
->>>>>>> 9c7b6f639823e2c152ec3613ab1a9040b94f8c57
 import java.util.List;
 import java.util.UUID;
 
@@ -33,6 +29,7 @@ public class ShopService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+    private String inventoryCount;
 
     public ShopLogin validateUser(ShopLogin user) {
         logger.info("loadUserByUsername");
@@ -147,15 +144,11 @@ public class ShopService {
                     startDate = order.getCreatedOn();
                     if(null != order.getRoundOrdered())
                         sold += order.getRoundOrdered();
-                    if(null != order.getSlimOrdered())
-                        sold += order.getSlimOrdered();
                     if(null != order.getTotalCost())
                         sales += order.getTotalCost();
                 } else {
                     if(null != order.getRoundOrdered())
                         sold += order.getRoundOrdered();
-                    if(null != order.getSlimOrdered())
-                        sold += order.getSlimOrdered();
                     if(null != order.getTotalCost())
                         sales += order.getTotalCost();
                 }
@@ -168,5 +161,13 @@ public class ShopService {
         }
 
         return lastSeven;
+    }
+
+    public Double getTotalSalesToday(String staffOf) {
+        return shopMapper.getTotalSalesToday(staffOf);
+    }
+
+    public String getInventoryCount(String shopId) {
+        return String.valueOf(shopMapper.getInventoryCount(shopId));
     }
 }

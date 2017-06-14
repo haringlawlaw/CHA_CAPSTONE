@@ -83,7 +83,8 @@
 
     <select id="getLastSevenDays" resultMap="orderInfoMap" resultType="java.util.List">
         SELECT DISTINCT created_on::TIMESTAMP::DATE,
-        SUM(round_ordered + slim_ordered)
+        SUM(round_ordered + slim_ordered) as round_ordered,
+        SUM(total_cost) as total_cost
         FROM order_info
         WHERE created_on &lt; now()::TIMESTAMP::DATE
         AND created_on &gt; now()::TIMESTAMP::DATE - INTERVAL '7 DAYS'
