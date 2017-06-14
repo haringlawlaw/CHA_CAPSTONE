@@ -51,9 +51,9 @@
                                     </div>
 
                                     <div class="form-group">
-                                            <label>Opening Time</label> <input type="time" th:text="*{timeOpen}"/>
+                                            <label>Opening Time</label> <input type="time" th:value="*{timeOpen}"/>
 
-                                            <label>Closing Time</label> <input type="time" th:text="*{timeClose}"/>
+                                            <label>Closing Time</label> <input type="time" th:value="*{timeClose}"/>
                                     </div>
 
                                     <div class="form-group">
@@ -94,25 +94,25 @@
                                     <label>Price of Alkaline Water</label>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon">₱ </span>
-                                        <input type="text" class="form-control" th:text="*{alkalinePrice}"/>
+                                        <input type="text" class="form-control" th:value="*{alkalinePrice}"/>
                                     </div>
 
                                     <label>Price of Mineral Water</label>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon">₱ </span>
-                                        <input type="text" class="form-control" th:text="*{mineralPrice}"/>
+                                        <input type="text" class="form-control" th:value="*{mineralPrice}"/>
                                     </div>
 
                                     <label>Price of Purified Water</label>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon">₱ </span>
-                                        <input type="text" class="form-control" th:text="*{purifiedPrice}"/>
+                                        <input type="text" class="form-control" th:value="*{purifiedPrice}"/>
                                     </div>
 
                                     <label>Price of Distilled Water</label>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon">₱ </span>
-                                        <input type="text" class="form-control" th:text="*{distilledPrice}"/>
+                                        <input type="text" class="form-control" th:value="*{distilledPrice}"/>
                                     </div>
 
                                     <button type="submit" class="btn btn-success btn-lg">Update Prices</button>

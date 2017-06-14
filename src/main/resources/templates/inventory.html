@@ -39,6 +39,7 @@
                             <table width="100%" class="table table-striped table-bordered table-hover"
                                    id="dataTables-example">
                                 <tbody>
+<<<<<<< HEAD
                                 <form th:action="@{/updateInventory1}" method="POST">
                                     <tr>
                                         <td rowspan="2" class="col-md-4"><img src="../static/images/slim.jpg"
@@ -50,6 +51,16 @@
                                                        placeholder="Enter New Quantity" th:value="${input}"/>
                                                 <span class="input-group-btn">
                                             <button class="btn btn-default" type="submit">Update</button>
+=======
+                                <tr>
+                                    <td rowspan="2" class="col-md-4"><img src="../static/images/slim.png" height="140px" width="120px"/></td>
+                                    <th class="col-md-2">Bottles Left:</th>
+                                    <td rowspan="2" class="col-md-2">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Enter New Quantity" />
+                                            <span class="input-group-btn">
+                                            <button class="btn btn-success" type="button">Update</button>
+>>>>>>> 27f5da870ba0045ca51ac9c59b75b6bd5f600a5f
                                             </span>
                                             </div>
                                         </td>
@@ -58,6 +69,7 @@
                                 <tr class="odd gradeX" th:object="${inventory}">
                                     <td th:text="*{slimStock}"></td>
                                 </tr>
+<<<<<<< HEAD
                                 <form th:action="@{/updateInventory2}" method="POST">
                                     <tr>
                                         <td rowspan="2" class="col-md-4"><img src="../static/images/round.jpg"
@@ -69,6 +81,18 @@
                                                        th:value="${input}"/>
                                                 <span class="input-group-btn">
                                             <button class="btn btn-default" type="button">Update</button>
+=======
+                                <tr>
+                                    <td rowspan="2" class="col-md-4"><div class="form-group">
+                                        <img src="../static/images/round.png" height="140px" width="140px"/>
+                                    </div></td>
+                                    <th class="col-md-2">Bottles Left:</th>
+                                    <td rowspan="2" class="col-md-2">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Enter New Quantity" />
+                                            <span class="input-group-btn">
+                                            <button class="btn btn-success" type="button">Update</button>
+>>>>>>> 27f5da870ba0045ca51ac9c59b75b6bd5f600a5f
                                             </span>
                                             </div>
                                         </td>
