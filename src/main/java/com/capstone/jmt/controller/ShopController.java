@@ -92,7 +92,8 @@ public class ShopController {
         model.addAttribute("username", shopUser.getUsername());
         Double sales = 0.0;
         for(int x=0; x<orders.size(); x++){
-            sales += orders.get(x).getTotalCost();
+            if(null!=orders.get(x).getTotalCost())
+                    sales += orders.get(x).getTotalCost();
         }
 
         model.addAttribute("totalSales", "P " + sales.toString());
@@ -109,11 +110,13 @@ public class ShopController {
     }
 
     @RequestMapping(value = "/inventory", method = RequestMethod.GET)
-    public String shopInventory(@ModelAttribute("shopUser") ShopLogin shopUser, Model model) {
+    public String shopInventory(@ModelAttribute("shopUser") ShopLogin shopUser, Model model){
         if (shopUser.getId() == null)
             return "redirect:/login";
 
+
         model.addAttribute("username", shopUser.getUsername());
+        model.addAttribute("inventory", shopService.getShopSalesInformationById(shopUser.getStaffOf()));
 
         return "inventory";
     }
@@ -124,6 +127,7 @@ public class ShopController {
             return "redirect:/login";
 
         model.addAttribute("username", shopUser.getUsername());
+        model.addAttribute("bottleSalesRecord", orderService.getBottleSales());
 
         return "bottlesales";
     }
