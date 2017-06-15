@@ -264,4 +264,28 @@
         FROM shop_sales_information
         WHERE id = #{shopId}
     </select>
+
+    <update id="updateRoundStock" flushCache="true">
+        UPDATE shop_sales_information
+        SET round_stock = #{stock},
+        updated_by = #{username}
+        WHERE id = #{shopId}
+    </update>
+
+    <update id="updateSlimStock" flushCache="true">
+        UPDATE shop_sales_information
+        SET slim_stock = #{stock},
+        updated_by = #{username}
+        WHERE id = #{shopId}
+    </update>
+
+    <update id="updatePrices" flushCache="true">
+        UPDATE shop_sales_information
+        SET distilledPrice = #{shop.distilledPrice, jdbcType=NUMERIC},
+        purifiedPrice = #{shop.purifiedPrice, jdbcType=NUMERIC},
+        mineralPrice = #{shop.mineralPrice, jdbcType=NUMERIC},
+        alkalinePrice = #{shop.alkalinePrice, jdbcType=NUMERIC},
+        updated_by = #{shop.updatedBy, jdbcType=VARCHAR}
+        WHERE id = #{shop.id, jdbcType=VARCHAR}
+    </update>
 </mapper>

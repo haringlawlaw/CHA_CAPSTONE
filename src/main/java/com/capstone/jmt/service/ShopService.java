@@ -170,4 +170,24 @@ public class ShopService {
     public String getInventoryCount(String shopId) {
         return String.valueOf(shopMapper.getInventoryCount(shopId));
     }
+
+    public void updateRoundStock(String username, String staffOf, Integer roundStock) {
+        shopMapper.updateRoundStock(username, staffOf, roundStock);
+    }
+
+    public void updateSlimStock(String username, String staffOf, Integer slimStock) {
+        shopMapper.updateSlimStock(username, staffOf, slimStock);
+    }
+
+    public void updatePrices(String username, String staffOf, ShopSalesInformation shop) {
+        shop.setUpdatedBy(username);
+        shop.setId(staffOf);
+        shopMapper.updatePrices(shop);
+    }
+
+
+    public void updateProfile(ShopInfo shop, String username) {
+        shop.setUpdatedBy(username);
+        shopMapper.updateShopInfo(shop);
+    }
 }

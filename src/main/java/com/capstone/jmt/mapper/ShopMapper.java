@@ -52,4 +52,11 @@ public interface ShopMapper {
     Double getTotalSalesToday(@Param("shopId") String staffOf);
 
     Integer getInventoryCount(@Param("shopId") String shopId);
+
+    void updateRoundStock(@Param("username") String username, @Param("shopId") String staffOf, @Param("stock") Integer roundStock);
+
+    void updateSlimStock(@Param("username") String username, @Param("shopId") String staffOf, @Param("stock") Integer slimStock);
+
+    void updatePrices(@Param("shop") ShopSalesInformation shop);
+
 }
