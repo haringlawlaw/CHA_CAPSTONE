@@ -13,12 +13,10 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.orm.jpa.vendor.HibernateJpaSessionFactoryBean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 /**
@@ -28,13 +26,13 @@ import javax.sql.DataSource;
 @Configuration
 @EnableTransactionManagement
 @MapperScan(basePackages = "com.capstone.jmt.mapper")
-public class AquaJmtConfig {
+public class CapstoneConfig {
 
-    private static Logger logger = LoggerFactory.getLogger(AquaJmtConfig.class);
+    private static Logger logger = LoggerFactory.getLogger(CapstoneConfig.class);
 
     @Primary
     @Bean
-    @ConfigurationProperties(prefix = "aqua.jdbc")
+    @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource(){
         logger.info("dataSource");
         return DataSourceBuilder.create().build();
@@ -48,10 +46,8 @@ public class AquaJmtConfig {
         sqlSessionFactory.setDataSource(dataSource());
         sqlSessionFactory.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
         sqlSessionFactory.setFailFast(true);
-        Resource mapperResource = new ClassPathResource("mapper/CustomerMapper.xml");
-        Resource mapperResource2 = new ClassPathResource("mapper/ShopMapper.xml");
-        Resource mapperResource3 = new ClassPathResource("mapper/OrderMapper.xml");
-        sqlSessionFactory.setMapperLocations(new Resource[]{mapperResource,mapperResource2,mapperResource3});
+        Resource mapperResource = new ClassPathResource("mapper/MainMapper.xml");
+        sqlSessionFactory.setMapperLocations(new Resource[]{mapperResource});
 
         return sqlSessionFactory.getObject();
     }

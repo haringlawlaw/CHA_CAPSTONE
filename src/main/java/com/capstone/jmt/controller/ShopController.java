@@ -1,21 +1,15 @@
 package com.capstone.jmt.controller;
 
 import com.capstone.jmt.data.*;
-import com.capstone.jmt.service.OrderService;
 import com.capstone.jmt.service.ShopService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.List;
-import java.util.StringJoiner;
 
 /**
  * Created by Jabito on 24/02/2017.
@@ -29,7 +23,7 @@ public class ShopController {
     private ShopService shopService;
 
     @Autowired
-    private OrderService orderService;
+    //private OrderService orderService;
 
     /*
     List of all GET Requests
@@ -55,22 +49,22 @@ public class ShopController {
 
     @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
     public String showDashboard(@ModelAttribute("shopUser") ShopLogin shopUser, Model model) {
-        if (shopUser.getId() == null)
-            return "redirect:/login";
-        Double sales = shopService.getTotalSalesToday(shopUser.getStaffOf());
-        Integer saleCount = shopService.getSalesCount(shopUser.getStaffOf());
-        Double total = 0.0;
-        List<LastSevenDays> orders = shopService.getLastSevenDays(shopUser.getStaffOf());
-        for (LastSevenDays lastSevenDays : orders) {
-            total+= lastSevenDays.getSales();
-        }
-        model.addAttribute("orders", orders);
-        model.addAttribute("total", "P " + String.valueOf(total));
-        model.addAttribute("totalSales", "P " + sales==null? "0.00": String.valueOf(sales));
-        model.addAttribute("inventoryCount", String.valueOf(shopService.getInventoryCount(shopUser.getStaffOf())));
-        model.addAttribute("saleCount", saleCount==null? "0": saleCount);
-        model.addAttribute("rating", shopService.getShopRating(shopUser.getStaffOf()));
-        model.addAttribute("username", shopUser.getUsername());
+//        if (shopUser.getId() == null)
+//            return "redirect:/login";
+//        Double sales = shopService.getTotalSalesToday(shopUser.getStaffOf());
+//        Integer saleCount = shopService.getSalesCount(shopUser.getStaffOf());
+//        Double total = 0.0;
+//        List<LastSevenDays> orders = shopService.getLastSevenDays(shopUser.getStaffOf());
+//        for (LastSevenDays lastSevenDays : orders) {
+//            total+= lastSevenDays.getSales();
+//        }
+//        model.addAttribute("orders", orders);
+//        model.addAttribute("total", "P " + String.valueOf(total));
+//        model.addAttribute("totalSales", "P " + sales==null? "0.00": String.valueOf(sales));
+//        model.addAttribute("inventoryCount", String.valueOf(shopService.getInventoryCount(shopUser.getStaffOf())));
+//        model.addAttribute("saleCount", saleCount==null? "0": saleCount);
+//        model.addAttribute("rating", shopService.getShopRating(shopUser.getStaffOf()));
+//        model.addAttribute("username", shopUser.getUsername());
 
         return "dashboard";
     }
@@ -97,17 +91,17 @@ public class ShopController {
         if (shopUser.getId() == null)
             return "redirect:/login";
 
-        List<OrderInfo> orders = orderService.getOrdersByShopId(shopUser.getStaffOf());
-        model.addAttribute("orders", orders);
-        model.addAttribute("username", shopUser.getUsername());
-        Double sales = 0.0;
-        for(int x=0; x<orders.size(); x++){
-            if(null!=orders.get(x).getTotalCost())
-                    sales += orders.get(x).getTotalCost();
-        }
-
-        model.addAttribute("totalSales", "P " + sales.toString());
-
+//        List<OrderInfo> orders = orderService.getOrdersByShopId(shopUser.getStaffOf());
+//        model.addAttribute("orders", orders);
+//        model.addAttribute("username", shopUser.getUsername());
+//        Double sales = 0.0;
+//        for(int x=0; x<orders.size(); x++){
+//            if(null!=orders.get(x).getTotalCost())
+//                    sales += orders.get(x).getTotalCost();
+//        }
+//
+//        model.addAttribute("totalSales", "P " + sales.toString());
+//
         return "sales";
     }
 
@@ -136,11 +130,11 @@ public class ShopController {
 
     @RequestMapping(value = "/bottlesales", method = RequestMethod.GET)
     public String showBottleSales(@ModelAttribute("shopUser") ShopLogin shopUser, Model model) {
-        if (shopUser.getId() == null)
-            return "redirect:/login";
-
-        model.addAttribute("username", shopUser.getUsername());
-        model.addAttribute("bottleSalesRecord", orderService.getBottleSales());
+//        if (shopUser.getId() == null)
+//            return "redirect:/login";
+//
+//        model.addAttribute("username", shopUser.getUsername());
+//        model.addAttribute("bottleSalesRecord", orderService.getBottleSales());
 
         return "bottlesales";
     }

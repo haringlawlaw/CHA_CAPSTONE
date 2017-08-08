@@ -1,7 +1,6 @@
 package com.capstone.jmt.service;
 
 import com.capstone.jmt.data.*;
-import com.capstone.jmt.mapper.OrderMapper;
 import com.capstone.jmt.mapper.ShopMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Created by Jabito on 15/02/2017.
@@ -24,8 +22,6 @@ public class ShopService {
     @Autowired
     private ShopMapper shopMapper;
 
-    @Autowired
-    private OrderMapper orderMapper;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -118,50 +114,7 @@ public class ShopService {
         return shopMapper.getShopRating(shopId);
     }
 
-    public List getOrdersForToday(String shopId) {
-        logger.info("getOrdersForToday");
-        return orderMapper.getOrdersForToday(shopId);
-    }
 
-    public List getLastSevenDays(String shopId) {
-        logger.info("getLastSevenDays");
-        List<OrderInfo> orders = orderMapper.getLastSevenDays(shopId);
-        String startDate;
-        Integer sold=0;
-        Double sales=0.0;
-        List<LastSevenDays> lastSeven = new ArrayList<>();
-        if(null != orders) {
-            startDate = orders.get(0).getCreatedOn();
-            for (OrderInfo order : orders) {
-                if (!order.getCreatedOn().equals(startDate)) {
-                    LastSevenDays lsd = new LastSevenDays();
-                    lsd.setDate(startDate);
-                    lsd.setSold(sold);
-                    lsd.setSales(sales);
-                    lastSeven.add(lsd);
-                    sold = 0;
-                    sales = 0.0;
-                    startDate = order.getCreatedOn();
-                    if(null != order.getRoundOrdered())
-                        sold += order.getRoundOrdered();
-                    if(null != order.getTotalCost())
-                        sales += order.getTotalCost();
-                } else {
-                    if(null != order.getRoundOrdered())
-                        sold += order.getRoundOrdered();
-                    if(null != order.getTotalCost())
-                        sales += order.getTotalCost();
-                }
-            }
-            LastSevenDays lsd = new LastSevenDays();
-            lsd.setDate(startDate);
-            lsd.setSold(sold);
-            lsd.setSales(sales);
-            lastSeven.add(lsd);
-        }
-
-        return lastSeven;
-    }
 
     public Double getTotalSalesToday(String staffOf) {
         return shopMapper.getTotalSalesToday(staffOf);
