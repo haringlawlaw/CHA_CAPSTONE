@@ -1,6 +1,4 @@
-body {
-	font: normal 14px/150% calibri, Arial, Helvetica, sans-serif;
-}
+
 
 .header {
 	background-color: #ffffff;
@@ -77,4 +75,56 @@ input.form-control {
 .navbar-fixed-left .navbar-nav > li > .dropdown-menu {
   margin-top: -50px;
   margin-left: 140px;
+}
+.top-design {
+	height: 150px;
+	background-color: midnightblue;
+}
+
+.user-image{
+	height: 170px;
+	width: 190px;
+	background-color: transparent;
+	float: left;
+	margin-top: 10px;
+
+
+}
+.left-design {
+	width: 190px;
+	height: 190px;
+	float:left;
+	background-color: lightgray;
+	margin-top: 30px;
+}
+.main-design {
+	margin-left:190px;
+}
+
+.image-logo {
+	float: left;
+	width: 190px;
+	height:140px;
+}
+.image-user {
+	border-radius: 20px;
+	width: 140px;
+	height:140px;
+	margin-left: 20px;
+}
+
+.ul-design{
+	list-style-type: none;
+	margin-top: 20px;
+}
+.li-design{
+	margin-top: 15px;
+}
+.hr-thickness{
+	background-color: yellow;
+	color: dimgrey;
+	border: solid 2px dimgrey;
+	height: 10px;
+	margin-right: 30px;
+
 }

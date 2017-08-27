@@ -74,3 +74,13 @@ input.form-control {
   margin-top: -50px;
   margin-left: 140px;
 }
+
+/* Use for input textbox in login */
+
+input.text-login{
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+}
