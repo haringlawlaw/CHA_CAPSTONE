@@ -88,8 +88,8 @@ public class ShopController {
 
     @RequestMapping(value = "/sales", method = RequestMethod.GET)
     public String showSales(@ModelAttribute("shopUser") ShopLogin shopUser, Model model) {
-        if (shopUser.getId() == null)
-            return "redirect:/login";
+//        if (shopUser.getId() == null)
+//            return "redirect:/login";
 
 //        List<OrderInfo> orders = orderService.getOrdersByShopId(shopUser.getStaffOf());
 //        model.addAttribute("orders", orders);
@@ -107,23 +107,23 @@ public class ShopController {
 
     @RequestMapping(value = "/transactions", method = RequestMethod.GET)
     public String showTransactions(@ModelAttribute("shopUser") ShopLogin shopUser, Model model) {
-        if (shopUser.getId() == null)
-            return "redirect:/login";
+//        if (shopUser.getId() == null)
+//            return "redirect:/login";
 
         return "transactions";
     }
 
     @RequestMapping(value = "/inventory", method = RequestMethod.GET)
     public String shopInventory(@ModelAttribute("shopUser") ShopLogin shopUser, Model model){
-        if (shopUser.getId() == null)
-            return "redirect:/login";
-
-
-        model.addAttribute("shop1", new ShopSalesInformation());
-        model.addAttribute("shop2", new ShopSalesInformation());
-        model.addAttribute("water", new ShopSalesInformation());
-        model.addAttribute("username", shopUser.getUsername());
-        model.addAttribute("inventory", shopService.getShopSalesInformationById(shopUser.getStaffOf()));
+//        if (shopUser.getId() == null)
+//            return "redirect:/login";
+//
+//
+//        model.addAttribute("shop1", new ShopSalesInformation());
+//        model.addAttribute("shop2", new ShopSalesInformation());
+//        model.addAttribute("water", new ShopSalesInformation());
+//        model.addAttribute("username", shopUser.getUsername());
+//        model.addAttribute("inventory", shopService.getShopSalesInformationById(shopUser.getStaffOf()));
 
         return "inventory";
     }
@@ -141,13 +141,13 @@ public class ShopController {
 
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
     public String shopProfile(@ModelAttribute("shopUser") ShopLogin shopUser, Model model) {
-        if (shopUser.getId() == null)
-            return "redirect:/login";
-
-        model.addAttribute("prices", new ShopSalesInformation());
-        model.addAttribute("shop", shopService.getShopInfoById(shopUser.getStaffOf()));
-        model.addAttribute("water", shopService.getShopSalesInformationById(shopUser.getStaffOf()));
-        model.addAttribute("username", shopUser.getUsername());
+//        if (shopUser.getId() == null)
+//            return "redirect:/login";
+//
+//        model.addAttribute("prices", new ShopSalesInformation());
+//        model.addAttribute("shop", shopService.getShopInfoById(shopUser.getStaffOf()));
+//        model.addAttribute("water", shopService.getShopSalesInformationById(shopUser.getStaffOf()));
+//        model.addAttribute("username", shopUser.getUsername());
 
         return "profile";
     }
@@ -155,15 +155,15 @@ public class ShopController {
     /*
     List of all POST Requests
      */
-    @RequestMapping(value = "loginUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/loginUser", method = RequestMethod.POST)
     public String loginUser(ShopLogin shop, Model model) {
-        ShopLogin user = shopService.validateUser(shop);
-        if (null != user) {
-            model.addAttribute("shopUser", user);
+//        ShopLogin user = shopService.validateUser(shop);
+//        if (null != user) {
+//            model.addAttribute("shopUser", user);
             return "redirect:/dashboard/";
-        } else {
-            return "redirect:/login/?error=" + "1";
-        }
+//        } else {
+//            return "redirect:/login/?error=" + "1";
+//        }
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
