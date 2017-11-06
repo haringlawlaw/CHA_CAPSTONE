@@ -3,7 +3,7 @@
 <mapper namespace="com.capstone.jmt.mapper.MainMapper">
 
     <resultMap id="EmergencyContactMap" type="com.capstone.jmt.entity.EmergencyContact">
-        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="id" property="id" jdbcType="VARCHAR"/>
         <result column="contact_name" property="contactName" jdbcType="VARCHAR"/>
         <result column="relationship" property="relationship" jdbcType="VARCHAR"/>
         <result column="contact_no" property="contactNo" jdbcType="VARCHAR"/>
@@ -15,11 +15,11 @@
     </resultMap>
 
     <resultMap id="ParentMap" type="com.capstone.jmt.entity.Parent">
-        <result column="id" property="id" jdbcType="INTEGER"/>
-        <result column="parent_of" property="parentOf" jdbcType="INTEGER"/>
+        <result column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="parent_of" property="parentOf" jdbcType="VARCHAR"/>
         <result column="relationship" property="relationship" jdbcType="VARCHAR"/>
         <result column="occupation" property="occupation" jdbcType="VARCHAR"/>
-        <result column="office_no" property="contactNo" jdbcType="VARCHAR"/>
+        <result column="contact_no" property="contactNo" jdbcType="VARCHAR"/>
         <result column="created_on" property="createdOn" jdbcType="TIMESTAMP"/>
         <result column="updated_on" property="updatedOn" jdbcType="TIMESTAMP"/>
         <result column="created_by" property="createdBy" jdbcType="VARCHAR"/>
@@ -29,7 +29,7 @@
     </resultMap>
 
     <resultMap id="StudentMap" type="com.capstone.jmt.entity.Student">
-        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="id" property="id" jdbcType="VARCHAR"/>
         <result column="first_name" property="firstName" jdbcType="VARCHAR"/>
         <result column="last_name" property="lastName" jdbcType="VARCHAR"/>
         <result column="middle_name" property="middleName" jdbcType="VARCHAR"/>
@@ -40,7 +40,7 @@
         <result column="address" property="address" jdbcType="VARCHAR"/>
         <result column="contact_no" property="contactNo" jdbcType="VARCHAR"/>
         <result column="emergency_contact" property="emergencyContact" jdbcType="VARCHAR"/>
-        <result column="grade_level_id" property="gradeLevelId" jdbcType="INTEGER"/>
+        <result column="grade_level_id" property="gradeLvlId" jdbcType="INTEGER"/>
         <result column="school_year" property="schoolYear" jdbcType="INTEGER"/>
         <result column="section" property="section" jdbcType="VARCHAR"/>
         <result column="is_old_student" property="isOldStudent" jdbcType="BOOLEAN"/>
@@ -54,7 +54,7 @@
     </resultMap>
 
     <resultMap id="UserMap" type="com.capstone.jmt.entity.User">
-        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="id" property="id" jdbcType="VARCHAR"/>
         <result column="username" property="username" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR"/>
         <result column="user_type_id" property="userTypeId" jdbcType="INTEGER"/>
@@ -66,4 +66,14 @@
         <result column="created_by" property="createdBy" jdbcType="VARCHAR"/>
         <result column="updated_by" property="updatedBy" jdbcType="VARCHAR"/>
     </resultMap>
+
+    <select id="getUserByUsername" resultMap="UserMap" resultType="com.capstone.jmt.entity.User">
+        SELECT * FROM data_users
+        WHERE username = #{username}
+    </select>
+
+    <select id="getStudent" resultMap="StudentMap" resultType="com.capstone.jmt.entity.Student">
+        SELECT * FROM data_students
+        WHERE id = #{id}
+    </select>
 </mapper>

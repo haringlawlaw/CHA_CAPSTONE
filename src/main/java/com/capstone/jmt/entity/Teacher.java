@@ -2,30 +2,24 @@ package com.capstone.jmt.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.Entity;
 import java.io.Serializable;
 import java.util.Date;
 
 /**
- * Created by Jabito on 25/08/2017.
+ * Created by Jabito on 06/11/2017.
  */
-@Entity
-public class Parent implements Serializable{
+public class Teacher implements Serializable {
 
     @JsonProperty("id")
     private String id;
-    @JsonProperty("parentOf")
-    private String parentOf;
-    @JsonProperty("relationship")
-    private String relationship;
-    @JsonProperty("parentFName")
-    private String parentFName;
-    @JsonProperty("parentLName")
-    private String parentLName;
+    @JsonProperty("firstName")
+    private String firstName;
+    @JsonProperty("lastName")
+    private String lastName;
+    @JsonProperty("position")
+    private String position;
     @JsonProperty("contactNo")
     private String contactNo;
-    @JsonProperty("occupation")
-    private String occupation;
     @JsonProperty("createdOn")
     private Date createdOn;
     @JsonProperty("updatedOn")
@@ -35,14 +29,6 @@ public class Parent implements Serializable{
     @JsonProperty("updatedBy")
     private String updatedBy;
 
-    public String getOccupation() {
-        return occupation;
-    }
-
-    public void setOccupation(String occupation) {
-        this.occupation = occupation;
-    }
-
     public String getId() {
         return id;
     }
@@ -51,36 +37,28 @@ public class Parent implements Serializable{
         this.id = id;
     }
 
-    public String getParentOf() {
-        return parentOf;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setParentOf(String parentOf) {
-        this.parentOf = parentOf;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getRelationship() {
-        return relationship;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setRelationship(String relationship) {
-        this.relationship = relationship;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getParentFName() {
-        return parentFName;
+    public String getPosition() {
+        return position;
     }
 
-    public void setParentFName(String parentFName) {
-        this.parentFName = parentFName;
-    }
-
-    public String getParentLName() {
-        return parentLName;
-    }
-
-    public void setParentLName(String parentLName) {
-        this.parentLName = parentLName;
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public String getContactNo() {

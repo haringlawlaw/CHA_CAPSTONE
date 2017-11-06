@@ -1,7 +1,6 @@
 package com.capstone.jmt.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import net.sourceforge.jtds.jdbc.DateTime;
 
 import javax.persistence.Entity;
 import java.io.Serializable;
@@ -20,7 +19,7 @@ public class User implements Serializable {
     @JsonProperty("password")
     private String password;
     @JsonProperty("userTypeId")
-    private Integer usertypeId;
+    private Integer userTypeId;
     @JsonProperty("email")
     private String email;
     @JsonProperty("lastLogin")
@@ -28,13 +27,29 @@ public class User implements Serializable {
     @JsonProperty("isLocked")
     private Boolean isLocked;
     @JsonProperty("createdOn")
-    private DateTime createdOn;
+    private Date createdOn;
     @JsonProperty("updatedOn")
-    private DateTime updatedOn;
+    private Date updatedOn;
     @JsonProperty("createdBy")
     private String createdBy;
     @JsonProperty("updatedBy")
     private String updatedBy;
+
+    public Date getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(Date createdOn) {
+        this.createdOn = createdOn;
+    }
+
+    public Date getUpdatedOn() {
+        return updatedOn;
+    }
+
+    public void setUpdatedOn(Date updatedOn) {
+        this.updatedOn = updatedOn;
+    }
 
     public Integer getId() {
         return id;
@@ -60,12 +75,12 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public Integer getUsertypeId() {
-        return usertypeId;
+    public Integer getUserTypeId() {
+        return userTypeId;
     }
 
-    public void setUsertypeId(Integer usertypeId) {
-        this.usertypeId = usertypeId;
+    public void setUserTypeId(Integer userTypeId) {
+        this.userTypeId = userTypeId;
     }
 
     public String getEmail() {
@@ -90,22 +105,6 @@ public class User implements Serializable {
 
     public void setLocked(Boolean locked) {
         isLocked = locked;
-    }
-
-    public DateTime getCreatedOn() {
-        return createdOn;
-    }
-
-    public void setCreatedOn(DateTime createdOn) {
-        this.createdOn = createdOn;
-    }
-
-    public DateTime getUpdatedOn() {
-        return updatedOn;
-    }
-
-    public void setUpdatedOn(DateTime updatedOn) {
-        this.updatedOn = updatedOn;
     }
 
     public String getCreatedBy() {

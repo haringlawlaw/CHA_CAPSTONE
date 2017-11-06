@@ -13,7 +13,7 @@ import java.util.Date;
 public class Student implements Serializable{
 
     @JsonProperty("id")
-    private Integer id;
+    private String id;
     @JsonProperty("firstName")
     private String firstName;
     @JsonProperty("lastName")
@@ -57,11 +57,11 @@ public class Student implements Serializable{
     @JsonProperty("updatedOn")
     private Date updatedOn;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
