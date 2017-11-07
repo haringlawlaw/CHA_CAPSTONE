@@ -47,7 +47,7 @@ public class ShopController {
         return "login";
     }
 
-    @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
+    @RequestMapping(value = "/homepage", method = RequestMethod.GET)
     public String showDashboard(@ModelAttribute("shopUser") ShopLogin shopUser, Model model) {
 //        if (shopUser.getId() == null)
 //            return "redirect:/login";
@@ -86,7 +86,7 @@ public class ShopController {
         return "main";
     }
 
-    @RequestMapping(value = "/sales", method = RequestMethod.GET)
+    @RequestMapping(value = "/attendanceLogs", method = RequestMethod.GET)
     public String showSales(@ModelAttribute("shopUser") ShopLogin shopUser, Model model) {
 //        if (shopUser.getId() == null)
 //            return "redirect:/login";
@@ -113,7 +113,7 @@ public class ShopController {
         return "transactions";
     }
 
-    @RequestMapping(value = "/inventory", method = RequestMethod.GET)
+    @RequestMapping(value = "/messages", method = RequestMethod.GET)
     public String shopInventory(@ModelAttribute("shopUser") ShopLogin shopUser, Model model){
 //        if (shopUser.getId() == null)
 //            return "redirect:/login";
@@ -128,7 +128,7 @@ public class ShopController {
         return "inventory";
     }
 
-    @RequestMapping(value = "/bottlesales", method = RequestMethod.GET)
+    @RequestMapping(value = "/settings", method = RequestMethod.GET)
     public String showBottleSales(@ModelAttribute("shopUser") ShopLogin shopUser, Model model) {
 //        if (shopUser.getId() == null)
 //            return "redirect:/login";
@@ -160,7 +160,7 @@ public class ShopController {
 //        ShopLogin user = shopService.validateUser(shop);
 //        if (null != user) {
 //            model.addAttribute("shopUser", user);
-            return "redirect:/dashboard/";
+            return "redirect:/homepage/";
 //        } else {
 //            return "redirect:/login/?error=" + "1";
 //        }
