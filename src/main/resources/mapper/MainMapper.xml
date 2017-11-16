@@ -76,4 +76,59 @@
         SELECT * FROM data_students
         WHERE id = #{id}
     </select>
+
+    <delete id="deleteStudentById" flushCache="true">
+        DELETE FROM data_students
+        WHERE id = #{id}
+    </delete>
+
+    <insert id="addStudent" flushCache="true">
+        INSERT INTO data_students(
+        id, first_name, last_name, middle_name, birth_date, place, gender, citizenship,
+        address, contact_no, emergency_contact, grade_level_id, school_year, "section",
+        is_old_student, is_transferee, is_enrolled, created_by, rfid)
+        VALUES
+        (#{student.id, jdbcType=VARCHAR},
+        #{student.firstName, jdbcType=VARCHAR},
+        #{student.lastName, jdbcType=VARCHAR},
+        #{student.middleName, jdbcType=VARCHAR},
+        #{student.bday, jdbcType=DATE},
+        #{student.place, jdbcType=VARCHAR},
+        #{student.gender, jdbcType=INTEGER},
+        #{student.citizenship, jdbcType=VARCHAR},
+        #{student.address, jdbcType=VARCHAR},
+        #{student.contactNo},
+        #{student.emergencyContact, jdbcType=VARCHAR},
+        #{student.gradeLvlId, jdbcType=INTEGER},
+        #{student.schoolYear, jdbcType=INTEGER},
+        #{student.section, jdbcType=VARCHAR},
+        #{student.isOldStudent, jdbcType=TINYINT},
+        #{student.isTransferee, jdbcType=TINYINT},
+        #{student.isEnrolled, jdbcType=TINYINT},
+        #{student.rfid, jdbcType=VARCHAR}
+        )
+    </insert>
+
+    <update id="updateStudent" flushCache="true">
+        UPDATE data_students
+        SET first_name = #{student.firstName, jdbcType=VARCHAR},
+        last_name = #{student.lastName, jdbcType=VARCHAR},
+        middle_name = #{student.middleName, jdbcType=VARCHAR},
+        birth_date = #{student.bday, jdbcType=DATE},
+        place = #{student.place, jdbcType=VARCHAR},
+        gender = #{student.gender, jdbcType=INTEGER},
+        citizenship = #{student.citizenship, jdbcType=VARCHAR},
+        address = #{student.address, jdbcType=VARCHAR},
+        contact_no = #{student.contactNo},
+        emergency_contact = #{student.emergencyContact, jdbcType=VARCHAR},
+        grade_level_id = #{student.gradeLvlId, jdbcType=INTEGER},
+        school_year = #{student.schoolYear, jdbcType=INTEGER},
+        section = #{student.section, jdbcType=VARCHAR},
+        is_old_student = #{student.isOldStudent, jdbcType=TINYINT},
+        is_transferee = #{student.isTransferee, jdbcType=TINYINT},
+        is_enrolled = #{student.isEnrolled, jdbcType=TINYINT},
+        updated_by = #{student.updatedBy, jdbcType=VARCHAR},
+        rfid = #{student.rfid, jdbcType=VARCHAR}
+        WHERE id = #{student.id, jdbcType=VARCHAR}
+    </update>
 </mapper>

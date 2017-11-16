@@ -1,5 +1,8 @@
 package com.capstone.jmt.controller;
 
+import com.capstone.jmt.entity.Student;
+import com.capstone.jmt.entity.Teacher;
+import com.capstone.jmt.entity.User;
 import com.capstone.jmt.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,10 +38,41 @@ public class MainAppController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @RequestMapping(value="getLastTap", method = RequestMethod.GET)
-    public ResponseEntity<?> getLastTap(@RequestParam String studentId){
+    @RequestMapping(value="getTapLogOfStudent", method = RequestMethod.GET)
+    public ResponseEntity<?> getTapLogOfStudent(@RequestParam String studentId){
         HashMap<String, Object> response = new HashMap<>();
-        response.putAll(mainService.getLastTap(studentId));
+        response.putAll(mainService.getTapLogOfStudent(studentId));
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @RequestMapping(value="getLastTapEntry", method = RequestMethod.GET)
+    public ResponseEntity<?> getLastTapEntry(@RequestParam String studentId){
+        HashMap<String, Object> response = new HashMap<>();
+        response.putAll(mainService.getLastTapEntry(studentId));
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "editStudentInfo", method = RequestMethod.POST)
+    public ResponseEntity<?> editStudentInfo(@RequestParam Student student){
+        HashMap<String, Object> response = new HashMap<>();
+        response.putAll(mainService.updateStudentInfo(student));
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @RequestMapping(value="addOrDeleteStudent", method = RequestMethod.POST)
+    public ResponseEntity<?> addOrDeleteStudent(@RequestParam Student student, @RequestParam String username, @RequestParam String command){
+        HashMap<String, Object> response = new HashMap<>();
+        User teacher = mainService.getUser(username);
+        if(teacher.getUserTypeId() == 0){
+            if(command.equalsIgnoreCase("add"))
+                response.putAll(mainService.addStudent(student));
+            else if(command.equalsIgnoreCase("delete"))
+                response.putAll(mainService.deleteStudentById(student.getId()));
+        }else{
+            response.put("responseCode", 404);
+            response.put("respnoseDesc", "Unauthorized request. User does not have admin status.");
+        }
+
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

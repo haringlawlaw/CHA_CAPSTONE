@@ -11,4 +11,10 @@ public interface MainMapper {
     User getUserByUsername(@Param("username") String username);
 
     Student getStudent(@Param("id") String studentId);
+
+    void updateStudent(@Param("student") Student student);
+
+    void addStudent(@Param("student")Student student);
+
+    void deleteStudentById(@Param("id") String id);
 }

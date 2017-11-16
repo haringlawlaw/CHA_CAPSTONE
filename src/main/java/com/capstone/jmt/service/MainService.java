@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * Created by Jabito on 08/08/2017.
@@ -59,9 +60,46 @@ public class MainService {
         return response;
     }
 
-    public HashMap<String, Object> getLastTap(String studentId) {
+    public HashMap<String, Object> getLastTapEntry(String studentId) {
         HashMap<String, Object> response = new HashMap<>();
         //TODO Last Tap Log of Student
+        return response;
+    }
+
+    public HashMap<String, Object> getTapLogOfStudent(String studentId) {
+        HashMap<String, Object> response = new HashMap<>();
+        //TODO Get Tap Log of Student
+        return response;
+    }
+
+    public HashMap<String, Object> updateStudentInfo(Student student) {
+        HashMap<String, Object> response = new HashMap<>();
+        Student existingStudent = mainMapper.getStudent(student.getId());
+        if(null != existingStudent){
+            mainMapper.updateStudent(student);
+        }else{
+            response.put("responseCode", 404);
+            response.put("responseDesc", "Failed to update student.");
+        }
+        return response;
+    }
+
+    public HashMap<String, Object> addStudent(Student student) {
+        HashMap<String, Object> response = new HashMap<>();
+        student.setId(UUID.randomUUID().toString());
+        mainMapper.addStudent(student);
+        response.put("responseCode", 200);
+        response.put("responseDesc", "Successfully added student.");
+        return response;
+    }
+
+    public User getUser(String username) {
+        return mainMapper.getUserByUsername(username);
+    }
+
+    public HashMap<String, Object> deleteStudentById(String id) {
+        HashMap<String, Object> response = new HashMap<>();
+        mainMapper.deleteStudentById(id);
         return response;
     }
 }
