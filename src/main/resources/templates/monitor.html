@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>AquaJMT | Monitoring </title>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="">
+            <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid" ng-app="">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Monitoring</h1>
+            </div>
+            <div class="row">
+            <div class="col-md-6">
+
+                <p align="center">{{name}}</p>
+                <div ng-hide="{{name}} != null">
+                    <img src="../static/images/school_logo.png" height="100px" width="100px" style="padding: -10px" />
+                </div>
+
+
+
+                <input class="form-control"  ng-model="name" autofocus="autofocus" style="border: none; box-shadow: none; text-decoration:white ; cursor: none;"/>
+
+
+            </div>
+
+            <div class="col-md-6">
+
+
+                <p align="center">{{name}}</p>
+
+            </div>
+
+
+
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+    </div>
+</div>
+</body>
+</html>
