@@ -171,7 +171,7 @@
           #{user.userTypeId, jdbcType=INTEGER},
           #{user.email, jdbcType=VARCHAR},
           #{user.isLocked, jdbcType=BOOLEAN},
-          #{username}
+          #{user.createdBy, jdbcType=VARCHAR}
         )
     </insert>
 

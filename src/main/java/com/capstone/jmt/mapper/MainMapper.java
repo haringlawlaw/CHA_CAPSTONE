@@ -27,7 +27,7 @@ public interface MainMapper {
 
     TapLog getLastTapDetails(@Param("rfid") String rfid);
 
-    void addUser(@Param("user") User user, @Param("username") String username);
+    void addUser(@Param("user") User user);
 
     TapLog getLastTapDetailsByStudentId(@Param("studentId") String studentId);
 

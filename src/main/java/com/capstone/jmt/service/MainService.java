@@ -1,5 +1,6 @@
 package com.capstone.jmt.service;
 
+import com.capstone.jmt.data.AddUserJson;
 import com.capstone.jmt.data.MessageJson;
 import com.capstone.jmt.data.RefGradeLevel;
 import com.capstone.jmt.data.TapLog;
@@ -148,11 +149,12 @@ public class MainService {
         return response;
     }
 
-    public void addUser(User user, String username) {
+    public void addUser(AddUserJson userJson) {
         System.out.println(UUID.randomUUID().toString());
+        User user = new User(userJson);
         user.setId(UUID.randomUUID().toString().substring(0, 35));
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        mainMapper.addUser(user, username);
+        mainMapper.addUser(user);
     }
 
     public List<RefGradeLevel> getGradeLevelList(){

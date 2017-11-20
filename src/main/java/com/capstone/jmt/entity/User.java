@@ -1,5 +1,6 @@
 package com.capstone.jmt.entity;
 
+import com.capstone.jmt.data.AddUserJson;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.Entity;
@@ -34,6 +35,14 @@ public class User implements Serializable {
     private String createdBy;
     @JsonProperty("updatedBy")
     private String updatedBy;
+
+    public User(AddUserJson userJson) {
+        this.username = userJson.getUsername();
+        this.password = userJson.getPassword();
+        this.userTypeId = userJson.getUserTypeId();
+        this.email = userJson.getEmail();
+        this.createdBy = userJson.getAppUsername();
+    }
 
     public Date getCreatedOn() {
         return createdOn;

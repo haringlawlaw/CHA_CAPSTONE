@@ -1,8 +1,8 @@
 package com.capstone.jmt.controller;
 
+import com.capstone.jmt.data.AddUserJson;
 import com.capstone.jmt.data.MessageJson;
 import com.capstone.jmt.entity.Student;
-import com.capstone.jmt.entity.Teacher;
 import com.capstone.jmt.entity.User;
 import com.capstone.jmt.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,9 +69,9 @@ public class MainAppController {
     }
 
     @RequestMapping(value="addOrDeleteStudent", method = RequestMethod.POST)
-    public ResponseEntity<?> addOrDeleteStudent(@RequestParam Student student, @RequestParam String username, @RequestParam String command){
+    public ResponseEntity<?> addOrDeleteStudent(@RequestParam Student student, @RequestParam String appUsername, @RequestParam String command){
         HashMap<String, Object> response = new HashMap<>();
-        User teacher = mainService.getUser(username);
+        User teacher = mainService.getUser(appUsername);
         if(teacher.getUserTypeId() == 0){
             if(command.equalsIgnoreCase("add"))
                 response.putAll(mainService.addStudent(student));
@@ -85,9 +85,9 @@ public class MainAppController {
     }
 
     @RequestMapping(value="addUser", method = RequestMethod.POST)
-    public ResponseEntity<?> addUser(@RequestBody User user, @RequestParam String username){
+    public ResponseEntity<?> addUser(@RequestBody AddUserJson user){
         HashMap<String, Object> response = new HashMap<>();
-        User admin = mainService.getUser(username);
+        User admin = mainService.getUser(user.getAppUsername());
         if(null != admin) {
             User teacher = mainService.getUser(user.getUsername());
             if (null != teacher) {
@@ -96,7 +96,7 @@ public class MainAppController {
             } else {
                 response.put("responseCode", 200);
                 response.put("responseDesc", "Successfully created User.");
-                mainService.addUser(user, username);
+                mainService.addUser(user);
             }
         }else{
             response.put("responseCode", 404);
