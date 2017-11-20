@@ -23,4 +23,6 @@ public interface MainMapper {
     void postAnnouncement(@Param("mj") MessageJson mj);
 
     TapLog getLastTapDetails(@Param("rfid") String rfid);
+
+    void addUser(@Param("user") User user, @Param("username") String username);
 }
