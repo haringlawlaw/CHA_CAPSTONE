@@ -1,5 +1,6 @@
 package com.capstone.jmt.controller;
 
+import com.capstone.jmt.data.MessageJson;
 import com.capstone.jmt.entity.Student;
 import com.capstone.jmt.entity.Teacher;
 import com.capstone.jmt.entity.User;
@@ -23,6 +24,13 @@ public class MainAppController {
 
     @Autowired
     private MainService mainService;
+
+    @RequestMapping(value="processRfidTap", method = RequestMethod.POST)
+    public ResponseEntity<?> processRfidTap(@RequestParam("rfid") String rfid){
+        HashMap<String, Object> response = new HashMap<>();
+        response.putAll(mainService.processRfidTap(rfid));
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 
     @RequestMapping(value="loginUser", method = RequestMethod.POST)
     public ResponseEntity<?> loginUser(@RequestParam String username, @RequestParam String password){
@@ -72,7 +80,13 @@ public class MainAppController {
             response.put("responseCode", 404);
             response.put("respnoseDesc", "Unauthorized request. User does not have admin status.");
         }
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 
+    @RequestMapping(value="postAnnouncement", method = RequestMethod.POST)
+    public ResponseEntity<?> postAnnouncement(@RequestParam MessageJson mj){
+        HashMap<String, Object> response = new HashMap<>();
+        response.putAll(mainService.postAnnouncement(mj));
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

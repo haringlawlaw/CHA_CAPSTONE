@@ -1,5 +1,7 @@
 package com.capstone.jmt.service;
 
+import com.capstone.jmt.data.MessageJson;
+import com.capstone.jmt.data.TapLog;
 import com.capstone.jmt.entity.Student;
 import com.capstone.jmt.entity.User;
 import com.capstone.jmt.mapper.MainMapper;
@@ -30,14 +32,14 @@ public class MainService {
 
         User user = mainMapper.getUserByUsername(username);
         response.put("user", user);
-        if(null == user){
+        if (null == user) {
             response.put("responseCode", HttpStatus.NOT_FOUND);
             response.put("responseDesc", "Username does not exists.");
-        }else{
-            if(passwordEncoder.matches(password, user.getPassword())){
+        } else {
+            if (passwordEncoder.matches(password, user.getPassword())) {
                 response.put("responseCode", HttpStatus.OK);
                 response.put("responseDesc", "Login Successful.");
-            }else{
+            } else {
                 response.put("responseCode", HttpStatus.UNAUTHORIZED);
                 response.put("responseDesc", "Password incorrect.");
             }
@@ -49,10 +51,10 @@ public class MainService {
         HashMap<String, Object> response = new HashMap<>();
         Student student = mainMapper.getStudent(studentId);
         response.put("student", student);
-        if(null == student){
+        if (null == student) {
             response.put("responseCode", HttpStatus.NOT_FOUND);
             response.put("responseDesc", "Student does not exists.");
-        }else{
+        } else {
             response.put("responseCode", HttpStatus.OK);
             response.put("responseDesc", "Student Found.");
         }
@@ -75,9 +77,9 @@ public class MainService {
     public HashMap<String, Object> updateStudentInfo(Student student) {
         HashMap<String, Object> response = new HashMap<>();
         Student existingStudent = mainMapper.getStudent(student.getId());
-        if(null != existingStudent){
+        if (null != existingStudent) {
             mainMapper.updateStudent(student);
-        }else{
+        } else {
             response.put("responseCode", 404);
             response.put("responseDesc", "Failed to update student.");
         }
@@ -100,6 +102,30 @@ public class MainService {
     public HashMap<String, Object> deleteStudentById(String id) {
         HashMap<String, Object> response = new HashMap<>();
         mainMapper.deleteStudentById(id);
+        return response;
+    }
+
+    public HashMap<String, Object> postAnnouncement(MessageJson mj) {
+        HashMap<String, Object> response = new HashMap<>();
+        //TODO Check function.
+        mainMapper.postAnnouncement(mj);
+        response.put("responseCode", 200);
+        response.put("responseDesc", "Announcement Posted.");
+
+        return response;
+    }
+
+    public HashMap<String, Object> processRfidTap(String rfid) {
+        HashMap<String, Object> response = new HashMap<>();
+        TapLog tap = mainMapper.getLastTapDetails(rfid);
+        if(null != tap) {
+            response.put("tapObject", tap);
+            response.put("responseCode", 200);
+            response.put("responseDesc", "Success.");
+        }else{
+            response.put("responseCode", 404);
+            response.put("responseDesc", "No tap yet or failed to retrieve.");
+        }
         return response;
     }
 }

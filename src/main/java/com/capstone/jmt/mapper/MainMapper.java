@@ -1,5 +1,7 @@
 package com.capstone.jmt.mapper;
 
+import com.capstone.jmt.data.MessageJson;
+import com.capstone.jmt.data.TapLog;
 import com.capstone.jmt.entity.Student;
 import com.capstone.jmt.entity.User;
 import org.apache.ibatis.annotations.Param;
@@ -17,4 +19,8 @@ public interface MainMapper {
     void addStudent(@Param("student")Student student);
 
     void deleteStudentById(@Param("id") String id);
+
+    void postAnnouncement(@Param("mj") MessageJson mj);
+
+    TapLog getLastTapDetails(@Param("rfid") String rfid);
 }

@@ -131,4 +131,30 @@
         rfid = #{student.rfid, jdbcType=VARCHAR}
         WHERE id = #{student.id, jdbcType=VARCHAR}
     </update>
+
+    <insert id="postAnnouncement" flushCache="true">
+        INSERT INTO log_messages(
+        posted_by,
+        message_type,
+        message_target,
+        message_content)
+        VALUES (
+        #{mj.postedBy, jdbcType=VARCHAR},
+        #{mj.messageType, jdbcType=INTEGER},
+        #{mj.messageTarget, jdbcType=VARCHAR},
+        #{mj.messageContent, jdbcType=VARCHAR}
+        )
+    </insert>
+
+    <resultMap id="TapLogMap" type="com.capstone.jmt.data.TapLog">
+        <result column="rfid" property="rfid" jdbcType="VARCHAR" />
+        <result column="log_type" property="logType" jdbcType="VARCHAR" />
+        <result column="log_datetime" property="logDateTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+    <select id="getLastTapDetails" resultMap="TapLogMap" resultType="com.capstone.jmt.data.TapLog">
+        SELECT TOP 1 * FROM log_taps
+        WHERE rfid = #{rfid}
+        ORDER BY log_datetime DESC
+    </select>
 </mapper>
