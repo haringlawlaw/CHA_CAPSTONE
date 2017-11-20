@@ -2,6 +2,7 @@ package com.capstone.jmt.controller;
 
 import com.capstone.jmt.data.AddUserJson;
 import com.capstone.jmt.data.MessageJson;
+import com.capstone.jmt.data.ShopLogin;
 import com.capstone.jmt.entity.Student;
 import com.capstone.jmt.entity.User;
 import com.capstone.jmt.service.MainService;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,10 +23,13 @@ import java.util.HashMap;
  */
 @Controller
 @RequestMapping(value="/app/")
+@SessionAttributes("appUSer")
 public class MainAppController {
 
     @Autowired
     private MainService mainService;
+
+
 
     @RequestMapping(value="processRfidTap", method = RequestMethod.POST)
     public ResponseEntity<?> processRfidTap(@RequestParam("rfid") String rfid){

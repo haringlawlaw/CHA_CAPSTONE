@@ -97,7 +97,7 @@
         #{student.gender, jdbcType=INTEGER},
         #{student.citizenship, jdbcType=VARCHAR},
         #{student.address, jdbcType=VARCHAR},
-        #{student.contactNo},
+        #{student.contactNo, jdbcType=VARCHAR},
         #{student.emergencyContact, jdbcType=VARCHAR},
         #{student.gradeLvlId, jdbcType=INTEGER},
         #{student.schoolYear, jdbcType=INTEGER},

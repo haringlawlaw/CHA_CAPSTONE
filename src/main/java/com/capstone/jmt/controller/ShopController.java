@@ -1,6 +1,7 @@
 package com.capstone.jmt.controller;
 
 import com.capstone.jmt.data.*;
+import com.capstone.jmt.entity.User;
 import com.capstone.jmt.service.ShopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +17,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping(value = "/")
-@SessionAttributes("shopUser")
+
 public class ShopController {
 
     @Autowired
@@ -28,24 +29,13 @@ public class ShopController {
     /*
     List of all GET Requests
      */
-    @ModelAttribute("shopUser")
-    public ShopLogin getShopUser() {
-        return new ShopLogin();
+    @ModelAttribute("appUSer")
+    public User getShopUser() {
+        return new User();
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginShopUser(@RequestParam(value = "error", required = false) String error, HttpServletRequest request,
-                                Model model) {
-        if (null != error) {
-            if (error.equals("1"))
-                model.addAttribute("param.error", true);
-            else if (error.equals("2"))
-                model.addAttribute("param.logout", true);
-        }
-        model.addAttribute("user", new ShopLogin());
 
-        return "login";
-    }
+
 
     @RequestMapping(value = "/homepage", method = RequestMethod.GET)
     public String showDashboard(@ModelAttribute("shopUser") ShopLogin shopUser, Model model) {
@@ -167,19 +157,32 @@ public class ShopController {
         return "profile";
     }
 
+//    @RequestMapping(value = "/addStudent", method = RequestMethod.GET)
+//    public String shopAddStudent(@ModelAttribute("shopUser") ShopLogin shopUser, Model model) {
+////        if (shopUser.getId() == null)
+////            return "redirect:/login";
+////
+////        model.addAttribute("prices", new ShopSalesInformation());
+////        model.addAttribute("shop", shopService.getShopInfoById(shopUser.getStaffOf()));
+////        model.addAttribute("water", shopService.getShopSalesInformationById(shopUser.getStaffOf()));
+////        model.addAttribute("username", shopUser.getUsername());
+//
+//        return "addStudent";
+//    }
+
     /*
     List of all POST Requests
      */
-    @RequestMapping(value = "/loginUser", method = RequestMethod.POST)
-    public String loginUser(ShopLogin shop, Model model) {
-//        ShopLogin user = shopService.validateUser(shop);
-//        if (null != user) {
-//            model.addAttribute("shopUser", user);
-            return "redirect:/homepage/";
-//        } else {
-//            return "redirect:/login/?error=" + "1";
-//        }
-    }
+//    @RequestMapping(value = "/loginUser", method = RequestMethod.POST)
+//    public String loginUser(ShopLogin shop, Model model) {
+////        ShopLogin user = shopService.validateUser(shop);
+////        if (null != user) {
+////            model.addAttribute("shopUser", user);
+//            return "redirect:/homepage/";
+////        } else {
+////            return "redirect:/login/?error=" + "1";
+////        }
+//    }
 
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public String logOutUser(@ModelAttribute("shopUser") ShopLogin shopUser, HttpServletRequest request, SessionStatus session) {
