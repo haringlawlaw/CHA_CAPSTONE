@@ -17,7 +17,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping(value = "/")
-@SessionAttributes("appUSer")
+
 public class ShopController {
 
     @Autowired
@@ -35,19 +35,7 @@ public class ShopController {
     }
 
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginShopUser(@RequestParam(value = "error", required = false) String error, HttpServletRequest request,
-                                Model model) {
-        if (null != error) {
-            if (error.equals("1"))
-                model.addAttribute("param.error", true);
-            else if (error.equals("2"))
-                model.addAttribute("param.logout", true);
-        }
-        model.addAttribute("appUser", new User());
 
-        return "login";
-    }
 
     @RequestMapping(value = "/homepage", method = RequestMethod.GET)
     public String showDashboard(@ModelAttribute("shopUser") ShopLogin shopUser, Model model) {
@@ -168,6 +156,19 @@ public class ShopController {
 
         return "profile";
     }
+
+//    @RequestMapping(value = "/addStudent", method = RequestMethod.GET)
+//    public String shopAddStudent(@ModelAttribute("shopUser") ShopLogin shopUser, Model model) {
+////        if (shopUser.getId() == null)
+////            return "redirect:/login";
+////
+////        model.addAttribute("prices", new ShopSalesInformation());
+////        model.addAttribute("shop", shopService.getShopInfoById(shopUser.getStaffOf()));
+////        model.addAttribute("water", shopService.getShopSalesInformationById(shopUser.getStaffOf()));
+////        model.addAttribute("username", shopUser.getUsername());
+//
+//        return "addStudent";
+//    }
 
     /*
     List of all POST Requests

@@ -130,6 +130,8 @@ public class MainService {
     }
 
     public void addUser(User user, String username) {
+        System.out.println(UUID.randomUUID().toString());
+        user.setId(UUID.randomUUID().toString().substring(0,35));
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         mainMapper.addUser(user, username);
     }

@@ -11,6 +11,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.HashMap;
 
@@ -86,7 +90,7 @@ public class MainAppController {
     }
 
     @RequestMapping(value="addUser", method = RequestMethod.POST)
-    public ResponseEntity<?> addUser(@RequestParam User user, @RequestParam String username){
+    public ResponseEntity<?> addUser(@RequestBody User user, @RequestParam String username){
         HashMap<String, Object> response = new HashMap<>();
         User admin = mainService.getUser(username);
         if(null != admin) {
