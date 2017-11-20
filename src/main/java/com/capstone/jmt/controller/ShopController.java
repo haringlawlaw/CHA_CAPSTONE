@@ -1,6 +1,7 @@
 package com.capstone.jmt.controller;
 
 import com.capstone.jmt.data.*;
+import com.capstone.jmt.entity.User;
 import com.capstone.jmt.service.ShopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,7 +43,7 @@ public class ShopController {
             else if (error.equals("2"))
                 model.addAttribute("param.logout", true);
         }
-        model.addAttribute("user", new ShopLogin());
+        model.addAttribute("appUser", new User());
 
         return "login";
     }
