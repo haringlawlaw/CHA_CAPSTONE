@@ -2,152 +2,159 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.capstone.jmt.mapper.MainMapper">
 
-    <resultMap id="orderInfoMap" type="com.capstone.jmt.data.OrderInfo">
-        <result column="id" property="id" jdbcType="VARCHAR" />
-        <result column="ordered_by" property="orderedBy" jdbcType="VARCHAR" />
-        <result column="ordered_from" property="orderedFrom" jdbcType="VARCHAR" />
-        <result column="customer_address" property="customerAddress" jdbcType="VARCHAR" />
-        <result column="water_type" property="waterType" jdbcType="VARCHAR" />
-        <result column="round_ordered" property="roundOrdered" jdbcType="INTEGER" />
-        <result column="slim_ordered" property="slimOrdered" jdbcType="INTEGER" />
-        <result column="cost_per_item" property="costPerItem" jdbcType="DOUBLE" />
-        <result column="total_cost" property="totalCost" jdbcType="DOUBLE" />
-        <result column="more_details" property="moreDetails" jdbcType="VARCHAR" />
-        <result column="created_on" property="createdOn" jdbcType="VARCHAR" />
-        <result column="updated_on" property="updatedOn" jdbcType="VARCHAR" />
-        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
-        <result column="rating_given" property="ratingGiven" jdbcType="INTEGER" />
-        <result column="comments" property="comments" jdbcType="VARCHAR" />
-        <result column="status" property="status" jdbcType="VARCHAR" />
-        <result column="Name" property="name" jdbcType="VARCHAR" />
+    <resultMap id="EmergencyContactMap" type="com.capstone.jmt.entity.EmergencyContact">
+        <result column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="contact_name" property="contactName" jdbcType="VARCHAR"/>
+        <result column="relationship" property="relationship" jdbcType="VARCHAR"/>
+        <result column="contact_no" property="contactNo" jdbcType="VARCHAR"/>
+        <result column="address" property="address" jdbcType="VARCHAR"/>
+        <result column="created_on" property="createdOn" jdbcType="TIMESTAMP"/>
+        <result column="updated_on" property="updatedOn" jdbcType="TIMESTAMP"/>
+        <result column="created_by" property="createdBy" jdbcType="VARCHAR"/>
+        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <resultMap id="orderContainersMap" type="com.capstone.jmt.data.OrderContainers">
-        <result column="id" property="id" jdbcType="VARCHAR" />
-        <result column="round_qty" property="roundQty" jdbcType="INTEGER" />
-        <result column="round_cost" property="roundCost" jdbcType="DOUBLE" />
-        <result column="slim_qty" property="slimQty" jdbcType="INTEGER" />
-        <result column="slim_cost" property="slimCost" jdbcType="DOUBLE" />
-        <result column="total_cost" property="totalCost" jdbcType="DOUBLE" />
-        <result column="created_on" property="createdOn" jdbcType="VARCHAR" />
-        <result column="updated_on" property="updatedOn" jdbcType="VARCHAR" />
-        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
+    <resultMap id="ParentMap" type="com.capstone.jmt.entity.Parent">
+        <result column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="parent_of" property="parentOf" jdbcType="VARCHAR"/>
+        <result column="relationship" property="relationship" jdbcType="VARCHAR"/>
+        <result column="occupation" property="occupation" jdbcType="VARCHAR"/>
+        <result column="contact_no" property="contactNo" jdbcType="VARCHAR"/>
+        <result column="created_on" property="createdOn" jdbcType="TIMESTAMP"/>
+        <result column="updated_on" property="updatedOn" jdbcType="TIMESTAMP"/>
+        <result column="created_by" property="createdBy" jdbcType="VARCHAR"/>
+        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR"/>
+        <result column="parent_fname" property="parentFName" jdbcType="VARCHAR"/>
+        <result column="parent_lname" property="parentLName" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <select id="getOrdersForToday" resultType="java.util.List">
-        select * from customer_login
-        WHERE ordered_from = #{shopId}
-        AND created_on::date = CURRENT_DATE::date
+    <resultMap id="StudentMap" type="com.capstone.jmt.entity.Student">
+        <result column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="first_name" property="firstName" jdbcType="VARCHAR"/>
+        <result column="last_name" property="lastName" jdbcType="VARCHAR"/>
+        <result column="middle_name" property="middleName" jdbcType="VARCHAR"/>
+        <result column="birth_date" property="bday" jdbcType="DATE"/>
+        <result column="place" property="place" jdbcType="VARCHAR"/>
+        <result column="gender" property="gender" jdbcType="INTEGER"/>
+        <result column="citizenship" property="citizenship" jdbcType="VARCHAR"/>
+        <result column="address" property="address" jdbcType="VARCHAR"/>
+        <result column="contact_no" property="contactNo" jdbcType="VARCHAR"/>
+        <result column="emergency_contact" property="emergencyContact" jdbcType="VARCHAR"/>
+        <result column="grade_level_id" property="gradeLvlId" jdbcType="INTEGER"/>
+        <result column="school_year" property="schoolYear" jdbcType="INTEGER"/>
+        <result column="section" property="section" jdbcType="VARCHAR"/>
+        <result column="is_old_student" property="isOldStudent" jdbcType="BOOLEAN"/>
+        <result column="is_transferee" property="isTransferee" jdbcType="BOOLEAN"/>
+        <result column="rfid" property="rfid" jdbcType="VARCHAR"/>
+        <result column="is_enrolled" property="isEnrolled" jdbcType="BOOLEAN"/>
+        <result column="created_by" property="createdBy" jdbcType="VARCHAR"/>
+        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR"/>
+        <result column="created_on" property="createdOn" jdbcType="TIMESTAMP"/>
+        <result column="updated_on" property="updatedOn" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <resultMap id="UserMap" type="com.capstone.jmt.entity.User">
+        <result column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="user_type_id" property="userTypeId" jdbcType="INTEGER"/>
+        <result column="email" property="email" jdbcType="VARCHAR"/>
+        <result column="last_login" property="lastLogin" jdbcType="TIMESTAMP"/>
+        <result column="is_locked" property="isLocked" jdbcType="BOOLEAN"/>
+        <result column="created_on" property="createdOn" jdbcType="TIMESTAMP"/>
+        <result column="updated_on" property="updatedOn" jdbcType="TIMESTAMP"/>
+        <result column="created_by" property="createdBy" jdbcType="VARCHAR"/>
+        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="getUserByUsername" resultMap="UserMap" resultType="com.capstone.jmt.entity.User">
+        SELECT * FROM data_users
+        WHERE username = #{username}
     </select>
 
-    <select id="getOrderInfoById" resultMap="orderInfoMap" resultType="com.capstone.jmt.data.OrderInfo">
-        SELECT * FROM order_info WHERE id = #{id}
+    <select id="getStudent" resultMap="StudentMap" resultType="com.capstone.jmt.entity.Student">
+        SELECT * FROM data_students
+        WHERE id = #{id}
     </select>
 
-    <select id="getOrderContainersById" resultMap="orderContainersMap" resultType="com.capstone.jmt.data.OrderContainers">
-        SELECT * FROM order_containers WHERE id = #{id}
-    </select>
+    <delete id="deleteStudentById" flushCache="true">
+        DELETE FROM data_students
+        WHERE id = #{id}
+    </delete>
 
-    <insert id="addOrderInfo" parameterType="com.capstone.jmt.data.OrderInfo">
-        INSERT INTO order_info
-        (id,
-        ordered_by,
-        ordered_from,
-        customer_address,
-        water_type,
-        round_ordered,
-        slim_ordered,
-        cost_per_item,
-        total_cost,
-        more_details,
-        rating_given,
-        comments,
-        status,
-        complaint)
+    <insert id="addStudent" flushCache="true">
+        INSERT INTO data_students(
+        id, first_name, last_name, middle_name, birth_date, place, gender, citizenship,
+        address, contact_no, emergency_contact, grade_level_id, school_year, "section",
+        is_old_student, is_transferee, is_enrolled, created_by, rfid)
         VALUES
-        (#{order.id, jdbcType=VARCHAR},
-        #{order.orderedBy, jdbcType=VARCHAR},
-        #{order.orderedFrom, jdbcType=VARCHAR},
-        #{order.customerAddress, jdbcType=VARCHAR},
-        #{order.waterType, jdbcType=VARCHAR},
-        #{order.roundOrdered , jdbcType=INTEGER},
-        #{order.slimOrdered, jdbcType=INTEGER},
-        #{order.costPerItem, jdbcType=DOUBLE},
-        #{order.totalCost, jdbcType=DOUBLE},
-        #{order.moreDetails, jdbcType=VARCHAR},
-        #{order.ratingGiven, jdbcType=INTEGER},
-        #{order.comments, jdbcType=VARCHAR},
-        #{order.status, jdbcType=VARCHAR},
-        #{order.complaint, jdbcType=VARCHAR})
+        (#{student.id, jdbcType=VARCHAR},
+        #{student.firstName, jdbcType=VARCHAR},
+        #{student.lastName, jdbcType=VARCHAR},
+        #{student.middleName, jdbcType=VARCHAR},
+        #{student.bday, jdbcType=DATE},
+        #{student.place, jdbcType=VARCHAR},
+        #{student.gender, jdbcType=INTEGER},
+        #{student.citizenship, jdbcType=VARCHAR},
+        #{student.address, jdbcType=VARCHAR},
+        #{student.contactNo},
+        #{student.emergencyContact, jdbcType=VARCHAR},
+        #{student.gradeLvlId, jdbcType=INTEGER},
+        #{student.schoolYear, jdbcType=INTEGER},
+        #{student.section, jdbcType=VARCHAR},
+        #{student.isOldStudent, jdbcType=TINYINT},
+        #{student.isTransferee, jdbcType=TINYINT},
+        #{student.isEnrolled, jdbcType=TINYINT},
+        #{student.rfid, jdbcType=VARCHAR}
+        )
     </insert>
 
-    <select id="getLastSevenDays" resultMap="orderInfoMap" resultType="java.util.List">
-        SELECT DISTINCT created_on::TIMESTAMP::DATE,
-        SUM(round_ordered + slim_ordered) as round_ordered,
-        SUM(total_cost) as total_cost
-        FROM order_info
-        WHERE created_on &lt; now()::TIMESTAMP::DATE
-        AND created_on &gt; now()::TIMESTAMP::DATE - INTERVAL '7 DAYS'
-        AND ordered_from = #{shopId}
-        GROUP BY created_on
-        ORDER BY created_on DESC
-    </select>
-
-    <update id="updateOrderInfo" flushCache="true" parameterType="com.capstone.jmt.data.OrderInfo">
-        UPDATE order_info
-        SET
-        ordered_by = #{order.orderedBy, jdbcType=VARCHAR},
-        ordered_from = #{order.orderedFrom, jdbcType=VARCHAR},
-        customer_address = #{orde  r.customerAddress, jdbcType=VARCHAR},
-        water_type = #{order.waterType, jdbcType=VARCHAR},
-        round_ordered = #{order.roundOrdered, jdbcType=INTEGER},
-        slim_ordered = #{order.slimOrdered, jdbcType=INTEGER},
-        cost_per_item = #{order.costPerItem, jdbcType=DOUBLE},
-        total_cost = #{order.totalCost, jdbcType=DOUBLE},
-        more_details = #{order.moreDetails, jdbcType=VARCHAR},
-        comments = #{order.comments, jdbcType=VARCHAR},
-        status = #{order.status, jdbcType=VARCHAR},
-        complaint = #{order.complaint}
-        WHERE
-        id = #{order.id, jdbcType=VARCHAR}
+    <update id="updateStudent" flushCache="true">
+        UPDATE data_students
+        SET first_name = #{student.firstName, jdbcType=VARCHAR},
+        last_name = #{student.lastName, jdbcType=VARCHAR},
+        middle_name = #{student.middleName, jdbcType=VARCHAR},
+        birth_date = #{student.bday, jdbcType=DATE},
+        place = #{student.place, jdbcType=VARCHAR},
+        gender = #{student.gender, jdbcType=INTEGER},
+        citizenship = #{student.citizenship, jdbcType=VARCHAR},
+        address = #{student.address, jdbcType=VARCHAR},
+        contact_no = #{student.contactNo},
+        emergency_contact = #{student.emergencyContact, jdbcType=VARCHAR},
+        grade_level_id = #{student.gradeLvlId, jdbcType=INTEGER},
+        school_year = #{student.schoolYear, jdbcType=INTEGER},
+        section = #{student.section, jdbcType=VARCHAR},
+        is_old_student = #{student.isOldStudent, jdbcType=TINYINT},
+        is_transferee = #{student.isTransferee, jdbcType=TINYINT},
+        is_enrolled = #{student.isEnrolled, jdbcType=TINYINT},
+        updated_by = #{student.updatedBy, jdbcType=VARCHAR},
+        rfid = #{student.rfid, jdbcType=VARCHAR}
+        WHERE id = #{student.id, jdbcType=VARCHAR}
     </update>
 
-    <insert id="addOrderContainers" parameterType="com.capstone.jmt.data.OrderContainers">
-        INSERT INTO order_containers
-        (id,
-        round_qty,
-        round_cost,
-        slim_qty,
-        slim_cost,
-        total_cost)
-        VALUES
-        #{order.id, jdbcType=VARCHAR},
-        #{order.roundQty, jdbcType=INTEGER},
-        #{order.roundCost, jdbcType=DOUBLE},
-        #{order.slimQty, jdbcType=INTEGER},
-        #{order.slimCost, jdbcType=DOUBLE},
-        #{order.totalCost, jdbcType=DOUBLE}
+    <insert id="postAnnouncement" flushCache="true">
+        INSERT INTO log_messages(
+        posted_by,
+        message_type,
+        message_target,
+        message_content)
+        VALUES (
+        #{mj.postedBy, jdbcType=VARCHAR},
+        #{mj.messageType, jdbcType=INTEGER},
+        #{mj.messageTarget, jdbcType=VARCHAR},
+        #{mj.messageContent, jdbcType=VARCHAR}
+        )
     </insert>
 
-    <update id="updateOrderContainers" flushCache="true" parameterType="com.capstone.jmt.data.OrderContainers">
-        UPDATE order_containers
-        SET
-        round_qty = #{order.roundQty, jdbcType=INTEGER},
-        round_cost = #{order.roundCost, jdbcType=DOUBLE},
-        slim_qty = #{order.slimQty, jdbcType=INTEGER},
-        slim_cost = #{order.slimCost, jdbcType=DOUBLE},
-        total_cost = #{order.totalCost, jdbcType=DOUBLE}
-        WHERE
-        id = #{order.id, jdbcType=VARCHAR}
-    </update>
+    <resultMap id="TapLogMap" type="com.capstone.jmt.data.TapLog">
+        <result column="rfid" property="rfid" jdbcType="VARCHAR" />
+        <result column="log_type" property="logType" jdbcType="VARCHAR" />
+        <result column="log_datetime" property="logDateTime" jdbcType="TIMESTAMP" />
+    </resultMap>
 
-    <select id="getOrdersByShopId" resultMap="orderInfoMap" resultType="java.util.List">
-        SELECT * FROM order_info
-        WHERE ordered_from = #{shopId}
-    </select>
-
-    <select id="getBottleSales" resultMap="orderInfoMap" resultType="java.util.List">
-        SELECT a.*,b.last_name || ', ' || b.first_name || ' ' || coalesce(b.middle_name) as Name from order_info a
-        Join customer_login  b on a.ordered_by = b.id
+    <select id="getLastTapDetails" resultMap="TapLogMap" resultType="com.capstone.jmt.data.TapLog">
+        SELECT TOP 1 * FROM log_taps
+        WHERE rfid = #{rfid}
+        ORDER BY log_datetime DESC
     </select>
 </mapper>

@@ -12,6 +12,10 @@ import java.util.Date;
 @Entity
 public class EmergencyContact implements Serializable {
 
+    @JsonProperty("id")
+    private String id;
+    @JsonProperty("contactOf")
+    private String contactOf;
     @JsonProperty("contactName")
     private String contactName;
     @JsonProperty("relationship")
@@ -24,6 +28,42 @@ public class EmergencyContact implements Serializable {
     private Date createdOn;
     @JsonProperty("updatedOn")
     private Date updatedOn;
+    @JsonProperty("createdBy")
+    private String createdBy;
+    @JsonProperty("updatedBy")
+    private String updatedBy;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getContactOf() {
+        return contactOf;
+    }
+
+    public void setContactOf(String contactOf) {
+        this.contactOf = contactOf;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
+    }
 
     public String getContactName() {
         return contactName;
