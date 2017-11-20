@@ -6,12 +6,14 @@ import io.swagger.models.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 
 /**
@@ -27,16 +29,22 @@ public class MainWebController {
     MainService mainService;
 
 
-    @ModelAttribute("appUSer")
-    public User getShopUser() {
-        return new User();
-    }
 
-    @RequestMapping(value="loginUser", method = RequestMethod.POST)
-    public String loginUser(User user, Model model){
+    @RequestMapping(value="loginWebUser", method = RequestMethod.POST)
+    public String loginWebUser(User user, org.springframework.ui.Model model){
+
+
+        System.out.println("USERNAME: " + user.getUsername());
+        System.out.println("PASSWORD: " + user.getPassword());
 
         HashMap<String, Object> returnJson = mainService.loginUser(user.getUsername(),user.getPassword());
         User returnedUser = (User) returnJson.get("User");
+        if(null == returnedUser){
+            System.out.println("Null");
+        }
+
+        System.out.println("RETURNED USER: " + returnedUser.getUsername());
+        model.addAttribute("user", returnedUser);
 
         return "redirect:/homepage/";
     }

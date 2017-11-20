@@ -17,7 +17,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping(value = "/")
-@SessionAttributes("shopUser")
+@SessionAttributes("appUSer")
 public class ShopController {
 
     @Autowired
@@ -29,10 +29,11 @@ public class ShopController {
     /*
     List of all GET Requests
      */
-    @ModelAttribute("shopUser")
-    public ShopLogin getShopUser() {
-        return new ShopLogin();
+    @ModelAttribute("appUSer")
+    public User getShopUser() {
+        return new User();
     }
+
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginShopUser(@RequestParam(value = "error", required = false) String error, HttpServletRequest request,
@@ -171,16 +172,16 @@ public class ShopController {
     /*
     List of all POST Requests
      */
-    @RequestMapping(value = "/loginUser", method = RequestMethod.POST)
-    public String loginUser(ShopLogin shop, Model model) {
-//        ShopLogin user = shopService.validateUser(shop);
-//        if (null != user) {
-//            model.addAttribute("shopUser", user);
-            return "redirect:/homepage/";
-//        } else {
-//            return "redirect:/login/?error=" + "1";
-//        }
-    }
+//    @RequestMapping(value = "/loginUser", method = RequestMethod.POST)
+//    public String loginUser(ShopLogin shop, Model model) {
+////        ShopLogin user = shopService.validateUser(shop);
+////        if (null != user) {
+////            model.addAttribute("shopUser", user);
+//            return "redirect:/homepage/";
+////        } else {
+////            return "redirect:/login/?error=" + "1";
+////        }
+//    }
 
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public String logOutUser(@ModelAttribute("shopUser") ShopLogin shopUser, HttpServletRequest request, SessionStatus session) {
