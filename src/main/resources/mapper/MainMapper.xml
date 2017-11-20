@@ -160,17 +160,18 @@
 
     <insert id="addUser" flushCache="true">
         INSERT INTO data_users(
-        id, username, password, user_type_id,  email, is_locked, created_by
+        id, username, password, reference_id, user_type_id,  email, is_locked, created_by
         )
         VALUES
         (
           #{user.id, jdbcType=VARCHAR},
           #{user.username, jdbcType=VARCHAR},
           #{user.password, jdbcType=VARCHAR},
-          #{user.user_type_id, jdbcType=INTEGER},
+          'DEFAULT',
+          #{user.userTypeId, jdbcType=INTEGER},
           #{user.email, jdbcType=VARCHAR},
-          #{user.isLocked, jdbcType=TINYINT},
-          #{user.createdBy, jdbcType=VARCHAR}
+          #{user.isLocked, jdbcType=BOOLEAN},
+          #{username}
         )
     </insert>
 </mapper>
