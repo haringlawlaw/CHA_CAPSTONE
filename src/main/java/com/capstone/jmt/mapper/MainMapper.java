@@ -1,10 +1,13 @@
 package com.capstone.jmt.mapper;
 
 import com.capstone.jmt.data.MessageJson;
+import com.capstone.jmt.data.RefGradeLevel;
 import com.capstone.jmt.data.TapLog;
 import com.capstone.jmt.entity.Student;
 import com.capstone.jmt.entity.User;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * Created by Jabito on 08/08/2017.
@@ -25,4 +28,10 @@ public interface MainMapper {
     TapLog getLastTapDetails(@Param("rfid") String rfid);
 
     void addUser(@Param("user") User user, @Param("username") String username);
+
+    TapLog getLastTapDetailsByStudentId(@Param("studentId") String studentId);
+
+    List<TapLog> getTapListDetailsByStudentId(@Param("studentId") String studentId);
+
+    List<RefGradeLevel> getGradeLevelList();
 }

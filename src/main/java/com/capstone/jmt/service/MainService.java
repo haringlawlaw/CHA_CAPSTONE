@@ -1,6 +1,7 @@
 package com.capstone.jmt.service;
 
 import com.capstone.jmt.data.MessageJson;
+import com.capstone.jmt.data.RefGradeLevel;
 import com.capstone.jmt.data.TapLog;
 import com.capstone.jmt.entity.Student;
 import com.capstone.jmt.entity.User;
@@ -11,6 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -64,13 +66,29 @@ public class MainService {
 
     public HashMap<String, Object> getLastTapEntry(String studentId) {
         HashMap<String, Object> response = new HashMap<>();
-        //TODO Last Tap Log of Student
+        TapLog tapLog = mainMapper.getLastTapDetailsByStudentId(studentId);
+        if(null != tapLog) {
+            response.put("tapDetails", tapLog);
+            response.put("responseCode", 200);
+            response.put("responseDesc", "Last tap entry retrieved.");
+        }else{
+            response.put("responseCode", 404);
+            response.put("responseDesc", "No logs yet.");
+        }
         return response;
     }
 
     public HashMap<String, Object> getTapLogOfStudent(String studentId) {
         HashMap<String, Object> response = new HashMap<>();
-        //TODO Get Tap Log of Student
+        List<TapLog> tapLog = mainMapper.getTapListDetailsByStudentId(studentId);
+        if(null != tapLog) {
+            response.put("tapListDetails", tapLog);
+            response.put("responseCode", 200);
+            response.put("responseDesc", "Last tap entry retrieved.");
+        }else{
+            response.put("responseCode", 404);
+            response.put("responseDesc", "No logs yet.");
+        }
         return response;
     }
 
@@ -118,11 +136,11 @@ public class MainService {
     public HashMap<String, Object> processRfidTap(String rfid) {
         HashMap<String, Object> response = new HashMap<>();
         TapLog tap = mainMapper.getLastTapDetails(rfid);
-        if(null != tap) {
+        if (null != tap) {
             response.put("tapObject", tap);
             response.put("responseCode", 200);
             response.put("responseDesc", "Success.");
-        }else{
+        } else {
             response.put("responseCode", 404);
             response.put("responseDesc", "No tap yet or failed to retrieve.");
         }
@@ -131,8 +149,12 @@ public class MainService {
 
     public void addUser(User user, String username) {
         System.out.println(UUID.randomUUID().toString());
-        user.setId(UUID.randomUUID().toString().substring(0,35));
+        user.setId(UUID.randomUUID().toString().substring(0, 35));
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         mainMapper.addUser(user, username);
+    }
+
+    public List<RefGradeLevel> getGradeLevelList(){
+        return mainMapper.getGradeLevelList();
     }
 }
