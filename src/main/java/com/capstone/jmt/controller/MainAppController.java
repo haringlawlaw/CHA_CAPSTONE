@@ -83,6 +83,27 @@ public class MainAppController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @RequestMapping(value="addUser", method = RequestMethod.POST)
+    public ResponseEntity<?> addUser(@RequestParam User user, @RequestParam String username){
+        HashMap<String, Object> response = new HashMap<>();
+        User admin = mainService.getUser(username);
+        if(null != admin) {
+            User teacher = mainService.getUser(user.getUsername());
+            if (null != teacher) {
+                response.put("responseCode", 201);
+                response.put("responseDesc", "Username already taken.");
+            } else {
+                response.put("responseCode", 200);
+                response.put("responseDesc", "Successfully created User.");
+                mainService.addUser(user, username);
+            }
+        }else{
+            response.put("responseCode", 404);
+            response.put("responseDesc", "Username not found.");
+        }
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
     @RequestMapping(value="postAnnouncement", method = RequestMethod.POST)
     public ResponseEntity<?> postAnnouncement(@RequestParam MessageJson mj){
         HashMap<String, Object> response = new HashMap<>();
