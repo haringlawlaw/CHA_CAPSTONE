@@ -31,7 +31,6 @@ public class MainAppController {
     @Autowired
     private MainService mainService;
 
-
     @RequestMapping(value = "processRfidTap", method = RequestMethod.POST)
     public ResponseEntity<?> processRfidTap(@RequestParam("rfid") String rfid) {
         HashMap<String, Object> response = new HashMap<>();
