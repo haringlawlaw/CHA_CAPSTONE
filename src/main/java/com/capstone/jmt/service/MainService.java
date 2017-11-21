@@ -5,6 +5,7 @@ import com.capstone.jmt.data.MessageJson;
 import com.capstone.jmt.data.RefGradeLevel;
 import com.capstone.jmt.data.TapLog;
 import com.capstone.jmt.entity.Student;
+import com.capstone.jmt.entity.Teacher;
 import com.capstone.jmt.entity.User;
 import com.capstone.jmt.mapper.MainMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -158,5 +159,14 @@ public class MainService {
 
     public List<RefGradeLevel> getGradeLevelList(){
         return mainMapper.getGradeLevelList();
+    }
+
+    public HashMap<String, Object> addTeacher(Teacher teacher) {
+        HashMap<String, Object> response = new HashMap<>();
+        teacher.setId(UUID.randomUUID().toString());
+        mainMapper.addTeacher(teacher);
+        response.put("responseCode", 200);
+        response.put("responseDesc", "Successfully Added Teacher.");
+        return response;
     }
 }

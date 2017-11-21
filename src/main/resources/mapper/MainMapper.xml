@@ -199,4 +199,17 @@
     <select id="getGradeLevelList" resultMap="GradeLevelMap" resultType="java.util.List">
         SELECT * FROM ref_grade_level
     </select>
+
+    <insert id="addTeacher" flushCache="true">
+        INSERT INTO data_teachers(id, teacher_fname, teacher_lname, position, contact_no, created_by)
+        VALUES
+        (
+        #{teacher.id, jdbcType=VARCHAR},
+        #{teacher.firstName, jdbcType=VARCHAR},
+        #{teacher.lastName, jdbcType=VARCHAR},
+        #{teacher.position, jdbcType=VARCHAR},
+        #{teacher.contactNo, jdbcType=VARCHAR},
+        #{teacher.createdBy, jdbcType=VARCHAR}
+        )
+    </insert>
 </mapper>

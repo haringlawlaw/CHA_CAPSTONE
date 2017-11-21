@@ -1,5 +1,6 @@
 package com.capstone.jmt.entity;
 
+import com.capstone.jmt.data.AddTeacherJson;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
@@ -28,6 +29,14 @@ public class Teacher implements Serializable {
     private String createdBy;
     @JsonProperty("updatedBy")
     private String updatedBy;
+
+    public Teacher(AddTeacherJson teacherJson) {
+        this.firstName = teacherJson.getFirstName();
+        this.lastName = teacherJson.getLastName();
+        this.position = teacherJson.getPosition();
+        this.contactNo = teacherJson.getContactNo();
+        this.createdBy = teacherJson.getAppUsername();
+    }
 
     public String getId() {
         return id;

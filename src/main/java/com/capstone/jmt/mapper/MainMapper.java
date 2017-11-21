@@ -4,6 +4,7 @@ import com.capstone.jmt.data.MessageJson;
 import com.capstone.jmt.data.RefGradeLevel;
 import com.capstone.jmt.data.TapLog;
 import com.capstone.jmt.entity.Student;
+import com.capstone.jmt.entity.Teacher;
 import com.capstone.jmt.entity.User;
 import org.apache.ibatis.annotations.Param;
 
@@ -34,4 +35,6 @@ public interface MainMapper {
     List<TapLog> getTapListDetailsByStudentId(@Param("studentId") String studentId);
 
     List<RefGradeLevel> getGradeLevelList();
+
+    void addTeacher(@Param("teacher") Teacher teacher);
 }

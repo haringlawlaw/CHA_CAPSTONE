@@ -1,9 +1,11 @@
 package com.capstone.jmt.controller;
 
+import com.capstone.jmt.data.AddTeacherJson;
 import com.capstone.jmt.data.AddUserJson;
 import com.capstone.jmt.data.MessageJson;
 import com.capstone.jmt.data.ShopLogin;
 import com.capstone.jmt.entity.Student;
+import com.capstone.jmt.entity.Teacher;
 import com.capstone.jmt.entity.User;
 import com.capstone.jmt.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,7 @@ import java.util.HashMap;
  * Created by Jabito on 08/08/2017.
  */
 @Controller
-@RequestMapping(value="/app/")
+@RequestMapping(value = "/app/")
 @SessionAttributes("appUSer")
 public class MainAppController {
 
@@ -30,70 +32,93 @@ public class MainAppController {
     private MainService mainService;
 
 
-
-    @RequestMapping(value="processRfidTap", method = RequestMethod.POST)
-    public ResponseEntity<?> processRfidTap(@RequestParam("rfid") String rfid){
+    @RequestMapping(value = "processRfidTap", method = RequestMethod.POST)
+    public ResponseEntity<?> processRfidTap(@RequestParam("rfid") String rfid) {
         HashMap<String, Object> response = new HashMap<>();
         response.putAll(mainService.processRfidTap(rfid));
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @RequestMapping(value="loginUser", method = RequestMethod.POST)
-    public ResponseEntity<?> loginUser(@RequestParam String username, @RequestParam String password){
+    @RequestMapping(value = "loginUser", method = RequestMethod.POST)
+    public ResponseEntity<?> loginUser(@RequestParam String username, @RequestParam String password) {
         HashMap<String, Object> response = new HashMap<>();
         response.putAll(mainService.loginUser(username, password));
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @RequestMapping(value="getStudent", method = RequestMethod.GET)
-    public ResponseEntity<?> getStudent(@RequestParam String studentId){
+    @RequestMapping(value = "getStudent", method = RequestMethod.GET)
+    public ResponseEntity<?> getStudent(@RequestParam String studentId) {
         HashMap<String, Object> response = new HashMap<>();
         response.putAll(mainService.getStudent(studentId));
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @RequestMapping(value="getTapLogOfStudent", method = RequestMethod.GET)
-    public ResponseEntity<?> getTapLogOfStudent(@RequestParam String studentId){
+    @RequestMapping(value = "getTapLogOfStudent", method = RequestMethod.GET)
+    public ResponseEntity<?> getTapLogOfStudent(@RequestParam String studentId) {
         HashMap<String, Object> response = new HashMap<>();
         response.putAll(mainService.getTapLogOfStudent(studentId));
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @RequestMapping(value="getLastTapEntry", method = RequestMethod.GET)
-    public ResponseEntity<?> getLastTapEntry(@RequestParam String studentId){
+    @RequestMapping(value = "getLastTapEntry", method = RequestMethod.GET)
+    public ResponseEntity<?> getLastTapEntry(@RequestParam String studentId) {
         HashMap<String, Object> response = new HashMap<>();
         response.putAll(mainService.getLastTapEntry(studentId));
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @RequestMapping(value = "editStudentInfo", method = RequestMethod.POST)
-    public ResponseEntity<?> editStudentInfo(@RequestParam Student student){
+    public ResponseEntity<?> editStudentInfo(@RequestParam Student student) {
         HashMap<String, Object> response = new HashMap<>();
         response.putAll(mainService.updateStudentInfo(student));
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @RequestMapping(value="addOrDeleteStudent", method = RequestMethod.POST)
-    public ResponseEntity<?> addOrDeleteStudent(@RequestParam Student student, @RequestParam String appUsername, @RequestParam String command){
+    @RequestMapping(value = "addTeacher", method = RequestMethod.POST)
+    public ResponseEntity<?> addTeacher(@RequestParam AddTeacherJson teacherJson, @RequestParam String appUsername) {
         HashMap<String, Object> response = new HashMap<>();
-        User teacher = mainService.getUser(appUsername);
-        if(teacher.getUserTypeId() == 0){
-            if(command.equalsIgnoreCase("add"))
-                response.putAll(mainService.addStudent(student));
-            else if(command.equalsIgnoreCase("delete"))
-                response.putAll(mainService.deleteStudentById(student.getId()));
-        }else{
+        User user = mainService.getUser(appUsername);
+        if (user.getUserTypeId() == 0) {
+            Teacher teacher = new Teacher(teacherJson);
+            response.putAll(mainService.addTeacher(teacher));
+        } else {
             response.put("responseCode", 404);
             response.put("respnoseDesc", "Unauthorized request. User does not have admin status.");
         }
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @RequestMapping(value="addUser", method = RequestMethod.POST)
-    public ResponseEntity<?> addUser(@RequestBody AddUserJson user){
+    @RequestMapping(value = "addStudent", method = RequestMethod.POST)
+    public ResponseEntity<?> addStudent(@RequestParam Student student, @RequestParam String appUsername) {
+        HashMap<String, Object> response = new HashMap<>();
+        User teacher = mainService.getUser(appUsername);
+        if (teacher.getUserTypeId() == 0) {
+            response.putAll(mainService.addStudent(student));
+        } else {
+            response.put("responseCode", 404);
+            response.put("respnoseDesc", "Unauthorized request. User does not have admin status.");
+        }
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "deleteStudent", method = RequestMethod.POST)
+    public ResponseEntity<?> deleteStudent(@RequestParam String studentId, @RequestParam String appUsername) {
+        HashMap<String, Object> response = new HashMap<>();
+        User teacher = mainService.getUser(appUsername);
+        if (teacher.getUserTypeId() == 0) {
+            response.putAll(mainService.deleteStudentById(studentId));
+        } else {
+            response.put("responseCode", 404);
+            response.put("respnoseDesc", "Unauthorized request. User does not have admin status.");
+        }
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "addUser", method = RequestMethod.POST)
+    public ResponseEntity<?> addUser(@RequestBody AddUserJson user) {
         HashMap<String, Object> response = new HashMap<>();
         User admin = mainService.getUser(user.getAppUsername());
-        if(null != admin) {
+        if (null != admin) {
             User teacher = mainService.getUser(user.getUsername());
             if (null != teacher) {
                 response.put("responseCode", 201);
@@ -103,15 +128,15 @@ public class MainAppController {
                 response.put("responseDesc", "Successfully created User.");
                 mainService.addUser(user);
             }
-        }else{
+        } else {
             response.put("responseCode", 404);
             response.put("responseDesc", "Username not found.");
         }
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @RequestMapping(value="postAnnouncement", method = RequestMethod.POST)
-    public ResponseEntity<?> postAnnouncement(@RequestParam MessageJson mj){
+    @RequestMapping(value = "postAnnouncement", method = RequestMethod.POST)
+    public ResponseEntity<?> postAnnouncement(@RequestParam MessageJson mj) {
         HashMap<String, Object> response = new HashMap<>();
         response.putAll(mainService.postAnnouncement(mj));
         return new ResponseEntity<>(response, HttpStatus.OK);
