@@ -36,6 +36,8 @@ public class User implements Serializable {
     @JsonProperty("updatedBy")
     private String updatedBy;
 
+    public User(){}
+
     public User(AddUserJson userJson) {
         this.username = userJson.getUsername();
         this.password = userJson.getPassword();
