@@ -151,7 +151,7 @@ public class MainService {
 
     public void addUser(AddUserJson userJson) {
         System.out.println(UUID.randomUUID().toString());
-        User user = new User(userJson);
+        User user = new User();
         user.setId(UUID.randomUUID().toString().substring(0, 35));
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         mainMapper.addUser(user);
