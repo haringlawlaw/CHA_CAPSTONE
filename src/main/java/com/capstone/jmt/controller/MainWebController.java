@@ -1,5 +1,6 @@
 package com.capstone.jmt.controller;
 
+import com.capstone.jmt.data.AddUserJson;
 import com.capstone.jmt.data.ShopLogin;
 import com.capstone.jmt.entity.Student;
 import com.capstone.jmt.entity.User;
@@ -112,6 +113,28 @@ public class MainWebController {
         }
 
         return "addStudent";
+    }
+
+    @RequestMapping(value = "/getUser", method = RequestMethod.GET)
+    public String getUserData(@Valid AddUserJson newUser, org.springframework.ui.Model model){
+
+        //TODO ADD VALIDATION OF NULL VALUES
+
+        model.addAttribute("newUser", new User());
+
+        return  "addUser";
+    }
+
+    @RequestMapping(value = "/addNewUser", method = RequestMethod.POST)
+    public String postNewUser(@Valid AddUserJson newUser, BindingResult bindingResult, org.springframework.ui.Model model){
+
+        System.out.println("USER username: " + newUser.getUsername());
+        System.out.println("USER password: " + newUser.getPassword());
+
+        mainService.addUser(newUser);
+
+        return "redirect:/login";
+
     }
 
 }
