@@ -38,6 +38,10 @@ public class Guidance implements Serializable {
         this.createdBy = teacherJson.getAppUsername();
     }
 
+    public Guidance() {
+
+    }
+
     public String getId() {
         return id;
     }

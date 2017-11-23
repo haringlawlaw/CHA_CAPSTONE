@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+    <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.capstone.jmt.mapper.MainMapper">
 
@@ -71,6 +71,7 @@
         <result column="password" property="password" jdbcType="VARCHAR"/>
         <result column="user_type_id" property="userTypeId" jdbcType="INTEGER"/>
         <result column="email" property="email" jdbcType="VARCHAR"/>
+        <result column="reference_id" property="referenceId" jdbcType="VARCHAR"/>
         <result column="last_login" property="lastLogin" jdbcType="TIMESTAMP"/>
         <result column="is_locked" property="isLocked" jdbcType="BOOLEAN"/>
         <result column="created_on" property="createdOn" jdbcType="TIMESTAMP"/>
@@ -199,7 +200,7 @@
           #{user.id, jdbcType=VARCHAR},
           #{user.username, jdbcType=VARCHAR},
           #{user.password, jdbcType=VARCHAR},
-          'DEFAULT',
+          #{user.referenceId, jdbcType=VARCHAR},
           #{user.userTypeId, jdbcType=INTEGER},
           #{user.email, jdbcType=VARCHAR},
           #{user.isLocked, jdbcType=BOOLEAN},

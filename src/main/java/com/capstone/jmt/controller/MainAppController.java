@@ -145,18 +145,23 @@ public class MainAppController {
         HashMap<String, Object> response = new HashMap<>();
         User admin = mainService.getUser(user.getAppUsername());
         if (null != admin) {
-            User teacher = mainService.getUser(user.getUsername());
-            if (null != teacher) {
-                response.put("responseCode", 201);
-                response.put("responseDesc", "Username already taken.");
-            } else {
-                response.put("responseCode", 200);
-                response.put("responseDesc", "Successfully created User.");
-                mainService.addUser(user);
+            if(admin.getUserTypeId() == 0) {
+                User teacher = mainService.getUser(user.getUsername());
+                if (null != teacher) {
+                    response.put("responseCode", 201);
+                    response.put("responseDesc", "Username already taken.");
+                } else {
+                    response.put("responseCode", 200);
+                    response.put("responseDesc", "Successfully created User.");
+                    mainService.addUser(user);
+                }
+            }else{
+                response.put("responseCode", HttpStatus.UNAUTHORIZED);
+                response.put("responseDesc", "Unauthorized user.");
             }
         } else {
             response.put("responseCode", 404);
-            response.put("responseDesc", "Username not found.");
+            response.put("responseDesc", "Admin user ID not found.");
         }
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
