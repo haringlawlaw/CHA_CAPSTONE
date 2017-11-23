@@ -38,7 +38,15 @@ public class MainService {
             response.put("responseDesc", "Username does not exists.");
         } else {
             if (passwordEncoder.matches(password, user.getPassword())) {
+                Guidance guidance = new Guidance();
+                Parent parent = new Parent();
+                if(user.getUserTypeId() == 1)
+                    guidance = mainMapper.getGuidance(user.getReferenceId());
+                else
+                    parent = mainMapper.getParent(user.getReferenceId());
                 response.put("User", user);
+                response.put("Guidance", guidance);
+                response.put("Parent", parent);
                 response.put("responseCode", HttpStatus.OK);
                 response.put("responseDesc", "Login Successful.");
             } else {

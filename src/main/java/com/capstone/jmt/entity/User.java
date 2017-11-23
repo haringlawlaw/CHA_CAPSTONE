@@ -21,6 +21,8 @@ public class User implements Serializable {
     private String password;
     @JsonProperty("userTypeId")
     private Integer userTypeId;
+    @JsonProperty("referenceId")
+    private String referenceId;
     @JsonProperty("email")
     private String email;
     @JsonProperty("lastLogin")
@@ -68,6 +70,14 @@ public class User implements Serializable {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getReferenceId() {
+        return referenceId;
+    }
+
+    public void setReferenceId(String referenceId) {
+        this.referenceId = referenceId;
     }
 
     public String getUsername() {
