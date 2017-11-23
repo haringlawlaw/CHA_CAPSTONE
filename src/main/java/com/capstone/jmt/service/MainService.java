@@ -160,7 +160,8 @@ public class MainService {
 
     public HashMap<String, Object> addStudent(Student student) {
         HashMap<String, Object> response = new HashMap<>();
-        student.setId(UUID.randomUUID().toString());
+        student.setId("SID" + mainMapper.getLastId(4));
+        mainMapper.incrementId(4);
         mainMapper.addStudent(student);
         response.put("responseCode", 200);
         response.put("responseDesc", "Successfully added student.");
@@ -204,7 +205,17 @@ public class MainService {
     public void addUser(AddUserJson userJson) {
         System.out.println(UUID.randomUUID().toString());
         User user = new User(userJson);
-        user.setId(UUID.randomUUID().toString());
+        Guidance guidance = mainMapper.getGuidance(userJson.getReferenceId());
+        Parent parent = mainMapper.getParent(user.getReferenceId());
+        user.setId(guidance != null? "GID" + mainMapper.getLastId(1):
+                    parent != null? "PID" + mainMapper.getLastId(2):
+                    "AID" + mainMapper.getLastId(0));
+        if(guidance != null)
+            mainMapper.incrementId(1);
+        else if(parent != null)
+            mainMapper.incrementId(2);
+        else
+            mainMapper.incrementId(0);
         user.setPassword(passwordEncoder.encode(userJson.getPassword()));
         mainMapper.addUser(user);
     }

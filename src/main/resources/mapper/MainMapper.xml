@@ -91,7 +91,9 @@
     </select>
 
     <update id="incrementId" flushCache="true">
-
+        UPDATE ref_user_ids
+        SET last_id = last_id + 1
+        WHERE id = #{id}
     </update>
 
     <select id="getUserByUsername" resultMap="UserMap" resultType="com.capstone.jmt.entity.User">
