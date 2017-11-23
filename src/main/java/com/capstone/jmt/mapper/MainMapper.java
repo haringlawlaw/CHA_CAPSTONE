@@ -3,9 +3,7 @@ package com.capstone.jmt.mapper;
 import com.capstone.jmt.data.MessageJson;
 import com.capstone.jmt.data.RefGradeLevel;
 import com.capstone.jmt.data.TapLog;
-import com.capstone.jmt.entity.Student;
-import com.capstone.jmt.entity.Teacher;
-import com.capstone.jmt.entity.User;
+import com.capstone.jmt.entity.*;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -36,5 +34,12 @@ public interface MainMapper {
 
     List<RefGradeLevel> getGradeLevelList();
 
-    void addTeacher(@Param("teacher") Teacher teacher);
+    void addTeacher(@Param("guidance") Guidance guidance);
+
+    Guidance getGuidance(@Param("id") String id);
+
+    Parent getParent(@Param("id") String id);
+
+    EmergencyContact getEmergencyContact(@Param("id") String id);
+
 }
