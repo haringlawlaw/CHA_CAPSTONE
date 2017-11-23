@@ -13,7 +13,7 @@ import java.util.Date;
 @Entity
 public class User implements Serializable {
 
-    @JsonProperty
+    @JsonProperty("id")
     private String id;
     @JsonProperty("username")
     private String username;
@@ -38,6 +38,7 @@ public class User implements Serializable {
     @JsonProperty("updatedBy")
     private String updatedBy;
 
+
     public User(){}
 
     public User(AddUserJson userJson) {
@@ -47,6 +48,7 @@ public class User implements Serializable {
         this.email = userJson.getEmail();
         this.createdBy = userJson.getAppUsername();
     }
+
 
     public Date getCreatedOn() {
         return createdOn;

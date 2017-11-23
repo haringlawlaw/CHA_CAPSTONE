@@ -101,9 +101,9 @@ public class MainAppController {
     }
 
     @RequestMapping(value = "addGuidance", method = RequestMethod.POST)
-    public ResponseEntity<?> addGuidance(@RequestBody AddGuidanceJson teacherJson, @RequestParam String appUsername) {
+    public ResponseEntity<?> addGuidance(@RequestBody AddGuidanceJson teacherJson) {
         HashMap<String, Object> response = new HashMap<>();
-        User user = mainService.getUser(appUsername);
+        User user = mainService.getUser(teacherJson.getAppUsername());
         if (user.getUserTypeId() == 0) {
             Guidance guidance = new Guidance(teacherJson);
             response.putAll(mainService.addGuidance(guidance));
