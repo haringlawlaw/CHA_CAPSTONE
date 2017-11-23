@@ -74,9 +74,9 @@ public class MainAppController {
     }
 
     @RequestMapping(value = "addTeacher", method = RequestMethod.POST)
-    public ResponseEntity<?> addTeacher(@RequestParam AddTeacherJson teacherJson, @RequestParam String appUsername) {
+    public ResponseEntity<?> addTeacher(@RequestBody AddTeacherJson teacherJson) {
         HashMap<String, Object> response = new HashMap<>();
-        User user = mainService.getUser(appUsername);
+        User user = mainService.getUser(teacherJson.getAppUsername());
         if (user.getUserTypeId() == 0) {
             Teacher teacher = new Teacher(teacherJson);
             response.putAll(mainService.addTeacher(teacher));

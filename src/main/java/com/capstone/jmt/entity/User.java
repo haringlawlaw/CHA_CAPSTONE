@@ -13,7 +13,7 @@ import java.util.Date;
 @Entity
 public class User implements Serializable {
 
-    @JsonProperty
+    @JsonProperty("id")
     private String id;
     @JsonProperty("username")
     private String username;
