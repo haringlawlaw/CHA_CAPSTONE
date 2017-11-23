@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -209,6 +210,20 @@ public class MainService {
         mainMapper.addTeacher(guidance);
         response.put("responseCode", 200);
         response.put("responseDesc", "Successfully Added Guidance.");
+        return response;
+    }
+
+    public HashMap<String, Object> getUserById(String id) {
+        HashMap<String, Object> response = new HashMap<>();
+        User user = mainMapper.getUserById(id);
+        response.put("user", user);
+        if(null == user){
+            response.put("responseCode", HttpStatus.NOT_FOUND);
+            response.put("responseDesc", "Cannot find user. Invalid Id.");
+        }else{
+            response.put("responseCode", HttpStatus.OK);
+            response.put("responseDesc", "Successfully retrieved user.");
+        }
         return response;
     }
 }
