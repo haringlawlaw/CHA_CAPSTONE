@@ -210,6 +210,7 @@ public class MainService {
         user.setId(guidance != null? "GID" + mainMapper.getLastId(1):
                     parent != null? "PID" + mainMapper.getLastId(2):
                     "AID" + mainMapper.getLastId(0));
+        user.setReferenceId("ADMIN");
         if(guidance != null)
             mainMapper.incrementId(1);
         else if(parent != null)
