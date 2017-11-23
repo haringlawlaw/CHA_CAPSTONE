@@ -32,7 +32,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-6">
-                                <form  role="form" th:object="${student}">
+                                <form  role="form" th:object="${student}" th:action="@{/addNewStudent}" method="post">
                                     <div class="form-group">
                                         <label>First Name</label>
                                         <input class="form-control" placeholder="First Name" th:field="*{firstName}"/>
@@ -55,9 +55,9 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Male</label>
-                                        <input type="radio" th:field="*{gender}" />
+                                        <input type="radio" name="gender" th:value="1"/>
                                         <label>Female</label>
-                                        <input type="radio" th:field="*{gender}"/>
+                                        <input type="radio" name="gender" th:value="0"/>
                                     </div>
                                     <div class="form-group">
                                         <label>Citizenship</label>
@@ -72,10 +72,24 @@
                                         <input class="form-control" placeholder="Contact Number" th:field="*{contactNo}"/>
                                     </div>
                                     <div class="form-group">
-                                        <label>Tap Card</label>
-                                        <input class="form-control" placeholder="Please Tap Card Once" th:field="*{}"/>
+                                        <label>Emergency Contact Person</label>
+                                        <input class="form-control" placeholder="Emergency Contact Person" th:field="*{emergencyContact}"/>
                                     </div>
-                                    <button type="submit" class="btn btn-success btn-lg">Save</button>
+
+                                    <div class="form-group">
+                                        <label>Grade Level Id  </label>
+                                        <select th:field="*{gradeLvlId}">
+                                            <option th:each="gradeLvlId :  ${gradeLevels}" th:text="${gradeLvlId.gradeLevel}" th:value="${gradeLvlId.id}">
+                                            </option>
+                                        </select>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Tap Card</label>
+                                        <input class="form-control" placeholder="Please Tap Card Once" th:field="*{rfid}"/>
+                                    </div>
+                                    <button th:type="submit" class="btn btn-success btn-lg">Save</button>
                                 </form>
                             </div>
                         <!-- /.col-lg-6 (nested) -->

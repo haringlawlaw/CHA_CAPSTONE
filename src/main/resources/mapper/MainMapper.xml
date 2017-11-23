@@ -85,10 +85,11 @@
     <insert id="addStudent" flushCache="true">
         INSERT INTO data_students(
         id, first_name, last_name, middle_name, birth_date, place, gender, citizenship,
-        address, contact_no, emergency_contact, grade_level_id, school_year, "section",
-        is_old_student, is_transferee, is_enrolled, created_by, rfid)
+        address, contact_no, emergency_contact, grade_level_id, school_year, section,
+        is_old_student, is_transferee, is_enrolled, created_by,updated_by, rfid)
         VALUES
-        (#{student.id, jdbcType=VARCHAR},
+        (
+        #{student.id, jdbcType=VARCHAR},
         #{student.firstName, jdbcType=VARCHAR},
         #{student.lastName, jdbcType=VARCHAR},
         #{student.middleName, jdbcType=VARCHAR},
@@ -105,6 +106,8 @@
         #{student.isOldStudent, jdbcType=TINYINT},
         #{student.isTransferee, jdbcType=TINYINT},
         #{student.isEnrolled, jdbcType=TINYINT},
+        #{student.created_by, jdbcType=VARCHAR},
+        #{student.updated_by, jdbcType=VARCHAR},
         #{student.rfid, jdbcType=VARCHAR}
         )
     </insert>
