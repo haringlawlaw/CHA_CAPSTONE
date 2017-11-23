@@ -17,8 +17,18 @@ public class AddUserJson implements Serializable{
     private Integer userTypeId;
     @JsonProperty("email")
     private String email;
+    @JsonProperty("referenceId")
+    private String referenceId;
     @JsonProperty("appUsername")
     private String appUsername;
+
+    public String getReferenceId() {
+        return referenceId;
+    }
+
+    public void setReferenceId(String referenceId) {
+        this.referenceId = referenceId;
+    }
 
     public String getUsername() {
         return username;

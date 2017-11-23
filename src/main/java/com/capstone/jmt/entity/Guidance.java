@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * Created by Jabito on 06/11/2017.
  */
-public class Teacher implements Serializable {
+public class Guidance implements Serializable {
 
     @JsonProperty("id")
     private String id;
@@ -30,12 +30,16 @@ public class Teacher implements Serializable {
     @JsonProperty("updatedBy")
     private String updatedBy;
 
-    public Teacher(AddTeacherJson teacherJson) {
+    public Guidance(AddTeacherJson teacherJson) {
         this.firstName = teacherJson.getFirstName();
         this.lastName = teacherJson.getLastName();
         this.position = teacherJson.getPosition();
         this.contactNo = teacherJson.getContactNo();
         this.createdBy = teacherJson.getAppUsername();
+    }
+
+    public Guidance() {
+
     }
 
     public String getId() {

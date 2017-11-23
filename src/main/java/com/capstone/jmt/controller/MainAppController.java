@@ -3,9 +3,8 @@ package com.capstone.jmt.controller;
 import com.capstone.jmt.data.AddTeacherJson;
 import com.capstone.jmt.data.AddUserJson;
 import com.capstone.jmt.data.MessageJson;
-import com.capstone.jmt.data.ShopLogin;
+import com.capstone.jmt.entity.Guidance;
 import com.capstone.jmt.entity.Student;
-import com.capstone.jmt.entity.Teacher;
 import com.capstone.jmt.entity.User;
 import com.capstone.jmt.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +30,6 @@ public class MainAppController {
     @Autowired
     private MainService mainService;
 
-
     @RequestMapping(value = "processRfidTap", method = RequestMethod.POST)
     public ResponseEntity<?> processRfidTap(@RequestParam("rfid") String rfid) {
         HashMap<String, Object> response = new HashMap<>();
@@ -46,10 +44,38 @@ public class MainAppController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "getUser", method = RequestMethod.GET)
+    public ResponseEntity<?> getUser(@RequestParam String id) {
+        HashMap<String, Object> response = new HashMap<>();
+        response.putAll(mainService.getUserById(id));
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
     @RequestMapping(value = "getStudent", method = RequestMethod.GET)
     public ResponseEntity<?> getStudent(@RequestParam String studentId) {
         HashMap<String, Object> response = new HashMap<>();
         response.putAll(mainService.getStudent(studentId));
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "getGuidance", method = RequestMethod.GET)
+    public ResponseEntity<?> getGuidance(@RequestParam String id) {
+        HashMap<String, Object> response = new HashMap<>();
+        response.putAll(mainService.getGuidance(id));
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "getParent", method = RequestMethod.GET)
+    public ResponseEntity<?> getParent(@RequestParam String id) {
+        HashMap<String, Object> response = new HashMap<>();
+        response.putAll(mainService.getParent(id));
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "getEmergencyContact", method = RequestMethod.GET)
+    public ResponseEntity<?> getEmergencyContact(@RequestParam String id) {
+        HashMap<String, Object> response = new HashMap<>();
+        response.putAll(mainService.getEmergencyContact(id));
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
@@ -79,8 +105,8 @@ public class MainAppController {
         HashMap<String, Object> response = new HashMap<>();
         User user = mainService.getUser(appUsername);
         if (user.getUserTypeId() == 0) {
-            Teacher teacher = new Teacher(teacherJson);
-            response.putAll(mainService.addTeacher(teacher));
+            Guidance guidance = new Guidance(teacherJson);
+            response.putAll(mainService.addTeacher(guidance));
         } else {
             response.put("responseCode", 404);
             response.put("respnoseDesc", "Unauthorized request. User does not have admin status.");
@@ -119,18 +145,23 @@ public class MainAppController {
         HashMap<String, Object> response = new HashMap<>();
         User admin = mainService.getUser(user.getAppUsername());
         if (null != admin) {
-            User teacher = mainService.getUser(user.getUsername());
-            if (null != teacher) {
-                response.put("responseCode", 201);
-                response.put("responseDesc", "Username already taken.");
-            } else {
-                response.put("responseCode", 200);
-                response.put("responseDesc", "Successfully created User.");
-                mainService.addUser(user);
+            if(admin.getUserTypeId() == 0) {
+                User teacher = mainService.getUser(user.getUsername());
+                if (null != teacher) {
+                    response.put("responseCode", 201);
+                    response.put("responseDesc", "Username already taken.");
+                } else {
+                    response.put("responseCode", 200);
+                    response.put("responseDesc", "Successfully created User.");
+                    mainService.addUser(user);
+                }
+            }else{
+                response.put("responseCode", HttpStatus.UNAUTHORIZED);
+                response.put("responseDesc", "Unauthorized user.");
             }
         } else {
             response.put("responseCode", 404);
-            response.put("responseDesc", "Username not found.");
+            response.put("responseDesc", "Admin user ID not found.");
         }
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
