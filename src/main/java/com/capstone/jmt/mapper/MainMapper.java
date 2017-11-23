@@ -42,4 +42,5 @@ public interface MainMapper {
 
     EmergencyContact getEmergencyContact(@Param("id") String id);
 
+    User getUserById(@Param("id") String id);
 }

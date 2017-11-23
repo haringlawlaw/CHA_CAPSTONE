@@ -44,6 +44,13 @@ public class MainAppController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "getUser", method = RequestMethod.GET)
+    public ResponseEntity<?> getUser(@RequestParam String id) {
+        HashMap<String, Object> response = new HashMap<>();
+        response.putAll(mainService.getUserById(id));
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
     @RequestMapping(value = "getStudent", method = RequestMethod.GET)
     public ResponseEntity<?> getStudent(@RequestParam String studentId) {
         HashMap<String, Object> response = new HashMap<>();
