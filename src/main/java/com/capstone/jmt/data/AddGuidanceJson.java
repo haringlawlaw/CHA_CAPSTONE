@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * Created by Jabito on 20/11/2017.
  */
-public class AddTeacherJson implements Serializable{
+public class AddGuidanceJson implements Serializable{
 
     @JsonProperty("firstName")
     private String firstName;

@@ -13,8 +13,6 @@ public class AddUserJson implements Serializable{
     private String username;
     @JsonProperty("password")
     private String password;
-    @JsonProperty("userTypeId")
-    private Integer userTypeId;
     @JsonProperty("email")
     private String email;
     @JsonProperty("referenceId")
@@ -44,14 +42,6 @@ public class AddUserJson implements Serializable{
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Integer getUserTypeId() {
-        return userTypeId;
-    }
-
-    public void setUserTypeId(Integer userTypeId) {
-        this.userTypeId = userTypeId;
     }
 
     public String getEmail() {

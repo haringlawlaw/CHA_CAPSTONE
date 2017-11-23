@@ -1,6 +1,6 @@
 package com.capstone.jmt.entity;
 
-import com.capstone.jmt.data.AddTeacherJson;
+import com.capstone.jmt.data.AddGuidanceJson;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
@@ -30,7 +30,7 @@ public class Guidance implements Serializable {
     @JsonProperty("updatedBy")
     private String updatedBy;
 
-    public Guidance(AddTeacherJson teacherJson) {
+    public Guidance(AddGuidanceJson teacherJson) {
         this.firstName = teacherJson.getFirstName();
         this.lastName = teacherJson.getLastName();
         this.position = teacherJson.getPosition();

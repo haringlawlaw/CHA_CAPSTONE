@@ -1,6 +1,6 @@
 package com.capstone.jmt.controller;
 
-import com.capstone.jmt.data.AddTeacherJson;
+import com.capstone.jmt.data.AddGuidanceJson;
 import com.capstone.jmt.data.AddUserJson;
 import com.capstone.jmt.data.MessageJson;
 import com.capstone.jmt.entity.Guidance;
@@ -100,13 +100,13 @@ public class MainAppController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "addTeacher", method = RequestMethod.POST)
-    public ResponseEntity<?> addTeacher(@RequestParam AddTeacherJson teacherJson, @RequestParam String appUsername) {
+    @RequestMapping(value = "addGuidance", method = RequestMethod.POST)
+    public ResponseEntity<?> addGuidance(@RequestBody AddGuidanceJson teacherJson, @RequestParam String appUsername) {
         HashMap<String, Object> response = new HashMap<>();
         User user = mainService.getUser(appUsername);
         if (user.getUserTypeId() == 0) {
             Guidance guidance = new Guidance(teacherJson);
-            response.putAll(mainService.addTeacher(guidance));
+            response.putAll(mainService.addGuidance(guidance));
         } else {
             response.put("responseCode", 404);
             response.put("respnoseDesc", "Unauthorized request. User does not have admin status.");

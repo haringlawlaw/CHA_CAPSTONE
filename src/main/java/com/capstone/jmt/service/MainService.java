@@ -204,8 +204,8 @@ public class MainService {
     public void addUser(AddUserJson userJson) {
         System.out.println(UUID.randomUUID().toString());
         User user = new User(userJson);
-        user.setId(UUID.randomUUID().toString().substring(0, 35));
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setId(UUID.randomUUID().toString());
+        user.setPassword(passwordEncoder.encode(userJson.getPassword()));
         mainMapper.addUser(user);
     }
 
@@ -213,7 +213,7 @@ public class MainService {
         return mainMapper.getGradeLevelList();
     }
 
-    public HashMap<String, Object> addTeacher(Guidance guidance) {
+    public HashMap<String, Object> addGuidance(Guidance guidance) {
         HashMap<String, Object> response = new HashMap<>();
         guidance.setId(UUID.randomUUID().toString());
         mainMapper.addTeacher(guidance);
