@@ -32,12 +32,14 @@ public class MainService {
         HashMap<String, Object> response = new HashMap<>();
 
         User user = mainMapper.getUserByUsername(username);
+        System.out.println("USERNAME SA MAPPER: " + user.getUsername());
         response.put("user", user);
         if (null == user) {
             response.put("responseCode", HttpStatus.NOT_FOUND);
             response.put("responseDesc", "Username does not exists.");
         } else {
-            if (passwordEncoder.matches(password, user.getPassword())) {
+            if (password.equals(user.getPassword())) {
+                System.out.println("TAMA");
                 Guidance guidance = new Guidance();
                 Parent parent = new Parent();
                 if(user.getUserTypeId() == 1)
@@ -50,6 +52,7 @@ public class MainService {
                 response.put("responseCode", HttpStatus.OK);
                 response.put("responseDesc", "Login Successful.");
             } else {
+                System.out.println("MALI");
                 response.put("responseCode", HttpStatus.UNAUTHORIZED);
                 response.put("responseDesc", "Password incorrect.");
             }
@@ -203,9 +206,9 @@ public class MainService {
 
     public void addUser(AddUserJson userJson) {
         System.out.println(UUID.randomUUID().toString());
-        User user = new User();
+        User user = new User(userJson);
         user.setId(UUID.randomUUID().toString().substring(0, 35));
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setPassword(passwordEncoder.encode(userJson.getPassword()));
         mainMapper.addUser(user);
     }
 

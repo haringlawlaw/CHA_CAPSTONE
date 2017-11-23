@@ -101,7 +101,7 @@ public class MainAppController {
     }
 
     @RequestMapping(value = "addTeacher", method = RequestMethod.POST)
-    public ResponseEntity<?> addTeacher(@RequestParam AddTeacherJson teacherJson, @RequestParam String appUsername) {
+    public ResponseEntity<?> addTeacher(@RequestBody AddTeacherJson teacherJson, @RequestParam String appUsername) {
         HashMap<String, Object> response = new HashMap<>();
         User user = mainService.getUser(appUsername);
         if (user.getUserTypeId() == 0) {

@@ -44,7 +44,7 @@ public class MainWebController {
             else if (error.equals("2"))
                 model.addAttribute("param.logout", true);
         }
-        model.addAttribute("appUser", new User());
+        model.addAttribute("appUser", getShopUser());
 
         return "login";
     }
@@ -63,8 +63,8 @@ public class MainWebController {
             System.out.println("Null");
         }
 
-//        System.out.println("RETURNED USER: " + returnedUser.getUsername());
-//        model.addAttribute("user", returnedUser);
+        System.out.println("RETURNED USER: " + returnedUser.getUsername());
+        model.addAttribute("user", returnedUser);
 
         return "redirect:/homepage/";
     }
@@ -76,6 +76,25 @@ public class MainWebController {
         model.addAttribute("student", new Student());
 
         return "addStudent";
+    }
+
+    @RequestMapping(value = "/attendanceLogs", method = RequestMethod.GET)
+    public String showSales(@ModelAttribute("appUser") User appUser, org.springframework.ui.Model model) {
+        if (appUser.getUsername() == null)
+            return "redirect:/login";
+
+//        List<OrderInfo> orders = orderService.getOrdersByShopId(shopUser.getStaffOf());
+//        model.addAttribute("orders", orders);
+//        model.addAttribute("username", shopUser.getUsername());
+//        Double sales = 0.0;
+//        for(int x=0; x<orders.size(); x++){
+//            if(null!=orders.get(x).getTotalCost())
+//                    sales += orders.get(x).getTotalCost();
+        }
+//
+//        model.addAttribute("totalSales", "P " + sales.toString());
+//
+        return "sales";
     }
 
 }
