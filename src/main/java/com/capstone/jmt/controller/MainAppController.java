@@ -3,9 +3,8 @@ package com.capstone.jmt.controller;
 import com.capstone.jmt.data.AddTeacherJson;
 import com.capstone.jmt.data.AddUserJson;
 import com.capstone.jmt.data.MessageJson;
-import com.capstone.jmt.data.ShopLogin;
+import com.capstone.jmt.entity.Guidance;
 import com.capstone.jmt.entity.Student;
-import com.capstone.jmt.entity.Teacher;
 import com.capstone.jmt.entity.User;
 import com.capstone.jmt.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +51,27 @@ public class MainAppController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "getGuidance", method = RequestMethod.GET)
+    public ResponseEntity<?> getGuidance(@RequestParam String id) {
+        HashMap<String, Object> response = new HashMap<>();
+        response.putAll(mainService.getGuidance(id));
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "getParent", method = RequestMethod.GET)
+    public ResponseEntity<?> getParent(@RequestParam String id) {
+        HashMap<String, Object> response = new HashMap<>();
+        response.putAll(mainService.getParent(id));
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "getEmergencyContact", method = RequestMethod.GET)
+    public ResponseEntity<?> getEmergencyContact(@RequestParam String id) {
+        HashMap<String, Object> response = new HashMap<>();
+        response.putAll(mainService.getEmergencyContact(id));
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
     @RequestMapping(value = "getTapLogOfStudent", method = RequestMethod.GET)
     public ResponseEntity<?> getTapLogOfStudent(@RequestParam String studentId) {
         HashMap<String, Object> response = new HashMap<>();
@@ -78,8 +98,8 @@ public class MainAppController {
         HashMap<String, Object> response = new HashMap<>();
         User user = mainService.getUser(teacherJson.getAppUsername());
         if (user.getUserTypeId() == 0) {
-            Teacher teacher = new Teacher(teacherJson);
-            response.putAll(mainService.addTeacher(teacher));
+            Guidance guidance = new Guidance(teacherJson);
+            response.putAll(mainService.addTeacher(guidance));
         } else {
             response.put("responseCode", 404);
             response.put("respnoseDesc", "Unauthorized request. User does not have admin status.");
