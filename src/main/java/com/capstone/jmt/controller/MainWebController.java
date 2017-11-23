@@ -2,6 +2,7 @@ package com.capstone.jmt.controller;
 
 import com.capstone.jmt.data.AddUserJson;
 import com.capstone.jmt.data.ShopLogin;
+import com.capstone.jmt.entity.Guidance;
 import com.capstone.jmt.entity.Student;
 import com.capstone.jmt.entity.User;
 import com.capstone.jmt.service.MainService;
@@ -121,7 +122,6 @@ public class MainWebController {
         //TODO ADD VALIDATION OF NULL VALUES
 
         model.addAttribute("newUser", new User());
-
         return  "addUser";
     }
 
@@ -132,9 +132,26 @@ public class MainWebController {
         System.out.println("USER password: " + newUser.getPassword());
 
         mainService.addUser(newUser);
+        return "redirect:/login";
+    }
 
+    @RequestMapping(value = "/getGuidance", method = RequestMethod.GET)
+    public String getGuidanceData(@Valid Guidance guidance, org.springframework.ui.Model model){
+
+        model.addAttribute("newGuidance", new Guidance());
+        return "addGuidance";
+    }
+
+    @RequestMapping(value = "/addNewGuidance", method = RequestMethod.POST)
+    public String postNewGuidance(@Valid Guidance guidance, BindingResult bindingResult, org.springframework.ui.Model model){
+
+        System.out.println("GUIDANCE FIRST NAME: " + guidance.getFirstName());
+        System.out.println("GUIDANCE LAST NAME: " + guidance.getLastName());
+
+        mainService.addGuidance(guidance);
         return "redirect:/login";
 
     }
+
 
 }
