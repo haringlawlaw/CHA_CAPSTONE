@@ -167,9 +167,12 @@ public class MainAppController {
     }
 
     @RequestMapping(value = "postAnnouncement", method = RequestMethod.POST)
-    public ResponseEntity<?> postAnnouncement(@RequestParam MessageJson mj) {
+    public ResponseEntity<?> postAnnouncement(@RequestBody MessageJson mj) {
         HashMap<String, Object> response = new HashMap<>();
         response.putAll(mainService.postAnnouncement(mj));
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+//    @RequestMapping(value = "getAnnouncements", method = RequestMethod.GET)
+//    public ResponseEntity<?> getAnnouncements(@RequestParam String)
 }

@@ -215,7 +215,8 @@ public class MainService {
 
     public HashMap<String, Object> addGuidance(Guidance guidance) {
         HashMap<String, Object> response = new HashMap<>();
-        guidance.setId(UUID.randomUUID().toString());
+        guidance.setId("GID" + mainMapper.getLastId(1));
+        mainMapper.incrementId(1);
         mainMapper.addTeacher(guidance);
         response.put("responseCode", 200);
         response.put("responseDesc", "Successfully Added Guidance.");
