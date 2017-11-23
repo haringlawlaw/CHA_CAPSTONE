@@ -32,7 +32,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-6">
-                                <form  role="form" th:object="${student}">
+                                <form  role="form" th:object="${student}" th:action="@{/addStudent}" method="post">
                                     <div class="form-group">
                                         <label>First Name</label>
                                         <input class="form-control" placeholder="First Name" th:field="*{firstName}"/>
@@ -55,9 +55,9 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Male</label>
-                                        <input type="radio" th:field="*{gender}" />
+                                        <input type="radio" name="gender" th:value="0"/>
                                         <label>Female</label>
-                                        <input type="radio" th:field="*{gender}"/>
+                                        <input type="radio" name="gender" th:value="1"/>
                                     </div>
                                     <div class="form-group">
                                         <label>Citizenship</label>
@@ -73,9 +73,9 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Tap Card</label>
-                                        <input class="form-control" placeholder="Please Tap Card Once" th:field="*{}"/>
+                                        <input class="form-control" placeholder="Please Tap Card Once" th:field="*{rfid}"/>
                                     </div>
-                                    <button type="submit" class="btn btn-success btn-lg">Save</button>
+                                    <button th:type="submit" class="btn btn-success btn-lg">Save</button>
                                 </form>
                             </div>
                         <!-- /.col-lg-6 (nested) -->

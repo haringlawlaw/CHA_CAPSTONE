@@ -10,9 +10,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.HashMap;
 
 /**
@@ -20,7 +22,7 @@ import java.util.HashMap;
  */
 @Controller
 @RequestMapping(value="/")
-@SessionAttributes("appUSer")
+@SessionAttributes("appUser")
 public class MainWebController {
 
 
@@ -32,6 +34,10 @@ public class MainWebController {
         return new User();
     }
 
+    @ModelAttribute("student")
+    public Student getStudent() {
+        return new Student();
+    }
 
 
 
@@ -44,14 +50,14 @@ public class MainWebController {
             else if (error.equals("2"))
                 model.addAttribute("param.logout", true);
         }
-        model.addAttribute("appUser", new User());
+        model.addAttribute("appUser", getShopUser());
 
         return "login";
     }
 
 
     @RequestMapping(value="loginWebUser", method = RequestMethod.POST)
-    public String loginWebUser(User user, org.springframework.ui.Model model){
+    public String loginWebUser(@ModelAttribute("appUser") User user, org.springframework.ui.Model model){
 
 
         System.out.println("USERNAME: " + user.getUsername());
@@ -63,17 +69,47 @@ public class MainWebController {
             System.out.println("Null");
         }
 
-//        System.out.println("RETURNED USER: " + returnedUser.getUsername());
-//        model.addAttribute("user", returnedUser);
+        System.out.println("RETURNED USER: " + returnedUser.getUsername());
+        model.addAttribute("User", returnedUser);
 
-        return "redirect:/homepage/";
+        return "redirect:/homepage";
     }
 
-    @RequestMapping(value = "/addStudent", method = RequestMethod.GET)
-    public String shopAddStudent(Student student, org.springframework.ui.Model model) {
 
+    @RequestMapping(value = "/homepage", method = RequestMethod.GET)
+    public String showDashboard(@ModelAttribute("appUser") User user, org.springframework.ui.Model model) {
+        System.out.println("HOMEPAGE: " + user.getUsername());
+       if(null != user.getUsername()) {
+           model.addAttribute("User", user);
+           return "dashboard";
+       }
+       return "redirect:/login";
+    }
+
+
+    @RequestMapping(value = "/getStudent", method = RequestMethod.GET)
+    public String shopAddStudent(@Valid Student student, org.springframework.ui.Model model) {
 
         model.addAttribute("student", new Student());
+
+        return "addStudent";
+    }
+
+    @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
+    public String addStudent(@Valid Student student , BindingResult bindingResult, org.springframework.ui.Model model){
+
+
+        System.out.println("student first name: " + student.getFirstName());
+        System.out.println("student last name: " + student.getLastName());
+        try{
+            student.setCreatedBy("admin123");
+            mainService.addStudent(student);
+            System.out.println("TRYING TO SAVE!");
+            System.out.println("SUCCESS!!");
+            return "redirect:/login";
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
         return "addStudent";
     }
