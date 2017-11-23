@@ -67,8 +67,8 @@ public class MainWebController {
             System.out.println("Null");
         }
 
-        System.out.println("RETURNED USER: " + returnedUser.getUsername());
-        model.addAttribute("user", returnedUser);
+//        System.out.println("RETURNED USER: " + returnedUser.getUsername());
+//        model.addAttribute("user", returnedUser);
 
         return "redirect:/homepage/";
     }

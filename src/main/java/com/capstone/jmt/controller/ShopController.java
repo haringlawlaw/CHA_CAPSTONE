@@ -29,16 +29,14 @@ public class ShopController {
     /*
     List of all GET Requests
      */
-    @ModelAttribute("appUSer")
+    @ModelAttribute("shopUser")
     public User getShopUser() {
         return new User();
     }
 
 
-
-
     @RequestMapping(value = "/homepage", method = RequestMethod.GET)
-    public String showDashboard(@ModelAttribute("shopUser") ShopLogin shopUser, Model model) {
+    public String showDashboard(@ModelAttribute("shopUser") User shopUser, Model model) {
 //        if (shopUser.getId() == null)
 //            return "redirect:/login";
 //        Double sales = shopService.getTotalSalesToday(shopUser.getStaffOf());

@@ -1,6 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+    <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.capstone.jmt.mapper.MainMapper">
+
+    <resultMap id="LastIdMap" type="com.capstone.jmt.entity.LastId">
+        <result column="id" property="id" jdbcType="INTEGER" />
+        <result column="last_id" property="lastId" jdbcType="INTEGER" />
+    </resultMap>
 
     <resultMap id="EmergencyContactMap" type="com.capstone.jmt.entity.EmergencyContact">
         <result column="id" property="id" jdbcType="VARCHAR"/>
@@ -12,6 +17,18 @@
         <result column="updated_on" property="updatedOn" jdbcType="TIMESTAMP"/>
         <result column="created_by" property="createdBy" jdbcType="VARCHAR"/>
         <result column="updated_by" property="updatedBy" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="GuidanceMap" type="com.capstone.jmt.entity.Guidance">
+        <result column="id" property="id" jdbcType="VARCHAR" />
+        <result column="teacher_fname" property="firstName" jdbcType="VARCHAR" />
+        <result column="teacher_lname" property="lastName" jdbcType="VARCHAR" />
+        <result column="position" property="position" jdbcType="VARCHAR" />
+        <result column="contact_no" property="contactNo" jdbcType="VARCHAR" />
+        <result column="created_on" property="createdOn" jdbcType="TIMESTAMP" />
+        <result column="updated_on" property="updatedOn" jdbcType="TIMESTAMP" />
+        <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+        <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
     </resultMap>
 
     <resultMap id="ParentMap" type="com.capstone.jmt.entity.Parent">
@@ -59,6 +76,7 @@
         <result column="password" property="password" jdbcType="VARCHAR"/>
         <result column="user_type_id" property="userTypeId" jdbcType="INTEGER"/>
         <result column="email" property="email" jdbcType="VARCHAR"/>
+        <result column="reference_id" property="referenceId" jdbcType="VARCHAR"/>
         <result column="last_login" property="lastLogin" jdbcType="TIMESTAMP"/>
         <result column="is_locked" property="isLocked" jdbcType="BOOLEAN"/>
         <result column="created_on" property="createdOn" jdbcType="TIMESTAMP"/>
@@ -67,13 +85,42 @@
         <result column="updated_by" property="updatedBy" jdbcType="VARCHAR"/>
     </resultMap>
 
+    <select id="getLastId" resultMap="LastIdMap" resultType="com.capstone.jmt.entity.LastId">
+        SELECT * FROM ref_user_ids
+        WHERE id = #{id}
+    </select>
+
+    <update id="incrementId" flushCache="true">
+
+    </update>
+
     <select id="getUserByUsername" resultMap="UserMap" resultType="com.capstone.jmt.entity.User">
         SELECT * FROM data_users
         WHERE username = #{username}
     </select>
 
+    <select id="getUserById" resultMap="UserMap" resultType="com.capstone.jmt.entity.User">
+        SELECT * FROM data_users
+        WHERE id = #{id}
+    </select>
+
     <select id="getStudent" resultMap="StudentMap" resultType="com.capstone.jmt.entity.Student">
         SELECT * FROM data_students
+        WHERE id = #{id}
+    </select>
+
+    <select id="getGuidance" resultMap="GuidanceMap" resultType="com.capstone.jmt.entity.Student">
+        SELECT * FROM data_guidance
+        WHERE id = #{id}
+    </select>
+
+    <select id="getParent" resultMap="ParentMap" resultType="com.capstone.jmt.entity.Student">
+        SELECT * FROM data_parents
+        WHERE id = #{id}
+    </select>
+
+    <select id="getEmergencyContact" resultMap="EmergencyContactMap" resultType="com.capstone.jmt.entity.Student">
+        SELECT * FROM data_emergency_contact
         WHERE id = #{id}
     </select>
 
@@ -170,11 +217,11 @@
           #{user.id, jdbcType=VARCHAR},
           #{user.username, jdbcType=VARCHAR},
           #{user.password, jdbcType=VARCHAR},
-          'DEFAULT',
+          #{user.referenceId, jdbcType=VARCHAR},
           #{user.userTypeId, jdbcType=INTEGER},
           #{user.email, jdbcType=VARCHAR},
           #{user.isLocked, jdbcType=BOOLEAN},
-          #{username}
+          #{user.createdBy, jdbcType=VARCHAR}
         )
     </insert>
 
@@ -202,4 +249,17 @@
     <select id="getGradeLevelList" resultMap="GradeLevelMap" resultType="java.util.List">
         SELECT * FROM ref_grade_level
     </select>
+
+    <insert id="addTeacher" flushCache="true">
+        INSERT INTO data_guidance(id, teacher_fname, teacher_lname, position, contact_no, created_by)
+        VALUES
+        (
+        #{guidance.id, jdbcType=VARCHAR},
+        #{guidance.firstName, jdbcType=VARCHAR},
+        #{guidance.lastName, jdbcType=VARCHAR},
+        #{guidance.position, jdbcType=VARCHAR},
+        #{guidance.contactNo, jdbcType=VARCHAR},
+        #{guidance.createdBy, jdbcType=VARCHAR}
+        )
+    </insert>
 </mapper>

@@ -1,10 +1,10 @@
 package com.capstone.jmt.service;
 
+import com.capstone.jmt.data.AddUserJson;
 import com.capstone.jmt.data.MessageJson;
 import com.capstone.jmt.data.RefGradeLevel;
 import com.capstone.jmt.data.TapLog;
-import com.capstone.jmt.entity.Student;
-import com.capstone.jmt.entity.User;
+import com.capstone.jmt.entity.*;
 import com.capstone.jmt.mapper.MainMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,7 +38,15 @@ public class MainService {
             response.put("responseDesc", "Username does not exists.");
         } else {
             if (passwordEncoder.matches(password, user.getPassword())) {
+                Guidance guidance = new Guidance();
+                Parent parent = new Parent();
+                if(user.getUserTypeId() == 1)
+                    guidance = mainMapper.getGuidance(user.getReferenceId());
+                else
+                    parent = mainMapper.getParent(user.getReferenceId());
                 response.put("User", user);
+                response.put("Guidance", guidance);
+                response.put("Parent", parent);
                 response.put("responseCode", HttpStatus.OK);
                 response.put("responseDesc", "Login Successful.");
             } else {
@@ -63,6 +71,52 @@ public class MainService {
 
         return response;
     }
+
+    public HashMap<String, Object> getGuidance(String id) {
+        HashMap<String, Object> response = new HashMap<>();
+        Guidance guidance = mainMapper.getGuidance(id);
+        response.put("guidance", guidance);
+        if (null == guidance) {
+            response.put("responseCode", HttpStatus.NOT_FOUND);
+            response.put("responseDesc", "Guidance does not exists.");
+        } else {
+            response.put("responseCode", HttpStatus.OK);
+            response.put("responseDesc", "Guidance Found.");
+        }
+
+        return response;
+    }
+
+    public HashMap<String, Object> getParent(String id) {
+        HashMap<String, Object> response = new HashMap<>();
+        Parent parent = mainMapper.getParent(id);
+        response.put("parent", parent);
+        if (null == parent) {
+            response.put("responseCode", HttpStatus.NOT_FOUND);
+            response.put("responseDesc", "Parent does not exists.");
+        } else {
+            response.put("responseCode", HttpStatus.OK);
+            response.put("responseDesc", "Parent Found.");
+        }
+
+        return response;
+    }
+
+    public HashMap<String, Object> getEmergencyContact(String id) {
+        HashMap<String, Object> response = new HashMap<>();
+        EmergencyContact eContact = mainMapper.getEmergencyContact(id);
+        response.put("emergencyContact", eContact);
+        if (null == eContact) {
+            response.put("responseCode", HttpStatus.NOT_FOUND);
+            response.put("responseDesc", "Emergency Contact does not exists.");
+        } else {
+            response.put("responseCode", HttpStatus.OK);
+            response.put("responseDesc", "Emergency Contact Found.");
+        }
+
+        return response;
+    }
+
 
     public HashMap<String, Object> getLastTapEntry(String studentId) {
         HashMap<String, Object> response = new HashMap<>();
@@ -147,14 +201,39 @@ public class MainService {
         return response;
     }
 
-    public void addUser(User user, String username) {
+    public void addUser(AddUserJson userJson) {
         System.out.println(UUID.randomUUID().toString());
-        user.setId(UUID.randomUUID().toString().substring(0, 35));
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        mainMapper.addUser(user, username);
+        User user = new User(userJson);
+        user.setId(UUID.randomUUID().toString());
+        user.setPassword(passwordEncoder.encode(userJson.getPassword()));
+        mainMapper.addUser(user);
     }
 
     public List<RefGradeLevel> getGradeLevelList(){
         return mainMapper.getGradeLevelList();
+    }
+
+    public HashMap<String, Object> addGuidance(Guidance guidance) {
+        HashMap<String, Object> response = new HashMap<>();
+        guidance.setId("GID" + mainMapper.getLastId(1));
+        mainMapper.incrementId(1);
+        mainMapper.addTeacher(guidance);
+        response.put("responseCode", 200);
+        response.put("responseDesc", "Successfully Added Guidance.");
+        return response;
+    }
+
+    public HashMap<String, Object> getUserById(String id) {
+        HashMap<String, Object> response = new HashMap<>();
+        User user = mainMapper.getUserById(id);
+        response.put("user", user);
+        if(null == user){
+            response.put("responseCode", HttpStatus.NOT_FOUND);
+            response.put("responseDesc", "Cannot find user. Invalid Id.");
+        }else{
+            response.put("responseCode", HttpStatus.OK);
+            response.put("responseDesc", "Successfully retrieved user.");
+        }
+        return response;
     }
 }
