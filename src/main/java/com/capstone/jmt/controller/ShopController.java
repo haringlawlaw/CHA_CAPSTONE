@@ -35,27 +35,6 @@ public class ShopController {
     }
 
 
-    @RequestMapping(value = "/homepage", method = RequestMethod.GET)
-    public String showDashboard(@ModelAttribute("shopUser") User shopUser, Model model) {
-//        if (shopUser.getId() == null)
-//            return "redirect:/login";
-//        Double sales = shopService.getTotalSalesToday(shopUser.getStaffOf());
-//        Integer saleCount = shopService.getSalesCount(shopUser.getStaffOf());
-//        Double total = 0.0;
-//        List<LastSevenDays> orders = shopService.getLastSevenDays(shopUser.getStaffOf());
-//        for (LastSevenDays lastSevenDays : orders) {
-//            total+= lastSevenDays.getSales();
-//        }
-//        model.addAttribute("orders", orders);
-//        model.addAttribute("total", "P " + String.valueOf(total));
-//        model.addAttribute("totalSales", "P " + sales==null? "0.00": String.valueOf(sales));
-//        model.addAttribute("inventoryCount", String.valueOf(shopService.getInventoryCount(shopUser.getStaffOf())));
-//        model.addAttribute("saleCount", saleCount==null? "0": saleCount);
-//        model.addAttribute("rating", shopService.getShopRating(shopUser.getStaffOf()));
-//        model.addAttribute("username", shopUser.getUsername());
-
-        return "dashboard";
-    }
 
     @RequestMapping(value = "/rating", method = RequestMethod.GET)
     public String shopRating(@ModelAttribute("shopUser") ShopLogin shopUser, Model model) {

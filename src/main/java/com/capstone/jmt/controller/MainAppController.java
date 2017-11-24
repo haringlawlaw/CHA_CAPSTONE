@@ -144,8 +144,9 @@ public class MainAppController {
     public ResponseEntity<?> addUser(@RequestBody AddUserJson user) {
         HashMap<String, Object> response = new HashMap<>();
         User admin = mainService.getUser(user.getAppUsername());
+        System.out.println(user.getAppUsername());
         if (null != admin || user.getAppUsername().equalsIgnoreCase("admin")) {
-            if(admin.getUserTypeId() == 0) {
+                if(user.getAppUsername().equalsIgnoreCase("admin") || 0 == admin.getUserTypeId()) {
                 User teacher = mainService.getUser(user.getUsername());
                 if (null != teacher) {
                     response.put("responseCode", 201);
