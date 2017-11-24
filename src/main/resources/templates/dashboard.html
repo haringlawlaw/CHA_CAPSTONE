@@ -19,8 +19,8 @@
 
     <div id="page-wrapper">
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header"> Welcome User!</h1>
+            <div class="col-lg-12" th:object="${User}">
+                <h1 class="page-header"> Welcome User! <span th:text="*{username}"> </span></h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>

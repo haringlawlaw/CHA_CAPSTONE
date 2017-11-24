@@ -48,7 +48,7 @@ public class Student implements Serializable{
     private String rfid;
     @JsonProperty("isEnrolled")
     private Boolean isEnrolled;
-    @JsonProperty("createdBy")
+        @JsonProperty("createdBy")
     private String createdBy;
     @JsonProperty("createdOn")
     private Date createdOn;

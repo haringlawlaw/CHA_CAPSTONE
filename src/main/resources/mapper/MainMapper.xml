@@ -85,15 +85,15 @@
         <result column="updated_by" property="updatedBy" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <select id="getLastId" resultMap="LastIdMap" resultType="com.capstone.jmt.entity.LastId">
-        SELECT * FROM ref_user_ids
-        WHERE id = #{id}
+    <select id="getLastId" resultType="java.lang.Integer">
+        SELECT last_id FROM ref_user_ids
+        WHERE user_type_id = #{id}
     </select>
 
     <update id="incrementId" flushCache="true">
         UPDATE ref_user_ids
         SET last_id = last_id + 1
-        WHERE id = #{id}
+        WHERE user_type_id = #{id}
     </update>
 
     <select id="getUserByUsername" resultMap="UserMap" resultType="com.capstone.jmt.entity.User">
@@ -134,10 +134,11 @@
     <insert id="addStudent" flushCache="true">
         INSERT INTO data_students(
         id, first_name, last_name, middle_name, birth_date, place, gender, citizenship,
-        address, contact_no, emergency_contact, grade_level_id, school_year, "section",
+        address, contact_no, emergency_contact, grade_level_id, school_year, section,
         is_old_student, is_transferee, is_enrolled, created_by, rfid)
         VALUES
-        (#{student.id, jdbcType=VARCHAR},
+        (
+        #{student.id, jdbcType=VARCHAR},
         #{student.firstName, jdbcType=VARCHAR},
         #{student.lastName, jdbcType=VARCHAR},
         #{student.middleName, jdbcType=VARCHAR},
@@ -151,9 +152,10 @@
         #{student.gradeLvlId, jdbcType=INTEGER},
         #{student.schoolYear, jdbcType=INTEGER},
         #{student.section, jdbcType=VARCHAR},
-        #{student.isOldStudent, jdbcType=TINYINT},
-        #{student.isTransferee, jdbcType=TINYINT},
-        #{student.isEnrolled, jdbcType=TINYINT},
+        #{student.isOldStudent, jdbcType=BOOLEAN},
+        #{student.isTransferee, jdbcType=BOOLEAN},
+        #{student.isEnrolled, jdbcType=BOOLEAN},
+        #{student.createdBy, jdbcType=VARCHAR},
         #{student.rfid, jdbcType=VARCHAR}
         )
     </insert>

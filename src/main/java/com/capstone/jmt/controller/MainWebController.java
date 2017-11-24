@@ -1,6 +1,8 @@
 package com.capstone.jmt.controller;
 
+import com.capstone.jmt.data.AddUserJson;
 import com.capstone.jmt.data.ShopLogin;
+import com.capstone.jmt.entity.Guidance;
 import com.capstone.jmt.entity.Student;
 import com.capstone.jmt.entity.User;
 import com.capstone.jmt.service.MainService;
@@ -10,9 +12,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.HashMap;
 
 /**
@@ -20,7 +24,7 @@ import java.util.HashMap;
  */
 @Controller
 @RequestMapping(value="/")
-@SessionAttributes("appUSer")
+@SessionAttributes("appUser")
 public class MainWebController {
 
 
@@ -32,6 +36,10 @@ public class MainWebController {
         return new User();
     }
 
+    @ModelAttribute("student")
+    public Student getStudent() {
+        return new Student();
+    }
 
 
 
@@ -44,14 +52,14 @@ public class MainWebController {
             else if (error.equals("2"))
                 model.addAttribute("param.logout", true);
         }
-        model.addAttribute("appUser", new User());
+        model.addAttribute("appUser", getShopUser());
 
         return "login";
     }
 
 
     @RequestMapping(value="loginWebUser", method = RequestMethod.POST)
-    public String loginWebUser(User user, org.springframework.ui.Model model){
+    public String loginWebUser(@ModelAttribute("appUser") User user, org.springframework.ui.Model model){
 
 
         System.out.println("USERNAME: " + user.getUsername());
@@ -63,19 +71,87 @@ public class MainWebController {
             System.out.println("Null");
         }
 
-//        System.out.println("RETURNED USER: " + returnedUser.getUsername());
-//        model.addAttribute("user", returnedUser);
+        System.out.println("RETURNED USER: " + returnedUser.getUsername());
+        model.addAttribute("User", returnedUser);
 
-        return "redirect:/homepage/";
+        return "redirect:/homepage";
     }
 
-    @RequestMapping(value = "/addStudent", method = RequestMethod.GET)
-    public String shopAddStudent(Student student, org.springframework.ui.Model model) {
 
+    @RequestMapping(value = "/homepage", method = RequestMethod.GET)
+    public String showDashboard(@ModelAttribute("appUser") User user, org.springframework.ui.Model model) {
+        System.out.println("HOMEPAGE: " + user.getUsername());
+       if(null != user.getUsername()) {
+           model.addAttribute("User", user);
+           return "dashboard";
+       }
+       return "redirect:/login";
+    }
+
+
+    @RequestMapping(value = "/getStudent", method = RequestMethod.GET)
+    public String shopAddStudent(@Valid Student student, org.springframework.ui.Model model) {
 
         model.addAttribute("student", new Student());
 
         return "addStudent";
     }
+
+    @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
+    public String addStudent(@Valid Student student , BindingResult bindingResult, org.springframework.ui.Model model){
+
+
+        System.out.println("student first name: " + student.getFirstName());
+        System.out.println("student last name: " + student.getLastName());
+        try{
+            student.setCreatedBy("admin123");
+            mainService.addStudent(student);
+            System.out.println("TRYING TO SAVE!");
+            System.out.println("SUCCESS!!");
+            return "redirect:/login";
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return "addStudent";
+    }
+
+    @RequestMapping(value = "/getUser", method = RequestMethod.GET)
+    public String getUserData(@Valid AddUserJson newUser, org.springframework.ui.Model model){
+
+        //TODO ADD VALIDATION OF NULL VALUES
+
+        model.addAttribute("newUser", new User());
+        return  "addUser";
+    }
+
+    @RequestMapping(value = "/addNewUser", method = RequestMethod.POST)
+    public String postNewUser(@Valid AddUserJson newUser, BindingResult bindingResult, org.springframework.ui.Model model){
+
+        System.out.println("USER username: " + newUser.getUsername());
+        System.out.println("USER password: " + newUser.getPassword());
+
+        mainService.addUser(newUser);
+        return "redirect:/login";
+    }
+
+    @RequestMapping(value = "/getGuidance", method = RequestMethod.GET)
+    public String getGuidanceData(@Valid Guidance guidance, org.springframework.ui.Model model){
+
+        model.addAttribute("newGuidance", new Guidance());
+        return "addGuidance";
+    }
+
+    @RequestMapping(value = "/addNewGuidance", method = RequestMethod.POST)
+    public String postNewGuidance(@Valid Guidance guidance, BindingResult bindingResult, org.springframework.ui.Model model){
+
+        System.out.println("GUIDANCE FIRST NAME: " + guidance.getFirstName());
+        System.out.println("GUIDANCE LAST NAME: " + guidance.getLastName());
+
+        mainService.addGuidance(guidance);
+        return "redirect:/login";
+
+    }
+
 
 }

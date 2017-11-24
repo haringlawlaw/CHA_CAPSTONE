@@ -44,7 +44,7 @@ public interface MainMapper {
 
     User getUserById(@Param("id") String id);
 
-    String getLastId(@Param("id") int id);
+    int getLastId(@Param("id") int id);
 
     void incrementId(@Param("id") int id);
 }

@@ -32,28 +32,29 @@ public class MainService {
         HashMap<String, Object> response = new HashMap<>();
 
         User user = mainMapper.getUserByUsername(username);
-        response.put("user", user);
-        if (null == user) {
-            response.put("responseCode", HttpStatus.NOT_FOUND);
-            response.put("responseDesc", "Username does not exists.");
-        } else {
-            if (passwordEncoder.matches(password, user.getPassword())) {
-                Guidance guidance = new Guidance();
-                Parent parent = new Parent();
-                if(user.getUserTypeId() == 1)
-                    guidance = mainMapper.getGuidance(user.getReferenceId());
-                else
-                    parent = mainMapper.getParent(user.getReferenceId());
-                response.put("User", user);
-                response.put("Guidance", guidance);
-                response.put("Parent", parent);
-                response.put("responseCode", HttpStatus.OK);
-                response.put("responseDesc", "Login Successful.");
-            } else {
-                response.put("responseCode", HttpStatus.UNAUTHORIZED);
-                response.put("responseDesc", "Password incorrect.");
-            }
-        }
+        response.put("User", user);
+//        if (null == user) {
+//            response.put("responseCode", HttpStatus.NOT_FOUND);
+//            response.put("responseDesc", "Username does not exists.");
+//        } else {
+//            if (passwordEncoder.matches(user.getPassword(), password)) {
+//                System.out.println("TAMA");
+//                Guidance guidance = new Guidance();
+//                Parent parent = new Parent();
+//                if(user.getUserTypeId() == 1)
+//                    guidance = mainMapper.getGuidance(user.getReferenceId());
+//                else
+//                    parent = mainMapper.getParent(user.getReferenceId());
+//                response.put("User", user);
+//                response.put("Guidance", guidance);
+//                response.put("Parent", parent);
+//                response.put("responseCode", HttpStatus.OK);
+//                response.put("responseDesc", "Login Successful.");
+//            } else {
+//                response.put("responseCode", HttpStatus.UNAUTHORIZED);
+//                response.put("responseDesc", "Password incorrect.");
+//            }
+//        }
         return response;
     }
 
@@ -160,7 +161,7 @@ public class MainService {
 
     public HashMap<String, Object> addStudent(Student student) {
         HashMap<String, Object> response = new HashMap<>();
-        student.setId("SID" + mainMapper.getLastId(4));
+        student.setId("SID" + String.valueOf(mainMapper.getLastId(4)));
         mainMapper.incrementId(4);
         mainMapper.addStudent(student);
         response.put("responseCode", 200);
@@ -207,16 +208,20 @@ public class MainService {
         User user = new User(userJson);
         Guidance guidance = mainMapper.getGuidance(userJson.getReferenceId());
         Parent parent = mainMapper.getParent(user.getReferenceId());
-        user.setId(guidance != null? "GID" + mainMapper.getLastId(1):
-                    parent != null? "PID" + mainMapper.getLastId(2):
-                    "AID" + mainMapper.getLastId(0));
+        user.setId(guidance != null? "GID" + String.valueOf(mainMapper.getLastId(1)):
+                    parent != null? "PID" + String.valueOf(mainMapper.getLastId(2)):
+                    "AID" + String.valueOf(mainMapper.getLastId(0)));
         user.setReferenceId("ADMIN");
-        if(guidance != null)
+        if(guidance != null) {
+            user.setUserTypeId(1);
             mainMapper.incrementId(1);
-        else if(parent != null)
+        }else if(parent != null) {
+            user.setUserTypeId(2);
             mainMapper.incrementId(2);
-        else
+        }else {
+            user.setUserTypeId(0);
             mainMapper.incrementId(0);
+        }
         user.setPassword(passwordEncoder.encode(userJson.getPassword()));
         mainMapper.addUser(user);
     }
