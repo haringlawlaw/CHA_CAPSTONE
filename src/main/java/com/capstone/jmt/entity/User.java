@@ -44,7 +44,6 @@ public class User implements Serializable {
     public User(AddUserJson userJson) {
         this.username = userJson.getUsername();
         this.password = userJson.getPassword();
-        this.userTypeId = userJson.getUserTypeId();
         this.email = userJson.getEmail();
         this.createdBy = userJson.getAppUsername();
     }

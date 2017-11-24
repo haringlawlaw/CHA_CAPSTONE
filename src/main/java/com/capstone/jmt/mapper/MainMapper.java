@@ -47,4 +47,10 @@ public interface MainMapper {
     String getLastId(@Param("id") int id);
 
     void incrementId(@Param("id") int id);
+
+    void addParent(@Param("parent") Parent parent);
+
+    void addEmergencyContact(@Param("eContact")EmergencyContact eContact);
+
+    List<MessageJson> getAnnouncementsByParentId(@Param("parentId") String parentId);
 }
