@@ -244,7 +244,8 @@
     </resultMap>
 
     <select id="getAnnouncementsByParentId" resultMap="MessageMap" resultType="java.util.List">
-
+        SELECT * FROM logs_of_messages
+        WHERE message_target LIKE #{searchString}
     </select>
 
     <insert id="addUser" flushCache="true">

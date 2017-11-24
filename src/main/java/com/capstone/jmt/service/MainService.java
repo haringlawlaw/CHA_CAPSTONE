@@ -278,7 +278,7 @@ public class MainService {
 
     public HashMap<String, Object> getAnnouncements(String parentId) {
         HashMap<String, Object> response = new HashMap<>();
-        List<MessageJson> announcements = mainMapper.getAnnouncementsByParentId(parentId);
+        List<MessageJson> announcements = mainMapper.getAnnouncementsByParentId("%" + parentId + "%");
         return response;
     }
 }
