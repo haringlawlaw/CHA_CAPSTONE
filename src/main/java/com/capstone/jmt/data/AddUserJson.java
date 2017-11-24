@@ -9,6 +9,9 @@ import java.io.Serializable;
  */
 public class AddUserJson implements Serializable{
 
+
+    @JsonProperty("userTypeId")
+    private Integer userTypeId;
     @JsonProperty("username")
     private String username;
     @JsonProperty("password")
@@ -19,6 +22,14 @@ public class AddUserJson implements Serializable{
     private String referenceId;
     @JsonProperty("appUsername")
     private String appUsername;
+
+    public Integer getUserTypeId() {
+        return userTypeId;
+    }
+
+    public void setUserTypeId(Integer userTypeId) {
+        this.userTypeId = userTypeId;
+    }
 
     public String getReferenceId() {
         return referenceId;
