@@ -169,6 +169,28 @@ public class MainService {
         return response;
     }
 
+    public HashMap<String, Object> addParent(Parent parent){
+        HashMap<String, Object> response = new HashMap<>();
+        parent.setId("PID" + mainMapper.getLastId(2));
+        mainMapper.incrementId(2);
+        mainMapper.addParent(parent);
+        response.put("responseCode", 200);
+        response.put("responseDesc", "Successfully added parent.");
+
+        return response;
+    }
+
+    public HashMap<String, Object> addEmergencyContact(EmergencyContact eContact){
+        HashMap<String, Object> response = new HashMap<>();
+        eContact.setId("EID" + mainMapper.getLastId(3));
+        mainMapper.incrementId(3);
+        mainMapper.addEmergencyContact(eContact);
+        response.put("responseCode", 200);
+        response.put("responseDesc", "Successfully added emergency contact.");
+
+        return response;
+    }
+
     public User getUser(String username) {
         return mainMapper.getUserByUsername(username);
     }
@@ -181,7 +203,6 @@ public class MainService {
 
     public HashMap<String, Object> postAnnouncement(MessageJson mj) {
         HashMap<String, Object> response = new HashMap<>();
-        //TODO Check function.
         mainMapper.postAnnouncement(mj);
         response.put("responseCode", 200);
         response.put("responseDesc", "Announcement Posted.");
@@ -251,6 +272,13 @@ public class MainService {
             response.put("responseCode", HttpStatus.OK);
             response.put("responseDesc", "Successfully retrieved user.");
         }
+        return response;
+    }
+
+
+    public HashMap<String, Object> getAnnouncements(String parentId) {
+        HashMap<String, Object> response = new HashMap<>();
+        List<MessageJson> announcements = mainMapper.getAnnouncementsByParentId("%" + parentId + "%");
         return response;
     }
 }

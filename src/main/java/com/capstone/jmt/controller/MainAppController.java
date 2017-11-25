@@ -169,11 +169,11 @@ public class MainAppController {
 
     @RequestMapping(value = "postAnnouncement", method = RequestMethod.POST)
     public ResponseEntity<?> postAnnouncement(@RequestBody MessageJson mj) {
-        HashMap<String, Object> response = new HashMap<>();
-        response.putAll(mainService.postAnnouncement(mj));
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        return new ResponseEntity<>(mainService.postAnnouncement(mj), HttpStatus.OK);
     }
 
-//    @RequestMapping(value = "getAnnouncements", method = RequestMethod.GET)
-//    public ResponseEntity<?> getAnnouncements(@RequestParam String)
+    @RequestMapping(value = "getAnnouncements", method = RequestMethod.GET)
+    public ResponseEntity<?> getAnnouncements(@RequestParam String parentId){
+        return new ResponseEntity<>(mainService.getAnnouncements(parentId), HttpStatus.OK);
+    }
 }

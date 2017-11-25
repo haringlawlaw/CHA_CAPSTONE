@@ -160,6 +160,32 @@
         )
     </insert>
 
+    <insert id="addParent" flushCache="true">
+        INSERT INTO data_parents(
+        id, parent_of, relationship, parent_name, occupation, office_no)
+        VALUES
+        (
+        #{parent.id, jdbcType=VARCHAR},
+        #{parent.parentOf, jdbcType=VARCHAR},
+        #{parent.relationship, jdbcType=VARCHAR},
+        #{parent.parentName, jdbcType=VARCHAR},
+        #{parent.occupation, jdbcType=VARCHAR},
+        #{parent.officeNo, jdbcType=VARCHAR}
+        )
+    </insert>
+
+    <insert id="addEmergencyContact" flushCache="true">
+        INSERT INTO data_emergency_contact
+        (id, contact_of, contact_name, relationship, contact_no, address)
+        VALUES(
+        #{eContact.id, jdbcType=VARCHAR},
+        #{eContact.contactOf, jdbcType=VARCHAR},
+        #{eContact.relationship, jdbcType=VARCHAR},
+        #{eContact.contactNo, jdbcType=VARCHAR},
+        #{eContact.address, jdbcType=VARCHAR}
+        )
+    </insert>
+
     <update id="updateStudent" flushCache="true">
         UPDATE data_students
         SET first_name = #{student.firstName, jdbcType=VARCHAR},
@@ -207,6 +233,19 @@
         SELECT TOP 1 * FROM log_taps
         WHERE rfid = #{rfid}
         ORDER BY log_datetime DESC
+    </select>
+
+    <resultMap id="MessageMap" type="com.capstone.jmt.data.MessageJson">
+        <result column="posted_by" property="postedBy" jdbcType="VARCHAR" />
+        <result column="message_type" property="messageTypeId" jdbcType="VARCHAR" />
+        <result column="message_target" property="messageTarget" jdbcType="VARCHAR" />
+        <result column="date_posted" property="datePosted" jdbcType="TIMESTAMP" />
+        <result column="message_content" property="message" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="getAnnouncementsByParentId" resultMap="MessageMap" resultType="java.util.List">
+        SELECT * FROM logs_of_messages
+        WHERE message_target LIKE #{searchString}
     </select>
 
     <insert id="addUser" flushCache="true">

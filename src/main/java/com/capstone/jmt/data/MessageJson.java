@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by Jabito on 16/11/2017.
@@ -16,6 +17,8 @@ public class MessageJson implements Serializable{
     private String message;
     @JsonProperty("postedBy")
     private String postedBy;
+    @JsonProperty("datePosted")
+    private Date datePosted;
     @JsonProperty("messageTarget")
     private ArrayList<String> messageTarget;
 
@@ -33,6 +36,14 @@ public class MessageJson implements Serializable{
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public Date getDatePosted() {
+        return datePosted;
+    }
+
+    public void setDatePosted(Date datePosted) {
+        this.datePosted = datePosted;
     }
 
     public String getPostedBy() {
