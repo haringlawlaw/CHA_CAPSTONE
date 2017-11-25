@@ -33,28 +33,28 @@ public class MainService {
 
         User user = mainMapper.getUserByUsername(username);
         response.put("User", user);
-//        if (null == user) {
-//            response.put("responseCode", HttpStatus.NOT_FOUND);
-//            response.put("responseDesc", "Username does not exists.");
-//        } else {
-//            if (passwordEncoder.matches(user.getPassword(), password)) {
-//                System.out.println("TAMA");
-//                Guidance guidance = new Guidance();
-//                Parent parent = new Parent();
-//                if(user.getUserTypeId() == 1)
-//                    guidance = mainMapper.getGuidance(user.getReferenceId());
-//                else
-//                    parent = mainMapper.getParent(user.getReferenceId());
-//                response.put("User", user);
-//                response.put("Guidance", guidance);
-//                response.put("Parent", parent);
-//                response.put("responseCode", HttpStatus.OK);
-//                response.put("responseDesc", "Login Successful.");
-//            } else {
-//                response.put("responseCode", HttpStatus.UNAUTHORIZED);
-//                response.put("responseDesc", "Password incorrect.");
-//            }
-//        }
+        if (null == user) {
+            response.put("responseCode", HttpStatus.NOT_FOUND);
+            response.put("responseDesc", "Username does not exists.");
+        } else {
+            if (passwordEncoder.matches(user.getPassword(), password)) {
+                System.out.println("TAMA");
+                Guidance guidance = new Guidance();
+                Parent parent = new Parent();
+                if(user.getUserTypeId() == 1)
+                    guidance = mainMapper.getGuidance(user.getReferenceId());
+                else
+                    parent = mainMapper.getParent(user.getReferenceId());
+                response.put("User", user);
+                response.put("Guidance", guidance);
+                response.put("Parent", parent);
+                response.put("responseCode", HttpStatus.OK);
+                response.put("responseDesc", "Login Successful.");
+            } else {
+                response.put("responseCode", HttpStatus.UNAUTHORIZED);
+                response.put("responseDesc", "Password incorrect.");
+            }
+        }
         return response;
     }
 

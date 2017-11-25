@@ -153,5 +153,20 @@ public class MainWebController {
 
     }
 
+    @RequestMapping(value = "/monitor", method = RequestMethod.GET)
+    public String shopMonitor(@ModelAttribute("appUser") User user, org.springframework.ui.Model model){
+//        if (shopUser.getId() == null)
+//            return "redirect:/login";
+//
+//
+//        model.addAttribute("shop1", new ShopSalesInformation());
+//        model.addAttribute("shop2", new ShopSalesInformation());
+//        model.addAttribute("water", new ShopSalesInformation());
+//        model.addAttribute("username", shopUser.getUsername());
+//        model.addAttribute("inventory", shopService.getShopSalesInformationById(shopUser.getStaffOf()));
+
+        return "monitor";
+    }
+
 
 }
