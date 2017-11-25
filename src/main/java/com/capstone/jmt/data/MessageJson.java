@@ -20,7 +20,7 @@ public class MessageJson implements Serializable{
     @JsonProperty("datePosted")
     private Date datePosted;
     @JsonProperty("messageTarget")
-    private ArrayList<String> messageTarget;
+    private String messageTarget;
 
     public Integer getMessageTypeId() {
         return messageTypeId;
@@ -54,11 +54,11 @@ public class MessageJson implements Serializable{
         this.postedBy = postedBy;
     }
 
-    public ArrayList<String> getMessageTarget() {
+    public String getMessageTarget() {
         return messageTarget;
     }
 
-    public void setMessageTarget(ArrayList<String> messageTarget) {
+    public void setMessageTarget(String messageTarget) {
         this.messageTarget = messageTarget;
     }
 }
