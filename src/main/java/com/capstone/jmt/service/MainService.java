@@ -38,7 +38,7 @@ public class MainService {
             response.put("responseCode", HttpStatus.NOT_FOUND);
             response.put("responseDesc", "Username does not exists.");
         } else {
-            if (passwordEncoder.matches(user.getPassword(), password)) {
+            if (passwordEncoder.matches(password, user.getPassword())) {
                 Guidance guidance = new Guidance();
                 Parent parent = new Parent();
                 if (user.getUserTypeId() == 1)
