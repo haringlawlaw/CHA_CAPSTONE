@@ -218,7 +218,7 @@
         VALUES (
         #{mj.postedBy, jdbcType=VARCHAR},
         #{mj.messageType, jdbcType=INTEGER},
-        #{mj.forInsert, jdbcType=VARCHAR},
+        #{mj.messageTarget, jdbcType=VARCHAR},
         #{mj.messageContent, jdbcType=VARCHAR}
         )
     </insert>

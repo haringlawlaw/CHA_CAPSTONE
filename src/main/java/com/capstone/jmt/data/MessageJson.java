@@ -21,16 +21,20 @@ public class MessageJson implements Serializable{
     @JsonProperty("datePosted")
     private Date datePosted;
     @JsonProperty("messageTarget")
-    private String[] messageTarget;
-    @JsonIgnore
-    private String forInsert;
+    private String messageTarget;
+    @JsonProperty("parentIds")
+    private String[] parentIds;
 
-    public String getForInsert() {
-        return forInsert;
+    public void setMessageTarget(String messageTarget) {
+        this.messageTarget = messageTarget;
     }
 
-    public void setForInsert(String forInsert) {
-        this.forInsert = forInsert;
+    public String[] getParentIds() {
+        return parentIds;
+    }
+
+    public void setParentIds(String[] parentIds) {
+        this.parentIds = parentIds;
     }
 
     public Integer getMessageTypeId() {
@@ -63,13 +67,5 @@ public class MessageJson implements Serializable{
 
     public void setPostedBy(String postedBy) {
         this.postedBy = postedBy;
-    }
-
-    public String[] getMessageTarget() {
-        return messageTarget;
-    }
-
-    public void setMessageTarget(String[] messageTarget) {
-        this.messageTarget = messageTarget;
     }
 }

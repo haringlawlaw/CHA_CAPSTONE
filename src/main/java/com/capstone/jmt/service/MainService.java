@@ -203,13 +203,13 @@ public class MainService {
     public HashMap<String, Object> postAnnouncement(MessageJson mj) {
         HashMap<String, Object> response = new HashMap<>();
         String forInsert = "";
-        for (int i = 0; i < mj.getMessageTarget().length; i++) {
+        for (int i = 0; i < mj.getParentIds().length; i++) {
             if(i == 0)
-                forInsert += mj.getMessageTarget();
+                forInsert += mj.getParentIds();
             else
-                forInsert += "," + mj.getMessageTarget();
+                forInsert += "," + mj.getParentIds();
         }
-        mj.setForInsert(forInsert);
+        mj.setMessageTarget(forInsert);
         mainMapper.postAnnouncement(mj);
         response.put("responseCode", 200);
         response.put("responseDesc", "Announcement Posted.");
@@ -284,18 +284,27 @@ public class MainService {
     public HashMap<String, Object> getAnnouncements(String parentId) {
         HashMap<String, Object> response = new HashMap<>();
         List<MessageJson> announcements = mainMapper.getAnnouncementsByParentId("%" + parentId + "%");
+        response.put("announcements", announcements);
+        response.put("responseCode", 200);
+        response.put("responseDesc", "Successfully retrieved list.");
         return response;
     }
 
     public HashMap<String, Object> getFilteredParentsBySection(String section) {
         HashMap<String, Object> response = new HashMap<>();
         List<Parent> parents = mainMapper.getFilteredParentsBySection(section);
+        response.put("parents", parents);
+        response.put("responseCode", 200);
+        response.put("responseDesc", "Successfully retrieved list.");
         return response;
     }
 
     public HashMap<String, Object> getParentsByGradeLevelId(Integer gradeLevelId) {
         HashMap<String, Object> response = new HashMap<>();
         List<Parent> parents = mainMapper.getParentsByGradeLevelId(gradeLevelId);
+        response.put("parents", parents);
+        response.put("responseCode", 200);
+        response.put("responseDesc", "Successfully retrieved list.");
         return response;
     }
 }
