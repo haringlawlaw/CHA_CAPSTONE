@@ -57,4 +57,10 @@ public interface MainMapper {
     List<Parent> getFilteredParentsBySection(@Param("section") String section);
 
     List<Parent> getParentsByGradeLevelId(@Param("gradeLevelId") Integer gradeLevelId);
+
+    void processRfidTap(@Param("rfid")String rfid);
+
+    void toggleSMS(@Param("parentId") String parentId, @Param("mode") boolean mode);
+
+    List<Student> getAllStudents();
 }

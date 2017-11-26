@@ -30,6 +30,11 @@ public class MainAppController {
     @Autowired
     private MainService mainService;
 
+    @RequestMapping(value = "toggleSMS", method = RequestMethod.POST)
+    public ResponseEntity<?> toggleSMS(@RequestParam("parentId") String parentId, @RequestParam("mode") boolean mode){
+        return new ResponseEntity<>(mainService.toggleSMS(parentId, mode), HttpStatus.OK);
+    }
+
     @RequestMapping(value = "processRfidTap", method = RequestMethod.POST)
     public ResponseEntity<?> processRfidTap(@RequestParam("rfid") String rfid) {
         HashMap<String, Object> response = new HashMap<>();
@@ -49,6 +54,11 @@ public class MainAppController {
         HashMap<String, Object> response = new HashMap<>();
         response.putAll(mainService.getUserById(id));
         return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "getAllStudents", method = RequestMethod.GET)
+    public ResponseEntity<?> getAllStudents() {
+        return new ResponseEntity<>(mainService.getAllStudents(), HttpStatus.OK);
     }
 
     @RequestMapping(value = "getStudent", method = RequestMethod.GET)

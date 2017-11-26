@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.MultiValueMap;
 
 import java.util.HashMap;
 import java.util.List;
@@ -40,7 +41,7 @@ public class MainService {
             if (passwordEncoder.matches(user.getPassword(), password)) {
                 Guidance guidance = new Guidance();
                 Parent parent = new Parent();
-                if(user.getUserTypeId() == 1)
+                if (user.getUserTypeId() == 1)
                     guidance = mainMapper.getGuidance(user.getReferenceId());
                 else
                     parent = mainMapper.getParent(user.getReferenceId());
@@ -121,11 +122,11 @@ public class MainService {
     public HashMap<String, Object> getLastTapEntry(String studentId) {
         HashMap<String, Object> response = new HashMap<>();
         TapLog tapLog = mainMapper.getLastTapDetailsByStudentId(studentId);
-        if(null != tapLog) {
+        if (null != tapLog) {
             response.put("tapDetails", tapLog);
             response.put("responseCode", 200);
             response.put("responseDesc", "Last tap entry retrieved.");
-        }else{
+        } else {
             response.put("responseCode", 404);
             response.put("responseDesc", "No logs yet.");
         }
@@ -135,11 +136,11 @@ public class MainService {
     public HashMap<String, Object> getTapLogOfStudent(String studentId) {
         HashMap<String, Object> response = new HashMap<>();
         List<TapLog> tapLog = mainMapper.getTapListDetailsByStudentId(studentId);
-        if(null != tapLog) {
+        if (null != tapLog) {
             response.put("tapListDetails", tapLog);
             response.put("responseCode", 200);
             response.put("responseDesc", "Last tap entry retrieved.");
-        }else{
+        } else {
             response.put("responseCode", 404);
             response.put("responseDesc", "No logs yet.");
         }
@@ -168,7 +169,7 @@ public class MainService {
         return response;
     }
 
-    public HashMap<String, Object> addParent(Parent parent){
+    public HashMap<String, Object> addParent(Parent parent) {
         HashMap<String, Object> response = new HashMap<>();
         parent.setId("PID" + mainMapper.getLastId(2));
         mainMapper.incrementId(2);
@@ -179,7 +180,7 @@ public class MainService {
         return response;
     }
 
-    public HashMap<String, Object> addEmergencyContact(EmergencyContact eContact){
+    public HashMap<String, Object> addEmergencyContact(EmergencyContact eContact) {
         HashMap<String, Object> response = new HashMap<>();
         eContact.setId("EID" + mainMapper.getLastId(3));
         mainMapper.incrementId(3);
@@ -204,7 +205,7 @@ public class MainService {
         HashMap<String, Object> response = new HashMap<>();
         String forInsert = "";
         for (int i = 0; i < mj.getParentIds().length; i++) {
-            if(i == 0)
+            if (i == 0)
                 forInsert += mj.getParentIds();
             else
                 forInsert += "," + mj.getParentIds();
@@ -217,17 +218,12 @@ public class MainService {
         return response;
     }
 
+
     public HashMap<String, Object> processRfidTap(String rfid) {
         HashMap<String, Object> response = new HashMap<>();
-        TapLog tap = mainMapper.getLastTapDetails(rfid);
-        if (null != tap) {
-            response.put("tapObject", tap);
-            response.put("responseCode", 200);
-            response.put("responseDesc", "Success.");
-        } else {
-            response.put("responseCode", 404);
-            response.put("responseDesc", "No tap yet or failed to retrieve.");
-        }
+        mainMapper.processRfidTap(rfid);
+        response.put("responseCode", 200);
+        response.put("responseDesc", "Success.");
         return response;
     }
 
@@ -235,17 +231,17 @@ public class MainService {
         User user = new User(userJson);
         Guidance guidance = mainMapper.getGuidance(userJson.getReferenceId());
         Parent parent = mainMapper.getParent(user.getReferenceId());
-        user.setId(guidance != null? "GID" + String.valueOf(mainMapper.getLastId(1)):
-                    parent != null? "PID" + String.valueOf(mainMapper.getLastId(2)):
-                    "AID" + String.valueOf(mainMapper.getLastId(0)));
+        user.setId(guidance != null ? "GID" + String.valueOf(mainMapper.getLastId(1)) :
+                parent != null ? "PID" + String.valueOf(mainMapper.getLastId(2)) :
+                        "AID" + String.valueOf(mainMapper.getLastId(0)));
         user.setReferenceId("ADMIN");
-        if(guidance != null) {
+        if (guidance != null) {
             user.setUserTypeId(1);
             mainMapper.incrementId(1);
-        }else if(parent != null) {
+        } else if (parent != null) {
             user.setUserTypeId(2);
             mainMapper.incrementId(2);
-        }else {
+        } else {
             user.setUserTypeId(0);
             mainMapper.incrementId(0);
         }
@@ -253,7 +249,7 @@ public class MainService {
         mainMapper.addUser(user);
     }
 
-    public List<RefGradeLevel> getGradeLevelList(){
+    public List<RefGradeLevel> getGradeLevelList() {
         return mainMapper.getGradeLevelList();
     }
 
@@ -271,10 +267,10 @@ public class MainService {
         HashMap<String, Object> response = new HashMap<>();
         User user = mainMapper.getUserById(id);
         response.put("user", user);
-        if(null == user){
+        if (null == user) {
             response.put("responseCode", HttpStatus.NOT_FOUND);
             response.put("responseDesc", "Cannot find user. Invalid Id.");
-        }else{
+        } else {
             response.put("responseCode", HttpStatus.OK);
             response.put("responseDesc", "Successfully retrieved user.");
         }
@@ -303,6 +299,22 @@ public class MainService {
         HashMap<String, Object> response = new HashMap<>();
         List<Parent> parents = mainMapper.getParentsByGradeLevelId(gradeLevelId);
         response.put("parents", parents);
+        response.put("responseCode", 200);
+        response.put("responseDesc", "Successfully retrieved list.");
+        return response;
+    }
+
+    public HashMap<String, Object> toggleSMS(String parentId, boolean mode) {
+        HashMap<String, Object> response = new HashMap<>();
+        mainMapper.toggleSMS(parentId, mode);
+        response.put("responseCode", 200);
+        response.put("responseDesc", "Successfully toggled SMS Notif.");
+        return response;
+    }
+
+    public HashMap<String, Object> getAllStudents() {
+        HashMap<String, Object> response = new HashMap<>();
+        response.put("students", mainMapper.getAllStudents());
         response.put("responseCode", 200);
         response.put("responseDesc", "Successfully retrieved list.");
         return response;

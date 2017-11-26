@@ -28,12 +28,22 @@ public class Parent implements Serializable{
     private String occupation;
     @JsonProperty("createdOn")
     private Date createdOn;
+    @JsonProperty("smsNotif")
+    private Boolean smsNotif;
     @JsonProperty("updatedOn")
     private Date updatedOn;
     @JsonProperty("createdBy")
     private String createdBy;
     @JsonProperty("updatedBy")
     private String updatedBy;
+
+    public Boolean getSmsNotif() {
+        return smsNotif;
+    }
+
+    public void setSmsNotif(Boolean smsNotif) {
+        this.smsNotif = smsNotif;
+    }
 
     public String getOccupation() {
         return occupation;
