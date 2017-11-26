@@ -263,6 +263,10 @@ public class MainService {
         return response;
     }
 
+    public Student getStudentByRfid(String rfid){
+        return mainMapper.getStudentByRfid(rfid);
+    }
+
     public HashMap<String, Object> getUserById(String id) {
         HashMap<String, Object> response = new HashMap<>();
         User user = mainMapper.getUserById(id);

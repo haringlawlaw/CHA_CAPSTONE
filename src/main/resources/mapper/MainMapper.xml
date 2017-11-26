@@ -292,6 +292,10 @@
 
     </insert>
 
+    <select id="getStudentByRfid" resultMap="StudentMap" resultType="com.capstone.jmt.entity.Student">
+        SELECT * from data_students WHERE rfid = #{rfid}
+    </select>
+
     <select id="getLastTapDetailsByStudentId" resultMap="TapLogMap" resultType="com.capstone.jmt.data.TapLog">
         SELECT TOP 1 * FROM log_taps
         WHERE rfid =
