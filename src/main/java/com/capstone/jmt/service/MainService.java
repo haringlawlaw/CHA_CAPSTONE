@@ -38,7 +38,6 @@ public class MainService {
             response.put("responseDesc", "Username does not exists.");
         } else {
             if (passwordEncoder.matches(user.getPassword(), password)) {
-                System.out.println("TAMA");
                 Guidance guidance = new Guidance();
                 Parent parent = new Parent();
                 if(user.getUserTypeId() == 1)
@@ -203,6 +202,14 @@ public class MainService {
 
     public HashMap<String, Object> postAnnouncement(MessageJson mj) {
         HashMap<String, Object> response = new HashMap<>();
+        String forInsert = "";
+        for (int i = 0; i < mj.getMessageTarget().length; i++) {
+            if(i == 0)
+                forInsert += mj.getMessageTarget();
+            else
+                forInsert += "," + mj.getMessageTarget();
+        }
+        mj.setForInsert(forInsert);
         mainMapper.postAnnouncement(mj);
         response.put("responseCode", 200);
         response.put("responseDesc", "Announcement Posted.");
@@ -225,7 +232,6 @@ public class MainService {
     }
 
     public void addUser(AddUserJson userJson) {
-        System.out.println(UUID.randomUUID().toString());
         User user = new User(userJson);
         Guidance guidance = mainMapper.getGuidance(userJson.getReferenceId());
         Parent parent = mainMapper.getParent(user.getReferenceId());
@@ -278,6 +284,18 @@ public class MainService {
     public HashMap<String, Object> getAnnouncements(String parentId) {
         HashMap<String, Object> response = new HashMap<>();
         List<MessageJson> announcements = mainMapper.getAnnouncementsByParentId("%" + parentId + "%");
+        return response;
+    }
+
+    public HashMap<String, Object> getFilteredParentsBySection(String section) {
+        HashMap<String, Object> response = new HashMap<>();
+        List<Parent> parents = mainMapper.getFilteredParentsBySection(section);
+        return response;
+    }
+
+    public HashMap<String, Object> getParentsByGradeLevelId(Integer gradeLevelId) {
+        HashMap<String, Object> response = new HashMap<>();
+        List<Parent> parents = mainMapper.getParentsByGradeLevelId(gradeLevelId);
         return response;
     }
 }

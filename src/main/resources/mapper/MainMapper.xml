@@ -218,7 +218,7 @@
         VALUES (
         #{mj.postedBy, jdbcType=VARCHAR},
         #{mj.messageType, jdbcType=INTEGER},
-        #{mj.messageTarget, jdbcType=VARCHAR},
+        #{mj.forInsert, jdbcType=VARCHAR},
         #{mj.messageContent, jdbcType=VARCHAR}
         )
     </insert>
@@ -228,6 +228,18 @@
         <result column="log_type" property="logType" jdbcType="VARCHAR" />
         <result column="log_datetime" property="logDateTime" jdbcType="TIMESTAMP" />
     </resultMap>
+
+    <select id="getFilteredParentsBySection" resultMap="ParentMap" resultType="java.util.List">
+        SELECT * FROM data_parents
+        WHERE parent_of IN
+        (SELECT id FROM data_students WHERE section = #{section})
+    </select>
+
+    <select id="getParentsByGradeLevelId" resultMap="ParentMap" resultType="java.util.List">
+        SELECT * FROM data_parents
+        WHERE parent_of IN
+        (SELECT id FROM data_students WHERE grade_level_id = #{gradeLevelId})
+    </select>
 
     <select id="getLastTapDetails" resultMap="TapLogMap" resultType="com.capstone.jmt.data.TapLog">
         SELECT TOP 1 * FROM log_taps
@@ -246,6 +258,7 @@
     <select id="getAnnouncementsByParentId" resultMap="MessageMap" resultType="java.util.List">
         SELECT * FROM logs_of_messages
         WHERE message_target LIKE #{searchString}
+        OR message_type = 3
     </select>
 
     <insert id="addUser" flushCache="true">

@@ -72,6 +72,20 @@ public class MainAppController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "getFilteredParentsBySection", method =  RequestMethod.GET)
+    public ResponseEntity<?> getFilteredParentsBySection(@RequestParam("section") String section) {
+        HashMap<String, Object> response = new HashMap<>();
+        response.putAll(mainService.getFilteredParentsBySection(section));
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @RequestMapping(value="getParentsByGradeLevelId", method = RequestMethod.GET)
+    public ResponseEntity<?> getParentsByGradeLevelId(@RequestParam("gradeLevelId") Integer gradeLevelId) {
+        HashMap<String, Object> response = new HashMap<>();
+        response.putAll(mainService.getParentsByGradeLevelId(gradeLevelId));
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
     @RequestMapping(value = "getEmergencyContact", method = RequestMethod.GET)
     public ResponseEntity<?> getEmergencyContact(@RequestParam String id) {
         HashMap<String, Object> response = new HashMap<>();

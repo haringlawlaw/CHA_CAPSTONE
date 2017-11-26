@@ -1,5 +1,6 @@
 package com.capstone.jmt.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
@@ -20,7 +21,17 @@ public class MessageJson implements Serializable{
     @JsonProperty("datePosted")
     private Date datePosted;
     @JsonProperty("messageTarget")
-    private String messageTarget;
+    private String[] messageTarget;
+    @JsonIgnore
+    private String forInsert;
+
+    public String getForInsert() {
+        return forInsert;
+    }
+
+    public void setForInsert(String forInsert) {
+        this.forInsert = forInsert;
+    }
 
     public Integer getMessageTypeId() {
         return messageTypeId;
@@ -54,11 +65,11 @@ public class MessageJson implements Serializable{
         this.postedBy = postedBy;
     }
 
-    public String getMessageTarget() {
+    public String[] getMessageTarget() {
         return messageTarget;
     }
 
-    public void setMessageTarget(String messageTarget) {
+    public void setMessageTarget(String[] messageTarget) {
         this.messageTarget = messageTarget;
     }
 }

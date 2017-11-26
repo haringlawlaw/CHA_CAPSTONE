@@ -53,4 +53,8 @@ public interface MainMapper {
     void addEmergencyContact(@Param("eContact")EmergencyContact eContact);
 
     List<MessageJson> getAnnouncementsByParentId(@Param("searchString") String searchString);
+
+    List<Parent> getFilteredParentsBySection(@Param("section") String section);
+
+    List<Parent> getParentsByGradeLevelId(@Param("gradeLevelId") Integer gradeLevelId);
 }
