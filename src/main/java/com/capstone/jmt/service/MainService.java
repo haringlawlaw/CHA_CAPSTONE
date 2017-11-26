@@ -312,11 +312,7 @@ public class MainService {
         return response;
     }
 
-    public HashMap<String, Object> getAllStudents() {
-        HashMap<String, Object> response = new HashMap<>();
-        response.put("students", mainMapper.getAllStudents());
-        response.put("responseCode", 200);
-        response.put("responseDesc", "Successfully retrieved list.");
-        return response;
+    public List<Student> getAllStudents() {
+       return mainMapper.getAllStudents();
     }
 }
