@@ -56,13 +56,9 @@
 
 
     $('#img').hide();
-    $('#firstStud').hide();
     $("#rfidTag").keyup(function () {
-        //todo check input count
-
         if(this.value == 0016287793){
             $('#img').show();
-            $('#firstStud').show();
             return;
         }
     });

@@ -105,7 +105,7 @@ public class MainWebController {
         System.out.println("student first name: " + student.getFirstName());
         System.out.println("student last name: " + student.getLastName());
         try{
-            student.setCreatedBy("admin123");
+            student.setCreatedBy("admin");
             mainService.addStudent(student);
             System.out.println("TRYING TO SAVE!");
             System.out.println("SUCCESS!!");
