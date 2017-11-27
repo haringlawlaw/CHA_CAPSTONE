@@ -175,6 +175,8 @@ public class MainWebController {
     @RequestMapping(value = "/monitor", method = RequestMethod.GET)
     public String shopMonitor(@RequestParam(value = "rfid", required = false) String rfid, Model model){
         Student student = mainService.getStudentByRfid(rfid);
+        if(null != student)
+            student.setFullName(student.getFirstName() + " " +student.getMiddleName() + " " + student.getLastName());
         model.addAttribute("student", new Student());
         model.addAttribute("stud", null != student?student: new Student());
 

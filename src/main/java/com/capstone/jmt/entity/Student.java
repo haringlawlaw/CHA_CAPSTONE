@@ -20,6 +20,7 @@ public class Student implements Serializable{
     private String lastName;
     @JsonProperty("middleName")
     private String middleName;
+    private String fullName;
     @JsonProperty("bday")
     private Date bday;
     @JsonProperty("place")
@@ -58,6 +59,14 @@ public class Student implements Serializable{
     private Date updatedOn;
 
     public Student(){}
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
     public String getId() {
         return id;

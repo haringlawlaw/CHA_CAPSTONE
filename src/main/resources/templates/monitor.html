@@ -21,38 +21,21 @@
                 <h1 class="page-header">Monitoring</h1>
             </div>
             <div class="row">
-                <form class="col-md-6" th:object="${student}" th:action="@{/monitorStudent}" th:method="POST">
-                    Please tap the rfid: <input id="rfidTag" th:field="*{rfid}" class="form-control" th:autofocus="true" hidden="true"/>
+
+
+
+                <center><form class="col-md-6" th:object="${student}" th:action="@{/monitorStudent}" th:method="POST">
+                    <h3>Please tap the RFID:</h3>
+                <br/>
+                    <input id="rfidTag" th:field="*{rfid}" class="form-control" th:autofocus="true" hidden="true" style="width: 0px; border: none; box-shadow: none"/>
 
                     <input type="submit" id="submit"/>
                 </form>
+                    <br/>
+
+                </center>
             </div>
-        </div>
-
-        <div class="panel-body">
-            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                <thead>
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Middle Name</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="odd gradeX">
-                    <td th:text="${stud.firstName}"></td>
-                    <td th:text="${stud.lastName}"></td>
-                    <td th:text="${stud.middleName}"></td>
-
-                </tr>
-                </tbody>
-                <thead>
-
-                </thead>
-            </table>
-            <!-- /.table-responsive -->
-
-            <!-- /.panel-body -->
+            <center><h3 th:text="${stud.fullName}"></h3></center>
         </div>
         <!-- /.col-lg-12 -->
     </div>
