@@ -260,6 +260,10 @@ public class MainService {
         return response;
     }
 
+    public Student getStudentByRfid(String rfid){
+        return mainMapper.getStudentByRfid(rfid);
+    }
+
     public HashMap<String, Object> getUserById(String id) {
         HashMap<String, Object> response = new HashMap<>();
         User user = mainMapper.getUserById(id);
@@ -309,11 +313,7 @@ public class MainService {
         return response;
     }
 
-    public HashMap<String, Object> getAllStudents() {
-        HashMap<String, Object> response = new HashMap<>();
-        response.put("students", mainMapper.getAllStudents());
-        response.put("responseCode", 200);
-        response.put("responseDesc", "Successfully retrieved list.");
-        return response;
+    public List<Student> getAllStudents() {
+       return mainMapper.getAllStudents();
     }
 }

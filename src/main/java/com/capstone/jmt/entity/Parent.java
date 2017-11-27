@@ -18,12 +18,10 @@ public class Parent implements Serializable{
     private String parentOf;
     @JsonProperty("relationship")
     private String relationship;
-    @JsonProperty("parentFName")
-    private String parentFName;
-    @JsonProperty("parentLName")
-    private String parentLName;
-    @JsonProperty("contactNo")
-    private String contactNo;
+    @JsonProperty("parentName")
+    private String parentName;
+    @JsonProperty("officeNo")
+    private String officeNo;
     @JsonProperty("occupation")
     private String occupation;
     @JsonProperty("createdOn")
@@ -77,28 +75,21 @@ public class Parent implements Serializable{
         this.relationship = relationship;
     }
 
-    public String getParentFName() {
-        return parentFName;
+
+    public String getParentName() {
+        return parentName;
     }
 
-    public void setParentFName(String parentFName) {
-        this.parentFName = parentFName;
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
     }
 
-    public String getParentLName() {
-        return parentLName;
+    public String getOfficeNo() {
+        return officeNo;
     }
 
-    public void setParentLName(String parentLName) {
-        this.parentLName = parentLName;
-    }
-
-    public String getContactNo() {
-        return contactNo;
-    }
-
-    public void setContactNo(String contactNo) {
-        this.contactNo = contactNo;
+    public void setOfficeNo(String officeNo) {
+        this.officeNo = officeNo;
     }
 
     public Date getCreatedOn() {

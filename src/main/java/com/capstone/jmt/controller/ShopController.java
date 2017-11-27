@@ -80,20 +80,6 @@ public class ShopController {
         return "transactions";
     }
 
-    @RequestMapping(value = "/messages", method = RequestMethod.GET)
-    public String shopInventory(@ModelAttribute("shopUser") ShopLogin shopUser, Model model){
-//        if (shopUser.getId() == null)
-//            return "redirect:/login";
-//
-//
-//        model.addAttribute("shop1", new ShopSalesInformation());
-//        model.addAttribute("shop2", new ShopSalesInformation());
-//        model.addAttribute("water", new ShopSalesInformation());
-//        model.addAttribute("username", shopUser.getUsername());
-//        model.addAttribute("inventory", shopService.getShopSalesInformationById(shopUser.getStaffOf()));
-
-        return "inventory";
-    }
 
 
 

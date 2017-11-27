@@ -3,6 +3,7 @@ package com.capstone.jmt.controller;
 import com.capstone.jmt.data.AddUserJson;
 import com.capstone.jmt.data.ShopLogin;
 import com.capstone.jmt.entity.Guidance;
+import com.capstone.jmt.entity.Parent;
 import com.capstone.jmt.entity.Student;
 import com.capstone.jmt.entity.User;
 import com.capstone.jmt.service.MainService;
@@ -92,7 +93,7 @@ public class MainWebController {
     @RequestMapping(value = "/getStudent", method = RequestMethod.GET)
     public String shopAddStudent(@Valid Student student, org.springframework.ui.Model model) {
 
-        model.addAttribute("student", new Student());
+        model.addAttribute("student", getStudent());
 
         return "addStudent";
     }
@@ -114,6 +115,24 @@ public class MainWebController {
         }
 
         return "addStudent";
+    }
+
+    @RequestMapping(value = "/getParent", method = RequestMethod.GET)
+    public String getParentOfStudent(@Valid Parent parent, org.springframework.ui.Model model){
+
+        model.addAttribute("students", mainService.getAllStudents());
+        model.addAttribute("parent", new Parent());
+        return "addParent";
+    }
+
+    @RequestMapping(value = "/addNewParent", method = RequestMethod.POST)
+    public String addNewParent(@Valid Parent parent, BindingResult bindingResult, org.springframework.ui.Model model){
+
+        parent.setCreatedBy("admin123");
+        parent.setUpdatedBy("admin123");
+        mainService.addParent(parent);
+
+        return "redirect:/login";
     }
 
     @RequestMapping(value = "/getUser", method = RequestMethod.GET)
@@ -167,6 +186,22 @@ public class MainWebController {
 
         return "monitor";
     }
+
+    @RequestMapping(value = "/messages", method = RequestMethod.GET)
+    public String shopInventory(@ModelAttribute("shopUser") ShopLogin shopUser, org.springframework.ui.Model model){
+//        if (shopUser.getId() == null)
+//            return "redirect:/login";
+//
+//
+//        model.addAttribute("shop1", new ShopSalesInformation());
+//        model.addAttribute("shop2", new ShopSalesInformation());
+//        model.addAttribute("water", new ShopSalesInformation());
+//        model.addAttribute("username", shopUser.getUsername());
+//        model.addAttribute("inventory", shopService.getShopSalesInformationById(shopUser.getStaffOf()));
+
+        return "inventory";
+    }
+
 
 
 }

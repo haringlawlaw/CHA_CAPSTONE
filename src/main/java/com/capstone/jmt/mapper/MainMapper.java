@@ -63,4 +63,6 @@ public interface MainMapper {
     void toggleSMS(@Param("parentId") String parentId, @Param("mode") boolean mode);
 
     List<Student> getAllStudents();
+
+    Student getStudentByRfid(@Param("rfid") String rfid);
 }
