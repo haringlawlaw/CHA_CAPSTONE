@@ -173,16 +173,19 @@ public class MainWebController {
     }
 
     @RequestMapping(value = "/monitor", method = RequestMethod.GET)
-    public String shopMonitor(@ModelAttribute("appUser") User user, org.springframework.ui.Model model){
-//        if (shopUser.getId() == null)
-//            return "redirect:/login";
-//
-//
-//        model.addAttribute("shop1", new ShopSalesInformation());
-//        model.addAttribute("shop2", new ShopSalesInformation());
-//        model.addAttribute("water", new ShopSalesInformation());
-//        model.addAttribute("username", shopUser.getUsername());
-//        model.addAttribute("inventory", shopService.getShopSalesInformationById(shopUser.getStaffOf()));
+    public String shopMonitor(@Valid String rfid, org.springframework.ui.Model model){
+
+
+        return "monitor";
+    }
+
+    @RequestMapping(value = "/monitorStudent", method = RequestMethod.POST)
+    public String monitorStudent(@Valid String rfid, org.springframework.ui.Model model){
+
+
+        Student student = mainService.getStudentByRfid(rfid);
+        System.out.println("STUDENT IN MONITOR: " + student.getFirstName());
+
 
         return "monitor";
     }
