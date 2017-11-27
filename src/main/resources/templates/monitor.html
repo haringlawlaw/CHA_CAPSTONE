@@ -21,35 +21,32 @@
                 <h1 class="page-header">Monitoring</h1>
             </div>
             <div class="row">
-                <div class="col-md-6">
-
+                <form class="col-md-6" th:action="@{/monitorStudent}" th:method="POST">
 
 
                     <img id="img" src="../static/images/school_logo.png" height="100px" width="100px"
-                             style="padding: -10px"/>
+                         style="padding: -10px"/>
 
 
-
-                    Please tap the rfid: <input id="rfidTag" class="form-control" />
+                    Please tap the rfid:
+                    <input id="rfidTag" th:value="*{rfid}" class="form-control" th:autofocus="true" hidden="true"/>
 
                     <div id="firstStud" class="row">
                         <label>FIRST NAME</label>
                         FRANCISCO
                     </div>
+                    <input type="submit" id="submit" hidden="true" />
+                </form>
+            </div>
 
-
-                </div>
-
-                <div class="col-md-6">
-
-
-
-                </div>
+            <div class="col-md-6">
 
 
             </div>
-            <!-- /.col-lg-12 -->
+
+
         </div>
+        <!-- /.col-lg-12 -->
     </div>
 </div>
 <script th:inline="javascript">
@@ -61,6 +58,8 @@
             $('#img').show();
             return;
         }
+        if (this.value.length >= 10)
+            $('#submit').click();
     });
 
 </script>

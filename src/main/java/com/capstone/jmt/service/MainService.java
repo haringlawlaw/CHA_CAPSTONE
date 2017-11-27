@@ -1,9 +1,6 @@
 package com.capstone.jmt.service;
 
-import com.capstone.jmt.data.AddUserJson;
-import com.capstone.jmt.data.MessageJson;
-import com.capstone.jmt.data.RefGradeLevel;
-import com.capstone.jmt.data.TapLog;
+import com.capstone.jmt.data.*;
 import com.capstone.jmt.entity.*;
 import com.capstone.jmt.mapper.MainMapper;
 import org.springframework.beans.factory.annotation.Autowired;

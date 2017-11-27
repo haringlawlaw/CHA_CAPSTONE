@@ -7,12 +7,12 @@ import com.capstone.jmt.entity.Parent;
 import com.capstone.jmt.entity.Student;
 import com.capstone.jmt.entity.User;
 import com.capstone.jmt.service.MainService;
-import io.swagger.models.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -46,7 +46,7 @@ public class MainWebController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginShopUser(@RequestParam(value = "error", required = false) String error, HttpServletRequest request,
-                                org.springframework.ui.Model model) {
+                                Model model) {
         if (null != error) {
             if (error.equals("1"))
                 model.addAttribute("param.error", true);
@@ -60,7 +60,7 @@ public class MainWebController {
 
 
     @RequestMapping(value="loginWebUser", method = RequestMethod.POST)
-    public String loginWebUser(@ModelAttribute("appUser") User user, org.springframework.ui.Model model){
+    public String loginWebUser(@ModelAttribute("appUser") User user, Model model){
 
 
         System.out.println("USERNAME: " + user.getUsername());
@@ -80,7 +80,7 @@ public class MainWebController {
 
 
     @RequestMapping(value = "/homepage", method = RequestMethod.GET)
-    public String showDashboard(@ModelAttribute("appUser") User user, org.springframework.ui.Model model) {
+    public String showDashboard(@ModelAttribute("appUser") User user, Model model) {
         System.out.println("HOMEPAGE: " + user.getUsername());
        if(null != user.getUsername()) {
            model.addAttribute("User", user);
@@ -91,7 +91,7 @@ public class MainWebController {
 
 
     @RequestMapping(value = "/getStudent", method = RequestMethod.GET)
-    public String shopAddStudent(@Valid Student student, org.springframework.ui.Model model) {
+    public String shopAddStudent(@Valid Student student, Model model) {
 
         model.addAttribute("student", getStudent());
 
@@ -99,7 +99,7 @@ public class MainWebController {
     }
 
     @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
-    public String addStudent(@Valid Student student , BindingResult bindingResult, org.springframework.ui.Model model){
+    public String addStudent(@Valid Student student , BindingResult bindingResult, Model model){
 
 
         System.out.println("student first name: " + student.getFirstName());
@@ -118,7 +118,7 @@ public class MainWebController {
     }
 
     @RequestMapping(value = "/getParent", method = RequestMethod.GET)
-    public String getParentOfStudent(@Valid Parent parent, org.springframework.ui.Model model){
+    public String getParentOfStudent(@Valid Parent parent, Model model){
 
         model.addAttribute("students", mainService.getAllStudents());
         model.addAttribute("parent", new Parent());
@@ -126,7 +126,7 @@ public class MainWebController {
     }
 
     @RequestMapping(value = "/addNewParent", method = RequestMethod.POST)
-    public String addNewParent(@Valid Parent parent, BindingResult bindingResult, org.springframework.ui.Model model){
+    public String addNewParent(@Valid Parent parent, BindingResult bindingResult, Model model){
 
         parent.setCreatedBy("admin123");
         parent.setUpdatedBy("admin123");
@@ -136,7 +136,7 @@ public class MainWebController {
     }
 
     @RequestMapping(value = "/getUser", method = RequestMethod.GET)
-    public String getUserData(@Valid AddUserJson newUser, org.springframework.ui.Model model){
+    public String getUserData(@Valid AddUserJson newUser, Model model){
 
         //TODO ADD VALIDATION OF NULL VALUES
 
@@ -145,7 +145,7 @@ public class MainWebController {
     }
 
     @RequestMapping(value = "/addNewUser", method = RequestMethod.POST)
-    public String postNewUser(@Valid AddUserJson newUser, BindingResult bindingResult, org.springframework.ui.Model model){
+    public String postNewUser(@Valid AddUserJson newUser, BindingResult bindingResult, Model model){
 
         System.out.println("USER username: " + newUser.getUsername());
         System.out.println("USER password: " + newUser.getPassword());
@@ -155,14 +155,14 @@ public class MainWebController {
     }
 
     @RequestMapping(value = "/getGuidance", method = RequestMethod.GET)
-    public String getGuidanceData(@Valid Guidance guidance, org.springframework.ui.Model model){
+    public String getGuidanceData(@Valid Guidance guidance, Model model){
 
         model.addAttribute("newGuidance", new Guidance());
         return "addGuidance";
     }
 
     @RequestMapping(value = "/addNewGuidance", method = RequestMethod.POST)
-    public String postNewGuidance(@Valid Guidance guidance, BindingResult bindingResult, org.springframework.ui.Model model){
+    public String postNewGuidance(@Valid Guidance guidance, BindingResult bindingResult, Model model){
 
         System.out.println("GUIDANCE FIRST NAME: " + guidance.getFirstName());
         System.out.println("GUIDANCE LAST NAME: " + guidance.getLastName());
@@ -173,25 +173,27 @@ public class MainWebController {
     }
 
     @RequestMapping(value = "/monitor", method = RequestMethod.GET)
-    public String shopMonitor(@Valid String rfid, org.springframework.ui.Model model){
+    public String shopMonitor(@Valid String rfid, Model model){
 
 
         return "monitor";
     }
 
     @RequestMapping(value = "/monitorStudent", method = RequestMethod.POST)
-    public String monitorStudent(@Valid String rfid, org.springframework.ui.Model model){
+    public String monitorStudent(@RequestParam(value="rfid", required = false) String rfid, Model model){
+        Student student = new Student();
+        if(null != rfid && !"".equals(rfid)) {
+            System.out.println("RFID" + rfid);
+            student = mainService.getStudentByRfid(rfid);
+        }
 
-
-        Student student = mainService.getStudentByRfid(rfid);
         System.out.println("STUDENT IN MONITOR: " + student.getFirstName());
-
 
         return "monitor";
     }
 
     @RequestMapping(value = "/messages", method = RequestMethod.GET)
-    public String shopInventory(@ModelAttribute("shopUser") ShopLogin shopUser, org.springframework.ui.Model model){
+    public String shopInventory(@ModelAttribute("shopUser") ShopLogin shopUser, Model model){
 //        if (shopUser.getId() == null)
 //            return "redirect:/login";
 //

@@ -139,7 +139,7 @@ public class MainAppController {
     }
 
     @RequestMapping(value = "addStudent", method = RequestMethod.POST)
-    public ResponseEntity<?> addStudent(@RequestParam Student student, @RequestParam String appUsername) {
+    public ResponseEntity<?> addStudent(@RequestBody Student student, @RequestParam String appUsername) {
         HashMap<String, Object> response = new HashMap<>();
         User teacher = mainService.getUser(appUsername);
         if (teacher.getUserTypeId() == 0) {

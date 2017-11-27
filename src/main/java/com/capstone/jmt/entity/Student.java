@@ -57,6 +57,8 @@ public class Student implements Serializable{
     @JsonProperty("updatedOn")
     private Date updatedOn;
 
+    public Student(){}
+
     public String getId() {
         return id;
     }
